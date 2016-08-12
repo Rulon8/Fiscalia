@@ -48,6 +48,7 @@ public class ControladorCrearUsuario {
 		interfazCrearUsuario = new VistaCrearUsuario();
 		modelo = ModeloCrearUsuario.obtenerInstancia();
 		correo = new Correo();
+		actualizar();
 	}
 	
 	public void actualizar() {
@@ -62,8 +63,9 @@ public class ControladorCrearUsuario {
 		user[6] = pass[1];
 		
 		exito = modelo.setNewUsuario(user);
-		correo.enviar(user[3], pass[0]);
+		//correo.enviar(user[3], pass[0]);
 		//crearReporteUsuarios();
+		actualizar();
 		return exito;
 	}
 	

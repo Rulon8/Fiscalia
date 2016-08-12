@@ -86,7 +86,7 @@ public class ModeloCrearUsuario {
 		c.addItem("Instructor 2");
 		c.addItem("Instructor 3");
 		
-		return null;
+		return c;
 	}
 
 	
