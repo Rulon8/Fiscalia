@@ -52,7 +52,7 @@ public class ControladorCrearUsuario {
 	}
 	
 	public void actualizar() {
-		Container instructores = modelo.getInfoInstructores2();
+		List<String> instructores = modelo.getInfoInstructores2();
 		interfazCrearUsuario.addVariosComboBoxInstructor2(instructores);
 	}
 	

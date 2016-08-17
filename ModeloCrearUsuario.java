@@ -78,8 +78,9 @@ public class ModeloCrearUsuario {
 		return exito;
 	}
 
-	public Container getInfoInstructores2() {
-		Container cont = new IndexedContainer();
+	public List<String> getInfoInstructores2() {
+		List<String> codigos = new ArrayList<String>();
+		ResultSet r;
 		Connection c;
 		Statement s;
 		String consulta;
@@ -92,7 +93,11 @@ public class ModeloCrearUsuario {
 
 			System.out.println(consulta);
 			
-			cont = (Container) s.executeQuery(consulta);
+			r = s.executeQuery(consulta);
+			
+			while (r.next()) {
+				codigos.add(r.getString(1));
+			}
 			
 			s.close();
 			c.commit();
@@ -106,7 +111,7 @@ public class ModeloCrearUsuario {
 			e.printStackTrace();
 		}
 		
-		return cont;
+		return codigos;
 		
 	}
 
