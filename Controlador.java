@@ -72,6 +72,9 @@ public class Controlador {
 		
 		controladorLogin.iniciar();
 		controladorLogin.setVista();
+		
+		//controladorCrearUsuario.iniciar();
+		//controladorCrearUsuario.setVista();
 	}
 	
 	public void cambiarVista(String vista) {
