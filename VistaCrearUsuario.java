@@ -470,7 +470,7 @@ public class VistaCrearUsuario extends CustomComponent {
 		etiquetaTitulo.setWidth("-1px");
 		etiquetaTitulo.setHeight("-1px");
 		etiquetaTitulo.setValue("Nuevo Usuario");
-		mainLayout.addComponent(etiquetaTitulo, "top:22.0px;left:20.0px;");
+		mainLayout.addComponent(etiquetaTitulo, "top:20.0px;left:20.0px;");
 		
 		// labelErrNom
 		labelErrNom = new Label();

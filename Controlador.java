@@ -9,6 +9,7 @@ public class Controlador {
 	private ControladorMenuPrincipal controladorMenuPrincipal;
 	private ControladorNuevoPassword controladorNuevoPassword;
 	private ControladorListaExpedientes controladorListaExpedientes;
+	private ControladorExpediente controladorExpediente;
 	private String tipoUsuario;
 	private String nombreUsuario;
 	private String apellidoUsuario;
@@ -67,11 +68,15 @@ public class Controlador {
 		controladorMenuPrincipal = ControladorMenuPrincipal.obtenerInstancia();
 		controladorNuevoPassword = ControladorNuevoPassword.obtenerInstancia();
 		controladorListaExpedientes =  ControladorListaExpedientes.obtenerInstancia();		
+		controladorExpediente = ControladorExpediente.obtenerInstancia();
 		//controladorListaExpedientes.iniciar();
 		//controladorListaExpedientes.setVista();
 		
 		controladorLogin.iniciar();
 		controladorLogin.setVista();
+		
+		//controladorExpediente.iniciar();
+		//controladorExpediente.setVista();
 		
 		//controladorCrearUsuario.iniciar();
 		//controladorCrearUsuario.setVista();
