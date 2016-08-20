@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -52,7 +53,8 @@ public class ControladorCrearUsuario {
 	}
 	
 	public void actualizar() {
-		Container instructores = modelo.getInfoInstructores2();
+		List<String> instructores = modelo.getInfoInstructores2();
+		Collections.sort(instructores);
 		interfazCrearUsuario.addVariosComboBoxInstructor2(instructores);
 	}
 	

@@ -53,7 +53,7 @@ public class ModeloCrearUsuario {
 			
 			s.executeUpdate(consulta);
 			
-			if (usuario[5] == "Instructor") {
+			if (usuario[5] == "Instructor" || usuario[5] == "Asistente") {
 				consulta = "INSERT INTO instasist VALUES ('" + usuario[2] + "', " + usuario[7] + ")";
 				s.executeUpdate(consulta);
 			}
@@ -61,8 +61,6 @@ public class ModeloCrearUsuario {
 				consulta = "INSERT INTO notificador VALUES ('" + usuario[2] + "')";
 				s.executeUpdate(consulta);
 			}
-			
-			//FALTA: Controlar caso asistente
 			
 			s.close();
 			c.commit();
@@ -80,13 +78,41 @@ public class ModeloCrearUsuario {
 		return exito;
 	}
 
-	public Container getInfoInstructores2() {
-		Container c = new IndexedContainer();
-		c.addItem("Instructor 1");
-		c.addItem("Instructor 2");
-		c.addItem("Instructor 3");
+	public List<String> getInfoInstructores2() {
+		List<String> codigos = new ArrayList<String>();
+		ResultSet r;
+		Connection c;
+		Statement s;
+		String consulta;
+		Modelo m = Modelo.obtenerInstancia();
 		
-		return c;
+		try {
+			c = m.getConnectionPool().reserveConnection();
+			s = c.createStatement();
+			consulta = "SELECT DISTINCT codigo FROM InstAsist";					
+
+			System.out.println(consulta);
+			
+			r = s.executeQuery(consulta);
+			
+			while (r.next()) {
+				codigos.add(r.getString(1));
+			}
+			
+			s.close();
+			c.commit();
+			c.close();
+			
+			m.getConnectionPool().releaseConnection(c);
+			
+		}
+		catch (SQLException e) {
+			//FALTA: Controlar errores de SQL
+			e.printStackTrace();
+		}
+		
+		return codigos;
+		
 	}
 
 	
