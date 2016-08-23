@@ -91,6 +91,9 @@ public class ControladorCrearUsuario {
 			System.out.println("Error de hash");
 		}
 		
+		//Cambiar comillas para que sean aceptadas por SQL
+		passHash.replaceAll("'", "''");
+		
 		passwords[0] = pass;
 		passwords[1] = passHash;
 		
