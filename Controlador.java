@@ -72,11 +72,11 @@ public class Controlador {
 		//controladorListaExpedientes.iniciar();
 		//controladorListaExpedientes.setVista();
 		
-		controladorLogin.iniciar();
-		controladorLogin.setVista();
+		//controladorLogin.iniciar();
+		//controladorLogin.setVista();
 		
-		//controladorExpediente.iniciar();
-		//controladorExpediente.setVista();
+		controladorExpediente.iniciar();
+		controladorExpediente.setVista();
 		
 		//controladorCrearUsuario.iniciar();
 		//controladorCrearUsuario.setVista();

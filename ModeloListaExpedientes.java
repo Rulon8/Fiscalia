@@ -25,7 +25,7 @@ public class ModeloListaExpedientes {
 		Connection conexion = null;
 		try{
 			cp = new SimpleJDBCConnectionPool("org.postgresql.Driver",
-					"jdbc:postgresql://127.0.0.1:5432/Fiscalia", "postgres", "123456", 1, 5);
+					"jdbc:postgresql://127.0.0.1:5432/Fiscalia", "postgres", "ECCIpgsql2016", 1, 5);
 			Connection conn = cp.reserveConnection();
 			Statement statement = conn.createStatement();
 			ResultSet rs = statement.executeQuery("SELECT current_database()");
