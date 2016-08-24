@@ -10,6 +10,8 @@ public class Controlador {
 	private ControladorMenuPrincipal controladorMenuPrincipal;
 	private ControladorNuevoPassword controladorNuevoPassword;
 	private ControladorListaExpedientes controladorListaExpedientes;
+	private ControladorLogs controladorLogs;
+	private ControladorExpediente controladorExpediente;
 	private String tipoUsuario;
 	private String nombreUsuario;
 	private String apellidoUsuario;
@@ -61,12 +63,12 @@ public class Controlador {
 	}
 	
 	public void iniciar() {
-		//NOTA: HACER SINGLETONS
 		modelo = Modelo.obtenerInstancia();
 		controladorCrearUsuario = ControladorCrearUsuario.obtenerInstancia();
 		controladorLogin = ControladorLogin.obtenerInstancia();
 		controladorMenuPrincipal = ControladorMenuPrincipal.obtenerInstancia();
 		controladorNuevoPassword = ControladorNuevoPassword.obtenerInstancia();
+
 		controladorListaExpedientes =  ControladorListaExpedientes.obtenerInstancia();
 		controladorCrearExpediente =  ControladorCrearExpediente.obtenerInstancia();
 		
@@ -74,6 +76,27 @@ public class Controlador {
 		controladorCrearExpediente.setVista();
 		//controladorLogin.iniciar();
 		//controladorLogin.setVista();
+
+		controladorListaExpedientes =  ControladorListaExpedientes.obtenerInstancia();	
+		controladorLogs = ControladorLogs.obtenerInstancia();
+		controladorListaExpedientes =  ControladorListaExpedientes.obtenerInstancia();		
+		controladorExpediente = ControladorExpediente.obtenerInstancia();
+		
+		//controladorListaExpedientes.iniciar();
+		//controladorListaExpedientes.setVista();
+		
+		controladorLogin.iniciar();
+		controladorLogin.setVista();
+		
+		//controladorLogs.iniciar("1");
+		//controladorLogs.setVista();
+		
+		//controladorExpediente.iniciar();
+		//controladorExpediente.setVista();
+		
+		//controladorCrearUsuario.iniciar();
+		//controladorCrearUsuario.setVista();
+
 	}
 	
 	public void cambiarVista(String vista) {
@@ -109,7 +132,19 @@ public class Controlador {
 			controladorCrearExpediente.setVista();
 			break;
 		}
-		
+
+		}	
+	
+	
+	public void cambiarVista(String vista, String numExpediente){
+		switch(vista) {
+		case "Logs":
+			controladorLogs.iniciar(numExpediente);
+			controladorLogs.setVista();
+			break;
+		case "Expediente":
+			break;
+		}
 	}
 
 }
