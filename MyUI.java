@@ -27,10 +27,12 @@ public class MyUI extends UI {
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-    		//VistaListaExpedientes Vista = new VistaListaExpedientes();
-    		//ControladorListaExpedientes  controlador = new ControladorListaExpedientes();
-    		//ControladorListaExpedientes controlador = ControladorListaExpedientes.obtenerInstancia();
-    		//controlador.iniciar();
+    		/*
+    		VistaCrearExpediente Vista = new VistaCrearExpediente();
+    		ControladorCrearExpediente  controlador = new ControladorCrearExpediente();
+    		ControladorCrearExpediente controlador = ControladorCrearExpediente.obtenerInstancia();
+    		controlador.iniciar();
+    		*/
     	
     		Controlador controlador = Controlador.obtenerInstancia();
     		controlador.iniciar();
