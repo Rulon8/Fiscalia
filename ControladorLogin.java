@@ -43,6 +43,9 @@ public class ControladorLogin {
 			System.out.println("Error de hash");
 		}
 		
+		//Cambiar las comillas para que sean aceptadas por SQL
+		credenciales[1].replaceAll("'", "''");
+		
 		datosUsuario = modeloLogin.autenticar(credenciales);
 		
 		if (!datosUsuario[0].equals("")) {
@@ -61,6 +64,7 @@ public class ControladorLogin {
 	}
 	
 	public void setVista() {
+		//interfazLogin.setVista();
 		MyUI.getCurrent().setContent(interfazLogin);
 	}
 
