@@ -42,7 +42,6 @@ public class ModeloExpediente {
 			datos.put("Fecha de Ingreso", rs.getString("fechaingreso"));
 			datos.put("Clasificacion", rs.getString("clasificacion"));
 			
-			
 			s.close();
 			c.close();
 			m.getConnectionPool().releaseConnection(c);

@@ -85,14 +85,14 @@ public class Controlador {
 		//controladorListaExpedientes.iniciar();
 		//controladorListaExpedientes.setVista();
 		
-		controladorLogin.iniciar();
-		controladorLogin.setVista();
+		//controladorLogin.iniciar();
+		//controladorLogin.setVista();
 		
 		//controladorLogs.iniciar("1");
 		//controladorLogs.setVista();
 		
-		//controladorExpediente.iniciar();
-		//controladorExpediente.setVista();
+		controladorExpediente.iniciar();
+		controladorExpediente.setVista();
 		
 		//controladorCrearUsuario.iniciar();
 		//controladorCrearUsuario.setVista();
@@ -143,16 +143,9 @@ public class Controlador {
 			controladorLogs.setVista();
 			break;
 		case "Expediente":
-			break;
-		}
-	}
-	
-	public void cambiarVista(String vista, String codExpediente) {
-		
-		switch(vista) {
-		case "Expediente":
-			controladorExpediente.iniciar(codExpediente);
+			controladorExpediente.iniciar(numExpediente);
 			controladorExpediente.setVista();
+			break;
 		}
 	}
 
