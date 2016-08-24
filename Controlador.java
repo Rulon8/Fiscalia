@@ -112,5 +112,14 @@ public class Controlador {
 		}
 		
 	}
+	
+	public void cambiarVista(String vista, String codExpediente) {
+		
+		switch(vista) {
+		case "Expediente":
+			controladorExpediente.iniciar(codExpediente);
+			controladorExpediente.setVista();
+		}
+	}
 
 }

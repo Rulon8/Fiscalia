@@ -1,10 +1,13 @@
 package ucr.casoUso;
 
+import java.util.HashMap;
+
 public class ControladorExpediente {
 	
 	VistaExpediente interfazExpediente;
 	ModeloExpediente modeloExpediente;
 	private static ControladorExpediente primeraInstancia = null;
+	String codigoExpediente;
 		
 	public ControladorExpediente() {
 	
@@ -12,9 +15,18 @@ public class ControladorExpediente {
 	
 	public void iniciar(){
 		
-		interfazExpediente = new VistaExpediente();
+		codigoExpediente = "33";
 		modeloExpediente = ModeloExpediente.obtenerInstancia();
+		interfazExpediente = new VistaExpediente();
 	
+	}
+	
+	public void iniciar(String codExpediente){
+		
+		codigoExpediente = codExpediente;
+		modeloExpediente = ModeloExpediente.obtenerInstancia();
+		interfazExpediente = new VistaExpediente();
+		
 	}
 	
 	public static ControladorExpediente obtenerInstancia() {
@@ -24,6 +36,12 @@ public class ControladorExpediente {
 		}
 		return primeraInstancia;
 	
+	}
+	
+	public HashMap<String, String> obtenerDatos() {
+		HashMap<String, String> datos = null;
+		datos = modeloExpediente.traerDatosExpediente(codigoExpediente);
+		return datos;
 	}
 	
 	public void setVista() {

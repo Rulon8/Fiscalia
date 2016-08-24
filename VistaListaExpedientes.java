@@ -107,7 +107,7 @@ public class VistaListaExpedientes extends CustomComponent {
 		try{
 		SimpleJDBCConnectionPool cp;
 		cp = new SimpleJDBCConnectionPool("org.postgresql.Driver",
-				"jdbc:postgresql://127.0.0.1:5432/Fiscalia", "postgres", "pass", 1, 5);
+				"jdbc:postgresql://127.0.0.1:5432/Fiscalia", "postgres", "ECCIpgsql2016", 1, 5);
 		TableQuery tq = new TableQuery("expediente", cp);
 		SQLContainer containerTabla = new SQLContainer(tq);
 		filterTable_1.setContainerDataSource(containerTabla);
