@@ -10,6 +10,7 @@ public class Controlador {
 	private ControladorMenuPrincipal controladorMenuPrincipal;
 	private ControladorNuevoPassword controladorNuevoPassword;
 	private ControladorListaExpedientes controladorListaExpedientes;
+	private ControladorListaExpedientesArchivados controladorListaExpedientesArchivados;
 	private ControladorLogs controladorLogs;
 	private ControladorExpediente controladorExpediente;
 	private String tipoUsuario;
@@ -68,22 +69,15 @@ public class Controlador {
 		controladorLogin = ControladorLogin.obtenerInstancia();
 		controladorMenuPrincipal = ControladorMenuPrincipal.obtenerInstancia();
 		controladorNuevoPassword = ControladorNuevoPassword.obtenerInstancia();
-
-		controladorListaExpedientes =  ControladorListaExpedientes.obtenerInstancia();
 		controladorCrearExpediente =  ControladorCrearExpediente.obtenerInstancia();
-		
-		controladorCrearExpediente.iniciar();
-		controladorCrearExpediente.setVista();
-		//controladorLogin.iniciar();
-		//controladorLogin.setVista();
-
-		controladorListaExpedientes =  ControladorListaExpedientes.obtenerInstancia();	
+		controladorListaExpedientes =  ControladorListaExpedientes.obtenerInstancia();
+		controladorListaExpedientesArchivados =  ControladorListaExpedientesArchivados.obtenerInstancia();
 		controladorLogs = ControladorLogs.obtenerInstancia();
 		controladorListaExpedientes =  ControladorListaExpedientes.obtenerInstancia();		
 		controladorExpediente = ControladorExpediente.obtenerInstancia();
 		
-		//controladorListaExpedientes.iniciar();
-		//controladorListaExpedientes.setVista();
+		controladorListaExpedientesArchivados.iniciar();
+		controladorListaExpedientesArchivados.setVista();
 		
 		//controladorLogin.iniciar();
 		//controladorLogin.setVista();
@@ -91,8 +85,8 @@ public class Controlador {
 		//controladorLogs.iniciar("1");
 		//controladorLogs.setVista();
 		
-		controladorExpediente.iniciar();
-		controladorExpediente.setVista();
+		//controladorExpediente.iniciar();
+		//controladorExpediente.setVista();
 		
 		//controladorCrearUsuario.iniciar();
 		//controladorCrearUsuario.setVista();
