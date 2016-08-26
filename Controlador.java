@@ -76,8 +76,8 @@ public class Controlador {
 		controladorListaExpedientes =  ControladorListaExpedientes.obtenerInstancia();		
 		controladorExpediente = ControladorExpediente.obtenerInstancia();
 		
-		controladorListaExpedientesArchivados.iniciar();
-		controladorListaExpedientesArchivados.setVista();
+		//controladorListaExpedientesArchivados.iniciar();
+		//controladorListaExpedientesArchivados.setVista();
 		
 		//controladorLogin.iniciar();
 		//controladorLogin.setVista();
@@ -85,8 +85,8 @@ public class Controlador {
 		//controladorLogs.iniciar("1");
 		//controladorLogs.setVista();
 		
-		//controladorExpediente.iniciar();
-		//controladorExpediente.setVista();
+		controladorExpediente.iniciar();
+		controladorExpediente.setVista();
 		
 		//controladorCrearUsuario.iniciar();
 		//controladorCrearUsuario.setVista();

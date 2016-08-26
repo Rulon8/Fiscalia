@@ -18,6 +18,7 @@ public class ModeloExpediente {
 	}
 	
 	public HashMap<String, String> traerDatosExpediente(String codExpediente) {
+		
 		Connection c;
 		Statement s;
 		String consulta = "";
@@ -30,7 +31,7 @@ public class ModeloExpediente {
 			c = m.getConnectionPool().reserveConnection();
 			s = c.createStatement();
 			consulta = "SELECT * FROM expediente WHERE codigo = '" + codExpediente + "'";
-			System.out.println(consulta);
+
 			rs = s.executeQuery(consulta);
 			
 			rs.next();
@@ -51,5 +52,30 @@ public class ModeloExpediente {
 		}
 		
 		return datos;
+	}
+	
+	public void actualizarDatos(String nuevoDato, String columna, String codigoExpediente) {
+		
+		Connection c;
+		Statement s;
+		String consulta = "";
+		Modelo m = Modelo.obtenerInstancia();
+		
+		try {
+			c = m.getConnectionPool().reserveConnection();
+			s = c.createStatement();
+			consulta = "UPDATE expediente SET " + columna + " = " + "'" + nuevoDato + "' WHERE codigo = '" + codigoExpediente + "'";
+			s.executeUpdate(consulta);
+			
+			System.out.println(consulta);
+			
+			s.close();
+			c.commit();
+			c.close();
+			m.getConnectionPool().releaseConnection(c);
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }
