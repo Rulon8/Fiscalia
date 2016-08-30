@@ -4,13 +4,15 @@ public class Controlador {
 	
 	private static Controlador primeraInstancia = null;
 	private Modelo modelo;
+	private ControladorCrearExpediente controladorCrearExpediente;
 	private ControladorCrearUsuario controladorCrearUsuario;
 	private ControladorLogin controladorLogin;
 	private ControladorMenuPrincipal controladorMenuPrincipal;
 	private ControladorNuevoPassword controladorNuevoPassword;
-	private ControladorListaExpedientes controladorListaExpedientes;
+	private ControladorListaExpedientesActivos controladorListaExpedientesActivos;
+	private ControladorListaExpedientesArchivados controladorListaExpedientesArchivados;
 	private ControladorLogs controladorLogs;
-	//private ControladorExpediente controladorExpediente;
+	private ControladorExpediente controladorExpediente;
 	private String tipoUsuario;
 	private String nombreUsuario;
 	private String apellidoUsuario;
@@ -67,25 +69,30 @@ public class Controlador {
 		controladorLogin = ControladorLogin.obtenerInstancia();
 		controladorMenuPrincipal = ControladorMenuPrincipal.obtenerInstancia();
 		controladorNuevoPassword = ControladorNuevoPassword.obtenerInstancia();
-		controladorListaExpedientes =  ControladorListaExpedientes.obtenerInstancia();	
+		controladorCrearExpediente =  ControladorCrearExpediente.obtenerInstancia();
+		controladorListaExpedientesActivos =  ControladorListaExpedientesActivos.obtenerInstancia();
+		controladorListaExpedientesArchivados =  ControladorListaExpedientesArchivados.obtenerInstancia();
 		controladorLogs = ControladorLogs.obtenerInstancia();
-		controladorListaExpedientes =  ControladorListaExpedientes.obtenerInstancia();		
-		//controladorExpediente = ControladorExpediente.obtenerInstancia();
+		controladorListaExpedientes =  ControladorListaExpedientes.obtenerInstancia();
 		
-		//controladorListaExpedientes.iniciar();
-		//controladorListaExpedientes.setVista();
+		//controladorListaExpedientesArchivados.iniciar();
+		//controladorListaExpedientesArchivados.setVista();
 		
-		//controladorLogin.iniciar();
-		//controladorLogin.setVista();
+		//controladorListaExpedientesActivos.iniciar();
+		//controladorListaExpedientesActivos.setVista();
 		
-		controladorLogs.iniciar("1");
-		controladorLogs.setVista();
+		controladorLogin.iniciar();
+		controladorLogin.setVista();
+		
+		//controladorLogs.iniciar("1");
+		//controladorLogs.setVista();
 		
 		//controladorExpediente.iniciar();
 		//controladorExpediente.setVista();
 		
 		//controladorCrearUsuario.iniciar();
 		//controladorCrearUsuario.setVista();
+
 	}
 	
 	public void cambiarVista(String vista) {
@@ -112,11 +119,18 @@ public class Controlador {
 			break;
 		
 		case "Lista Expedientes":
-			controladorListaExpedientes.iniciar();
-			controladorListaExpedientes.setVista();
+			controladorListaExpedientesActivos.iniciar();
+			controladorListaExpedientesActivos.setVista();
 			break;
+			
+		case "Crear Expediente":
+			controladorCrearExpediente.iniciar();
+			controladorCrearExpediente.setVista();
+			break;
+		}
+
 		}	
-	}
+	
 	
 	public void cambiarVista(String vista, String numExpediente){
 		switch(vista) {
@@ -124,8 +138,9 @@ public class Controlador {
 			controladorLogs.iniciar(numExpediente);
 			controladorLogs.setVista();
 			break;
-		
 		case "Expediente":
+			controladorExpediente.iniciar(numExpediente);
+			controladorExpediente.setVista();
 			break;
 		}
 	}

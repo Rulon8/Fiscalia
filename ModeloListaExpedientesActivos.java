@@ -7,15 +7,15 @@ import java.sql.Statement;
 
 import com.vaadin.data.util.sqlcontainer.connection.SimpleJDBCConnectionPool;
 
-public class ModeloListaExpedientes {
-	private static ModeloListaExpedientes primeraInstancia;
-	public ModeloListaExpedientes(){
+public class ModeloListaExpedientesActivos {
+	private static ModeloListaExpedientesActivos primeraInstancia;
+	public ModeloListaExpedientesActivos(){
 		conectarBD();
 	}
 	
-	public static ModeloListaExpedientes obtenerInstancia() {
+	public static ModeloListaExpedientesActivos obtenerInstancia() {
 		if(primeraInstancia == null){
-			primeraInstancia = new ModeloListaExpedientes();
+			primeraInstancia = new ModeloListaExpedientesActivos();
 		}
 		return primeraInstancia;
 	}
