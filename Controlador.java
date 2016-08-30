@@ -9,7 +9,7 @@ public class Controlador {
 	private ControladorLogin controladorLogin;
 	private ControladorMenuPrincipal controladorMenuPrincipal;
 	private ControladorNuevoPassword controladorNuevoPassword;
-	private ControladorListaExpedientes controladorListaExpedientes;
+	private ControladorListaExpedientesActivos controladorListaExpedientesActivos;
 	private ControladorListaExpedientesArchivados controladorListaExpedientesArchivados;
 	private ControladorLogs controladorLogs;
 	private ControladorExpediente controladorExpediente;
@@ -70,14 +70,16 @@ public class Controlador {
 		controladorMenuPrincipal = ControladorMenuPrincipal.obtenerInstancia();
 		controladorNuevoPassword = ControladorNuevoPassword.obtenerInstancia();
 		controladorCrearExpediente =  ControladorCrearExpediente.obtenerInstancia();
-		controladorListaExpedientes =  ControladorListaExpedientes.obtenerInstancia();
+		controladorListaExpedientesActivos =  ControladorListaExpedientesActivos.obtenerInstancia();
 		controladorListaExpedientesArchivados =  ControladorListaExpedientesArchivados.obtenerInstancia();
 		controladorLogs = ControladorLogs.obtenerInstancia();
-		controladorListaExpedientes =  ControladorListaExpedientes.obtenerInstancia();		
 		controladorExpediente = ControladorExpediente.obtenerInstancia();
 		
 		controladorListaExpedientesArchivados.iniciar();
 		controladorListaExpedientesArchivados.setVista();
+		
+		//controladorListaExpedientesActivos.iniciar();
+		//controladorListaExpedientesActivos.setVista();
 		
 		//controladorLogin.iniciar();
 		//controladorLogin.setVista();
@@ -117,8 +119,8 @@ public class Controlador {
 			break;
 		
 		case "Lista Expedientes":
-			controladorListaExpedientes.iniciar();
-			controladorListaExpedientes.setVista();
+			controladorListaExpedientesActivos.iniciar();
+			controladorListaExpedientesActivos.setVista();
 			break;
 			
 		case "Crear Expediente":
