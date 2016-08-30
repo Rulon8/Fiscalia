@@ -44,6 +44,10 @@ public class ControladorExpediente {
 		return datos;
 	}
 	
+	public void enviarDatos(String nuevoDato, String columna) {
+		modeloExpediente.actualizarDatos(nuevoDato, columna, codigoExpediente);
+	}
+	
 	public void setVista() {
 		MyUI.getCurrent().setContent(interfazExpediente);
 	}
