@@ -73,7 +73,7 @@ public class Controlador {
 		controladorListaExpedientesActivos =  ControladorListaExpedientesActivos.obtenerInstancia();
 		controladorListaExpedientesArchivados =  ControladorListaExpedientesArchivados.obtenerInstancia();
 		controladorLogs = ControladorLogs.obtenerInstancia();
-		controladorExpediente = ControladorExpediente.obtenerInstancia();
+		controladorListaExpedientes =  ControladorListaExpedientes.obtenerInstancia();
 		
 		//controladorListaExpedientesArchivados.iniciar();
 		//controladorListaExpedientesArchivados.setVista();

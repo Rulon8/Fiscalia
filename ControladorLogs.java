@@ -1,5 +1,7 @@
 package ucr.casoUso;
 
+import java.util.ArrayList;
+
 public class ControladorLogs {
 
 	VistaLogs interfazLogs;
@@ -11,9 +13,10 @@ public class ControladorLogs {
 	}
 	
 	public void iniciar(String numExp){
-		interfazLogs = new VistaLogs();
-		modeloLogs = ModeloLogs.obtenerInstancia(numExp);
+		modeloLogs = ModeloLogs.obtenerInstancia();
 		numExpediente = numExp;
+		interfazLogs = new VistaLogs();
+		
 	}
 	
 	public static ControladorLogs obtenerInstancia() {
@@ -27,4 +30,11 @@ public class ControladorLogs {
 		MyUI.getCurrent().setContent(interfazLogs);
 	}
 	
+	public String getNumExp(){
+		return numExpediente;
+	}
+	
+	public ArrayList<String[]> pedirDatos(){
+		return modeloLogs.pedirDatos(numExpediente);
+	}
 }
