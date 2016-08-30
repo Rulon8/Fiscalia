@@ -81,14 +81,14 @@ public class Controlador {
 		//controladorListaExpedientesActivos.iniciar();
 		//controladorListaExpedientesActivos.setVista();
 		
-		//controladorLogin.iniciar();
-		//controladorLogin.setVista();
+		controladorLogin.iniciar();
+		controladorLogin.setVista();
 		
 		//controladorLogs.iniciar("1");
 		//controladorLogs.setVista();
 		
-		controladorExpediente.iniciar();
-		controladorExpediente.setVista();
+		//controladorExpediente.iniciar();
+		//controladorExpediente.setVista();
 		
 		//controladorCrearUsuario.iniciar();
 		//controladorCrearUsuario.setVista();
@@ -127,6 +127,10 @@ public class Controlador {
 			controladorCrearExpediente.iniciar();
 			controladorCrearExpediente.setVista();
 			break;
+			
+		case "Expedientes Archivados":
+			controladorListaExpedientesArchivados.iniciar();
+			controladorListaExpedientesArchivados.setVista();
 		}
 
 		}	
