@@ -26,8 +26,8 @@ public class ModeloLogs {
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
-			System.out.println("SELECT numcambio, cedusuario, fecha, descripcion FROM logcambios WHERE numexpediente = '" + numExpediente + "'");
-			String consulta = "SELECT numcambio, cedusuario, fecha, descripcion FROM logcambios WHERE numexpediente = '" + numExpediente + "'";
+			System.out.println("SELECT numcambio, cedusuario, fecha, descripcion FROM logCambios WHERE codigo = '" + numExpediente + "'");
+			String consulta = "SELECT numcambio, cedusuario, fecha, descripcion FROM logCambios WHERE codigo = '" + numExpediente + "'";
 			ResultSet rs = s.executeQuery(consulta);
 			rs.next();
 			while(rs.next() != false) {
