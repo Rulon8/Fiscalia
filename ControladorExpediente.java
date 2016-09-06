@@ -44,9 +44,9 @@ public class ControladorExpediente {
 		return datos;
 	}
 	
-	public void enviarDatos(String nuevoDato, String columna, String instructor, String numExp, String valorViejo, String numCambio) {
+	public void enviarDatos(String nuevoDato, String columna, String instructor, String numExp, String valorViejo) {
 		modeloExpediente.actualizarDatos(nuevoDato, columna, codigoExpediente);
-		modeloExpediente.actualizarLogs(codigoExpediente, numExp, instructor, columna, valorViejo, nuevoDato, numCambio);
+		modeloExpediente.actualizarLogs(codigoExpediente, numExp, instructor, columna, valorViejo, nuevoDato);
 	}
 	
 	public void setVista() {
