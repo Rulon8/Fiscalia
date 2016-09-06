@@ -78,4 +78,29 @@ public class ModeloExpediente {
 			e.printStackTrace();
 		}
 	}
+	
+	public void actualizarLogs(String codigo, String numExp, String usuario, String campo, String valorViejo, String valorNuevo, String numCambio) {
+		
+		Connection c;
+		Statement s;
+		String consulta = "";
+		Modelo m = Modelo.obtenerInstancia();
+		
+		try {
+			c = m.getConnectionPool().reserveConnection();
+			s = c.createStatement();
+			consulta = "INSERT INTO logCambios VALUES ()";
+			s.executeUpdate(consulta);
+			
+			System.out.println(consulta);
+			
+			s.close();
+			c.commit();
+			c.close();
+			m.getConnectionPool().releaseConnection(c);
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }
