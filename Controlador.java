@@ -73,7 +73,7 @@ public class Controlador {
 		controladorListaExpedientesActivos =  ControladorListaExpedientesActivos.obtenerInstancia();
 		controladorListaExpedientesArchivados =  ControladorListaExpedientesArchivados.obtenerInstancia();
 		controladorLogs = ControladorLogs.obtenerInstancia();
-		controladorListaExpedientes =  ControladorListaExpedientes.obtenerInstancia();
+		controladorExpediente = ControladorExpediente.obtenerInstancia();
 		
 		//controladorListaExpedientesArchivados.iniciar();
 		//controladorListaExpedientesArchivados.setVista();
@@ -81,11 +81,11 @@ public class Controlador {
 		//controladorListaExpedientesActivos.iniciar();
 		//controladorListaExpedientesActivos.setVista();
 		
-		controladorLogin.iniciar();
-		controladorLogin.setVista();
+		//controladorLogin.iniciar();
+		//controladorLogin.setVista();
 		
-		//controladorLogs.iniciar("1");
-		//controladorLogs.setVista();
+		controladorLogs.iniciar("33");
+		controladorLogs.setVista();
 		
 		//controladorExpediente.iniciar();
 		//controladorExpediente.setVista();
@@ -132,14 +132,14 @@ public class Controlador {
 		}	
 	
 	
-	public void cambiarVista(String vista, String numExpediente){
+	public void cambiarVista(String vista, String codigo){
 		switch(vista) {
 		case "Logs":
-			controladorLogs.iniciar(numExpediente);
+			controladorLogs.iniciar(codigo);
 			controladorLogs.setVista();
 			break;
 		case "Expediente":
-			controladorExpediente.iniciar(numExpediente);
+			controladorExpediente.iniciar(codigo);
 			controladorExpediente.setVista();
 			break;
 		}

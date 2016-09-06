@@ -5,16 +5,16 @@ import java.util.ArrayList;
 public class ControladorLogs {
 
 	VistaLogs interfazLogs;
-	String numExpediente;
+	String codigoExp;
 	ModeloLogs modeloLogs;
 	private static ControladorLogs primeraInstancia = null;
 	
 	public ControladorLogs() {
 	}
 	
-	public void iniciar(String numExp){
+	public void iniciar(String codExp){
 		modeloLogs = ModeloLogs.obtenerInstancia();
-		numExpediente = numExp;
+		codigoExp = codExp;
 		interfazLogs = new VistaLogs();
 		
 	}
@@ -30,11 +30,15 @@ public class ControladorLogs {
 		MyUI.getCurrent().setContent(interfazLogs);
 	}
 	
+	public String getCodExp(){
+		return codigoExp;
+	}
+	
 	public String getNumExp(){
-		return numExpediente;
+		return modeloLogs.getNumExp(codigoExp);
 	}
 	
 	public ArrayList<String[]> pedirDatos(){
-		return modeloLogs.pedirDatos(numExpediente);
+		return modeloLogs.pedirDatos(codigoExp);
 	}
 }
