@@ -126,7 +126,8 @@ public class ControladorCrearUsuario {
 				JasperExportManager.exportReportToPdfFile(jasperPrint, "C:\\Users\\Giancarlo\\Documents\\UCR\\Ingenería I\\reporteUsuarios.pdf");
 			}
 			catch (JRException e) {
-				System.out.println("Error de Jasper");
+				
+				
 			}
 			
 			s.close();

@@ -2033,7 +2033,7 @@ public class VistaExpediente extends CustomComponent {
 		labelDuracIngresoUltUbic.setWidth("-1px");
 		labelDuracIngresoUltUbic.setHeight("-1px");
 		labelDuracIngresoUltUbic.setValue("Duración Ingreso-Última Ubicación");
-		LayoutFechas.addComponent(labelDuracIngresoUltUbic, "right:309.0px;bottom:-1631.0px;");
+		LayoutFechas.addComponent(labelDuracIngresoUltUbic, "top:400.0px;left:700.0px;");
 		
 		// valorDuracIngresoUltUbic
 		valorDuracIngresoUltUbic = new Label();
@@ -2041,7 +2041,7 @@ public class VistaExpediente extends CustomComponent {
 		valorDuracIngresoUltUbic.setWidth("-1px");
 		valorDuracIngresoUltUbic.setHeight("-1px");
 		valorDuracIngresoUltUbic.setValue("Label");
-		LayoutFechas.addComponent(valorDuracIngresoUltUbic, "right:371.0px;bottom:139.0px;");
+		LayoutFechas.addComponent(valorDuracIngresoUltUbic, "top:440.0px;left:700.0px;");
 		
 		// botonModDuracIngresoUltUbic
 		botonModDuracIngresoUltUbic = new Button();
@@ -2049,14 +2049,14 @@ public class VistaExpediente extends CustomComponent {
 		botonModDuracIngresoUltUbic.setImmediate(true);
 		botonModDuracIngresoUltUbic.setWidth("-1px");
 		botonModDuracIngresoUltUbic.setHeight("-1px");
-		LayoutFechas.addComponent(botonModDuracIngresoUltUbic, "right:321.0px;bottom:-751.0px;");
+		LayoutFechas.addComponent(botonModDuracIngresoUltUbic, "top:480.0px;left:700.0px;");
 		
 		// campoDuracIngresoUltUbic
 		campoDuracIngresoUltUbic = new TextField();
 		campoDuracIngresoUltUbic.setImmediate(false);
 		campoDuracIngresoUltUbic.setWidth("-1px");
 		campoDuracIngresoUltUbic.setHeight("-1px");
-		LayoutFechas.addComponent(campoDuracIngresoUltUbic, "right:259.0px;bottom:-2093.0px;");
+		LayoutFechas.addComponent(campoDuracIngresoUltUbic, "top:530.0px;left:700.0px;");
 		
 		// botonEnvDuracIngresoUltUbic
 		botonEnvDuracIngresoUltUbic = new Button();
@@ -2064,7 +2064,7 @@ public class VistaExpediente extends CustomComponent {
 		botonEnvDuracIngresoUltUbic.setImmediate(true);
 		botonEnvDuracIngresoUltUbic.setWidth("-1px");
 		botonEnvDuracIngresoUltUbic.setHeight("-1px");
-		LayoutFechas.addComponent(botonEnvDuracIngresoUltUbic, "right:361.0px;bottom:89.0px;");
+		LayoutFechas.addComponent(botonEnvDuracIngresoUltUbic, "top:530.0px;left:900.0px;");
 		
 		// labelFechaIng
 		labelFechaIng = new Label();
@@ -2111,7 +2111,7 @@ public class VistaExpediente extends CustomComponent {
 		labelPlazoIngresoUltUbic.setWidth("-1px");
 		labelPlazoIngresoUltUbic.setHeight("-1px");
 		labelPlazoIngresoUltUbic.setValue("Plazo Ingreso-Última Ubicación");
-		LayoutFechas.addComponent(labelPlazoIngresoUltUbic, "right:359.0px;bottom:-1414.0px;");
+		LayoutFechas.addComponent(labelPlazoIngresoUltUbic, "top:400.0px;left:350.0px;");
 		
 		// valorPlazoIngresoUltUbic
 		valorPlazoIngresoUltUbic = new Label();
@@ -2119,7 +2119,7 @@ public class VistaExpediente extends CustomComponent {
 		valorPlazoIngresoUltUbic.setWidth("-1px");
 		valorPlazoIngresoUltUbic.setHeight("-1px");
 		valorPlazoIngresoUltUbic.setValue("Label");
-		LayoutFechas.addComponent(valorPlazoIngresoUltUbic, "right:421.0px;bottom:200.0px;");
+		LayoutFechas.addComponent(valorPlazoIngresoUltUbic, "top:440.0px;left:350.0px;");
 		
 		// botonModPlazoIngresoUltUbic
 		botonModPlazoIngresoUltUbic = new Button();
@@ -2127,14 +2127,14 @@ public class VistaExpediente extends CustomComponent {
 		botonModPlazoIngresoUltUbic.setImmediate(true);
 		botonModPlazoIngresoUltUbic.setWidth("-1px");
 		botonModPlazoIngresoUltUbic.setHeight("-1px");
-		LayoutFechas.addComponent(botonModPlazoIngresoUltUbic, "right:371.0px;bottom:-648.0px;");
+		LayoutFechas.addComponent(botonModPlazoIngresoUltUbic, "top:480.0px;left:350.0px;");
 		
 		// campoPlazoIngresoUltUbic
 		campoPlazoIngresoUltUbic = new TextField();
 		campoPlazoIngresoUltUbic.setImmediate(false);
 		campoPlazoIngresoUltUbic.setWidth("-1px");
 		campoPlazoIngresoUltUbic.setHeight("-1px");
-		LayoutFechas.addComponent(campoPlazoIngresoUltUbic, "right:309.0px;bottom:-1926.0px;");
+		LayoutFechas.addComponent(campoPlazoIngresoUltUbic, "top:530.0px;left:350.0px;");
 		
 		// botonEnvPlazoIngresoUltUbic
 		botonEnvPlazoIngresoUltUbic = new Button();
@@ -2142,7 +2142,7 @@ public class VistaExpediente extends CustomComponent {
 		botonEnvPlazoIngresoUltUbic.setImmediate(true);
 		botonEnvPlazoIngresoUltUbic.setWidth("-1px");
 		botonEnvPlazoIngresoUltUbic.setHeight("-1px");
-		LayoutFechas.addComponent(botonEnvPlazoIngresoUltUbic, "right:411.0px;bottom:152.0px;");
+		LayoutFechas.addComponent(botonEnvPlazoIngresoUltUbic, "top:530.0px;left:550.0px;");
 		
 		// labelDuracCambioUltUbic
 		labelDuracCambioUltUbic = new Label();
@@ -2150,7 +2150,7 @@ public class VistaExpediente extends CustomComponent {
 		labelDuracCambioUltUbic.setWidth("-1px");
 		labelDuracCambioUltUbic.setHeight("-1px");
 		labelDuracCambioUltUbic.setValue("Duración Cambio Estado-Última Ubicación");
-		LayoutFechas.addComponent(labelDuracCambioUltUbic, "right:339.0px;bottom:-1601.0px;");
+		LayoutFechas.addComponent(labelDuracCambioUltUbic, "top:600.0px;left:0.0px;");
 		
 		// valorDuracCambioUltUbic
 		valorDuracCambioUltUbic = new Label();
@@ -2158,7 +2158,7 @@ public class VistaExpediente extends CustomComponent {
 		valorDuracCambioUltUbic.setWidth("-1px");
 		valorDuracCambioUltUbic.setHeight("-1px");
 		valorDuracCambioUltUbic.setValue("Label");
-		LayoutFechas.addComponent(valorDuracCambioUltUbic, "right:401.0px;bottom:169.0px;");
+		LayoutFechas.addComponent(valorDuracCambioUltUbic, "top:640.0px;left:0.0px;");
 		
 		// botonModDuracCambioUltUbic
 		botonModDuracCambioUltUbic = new Button();
@@ -2166,14 +2166,14 @@ public class VistaExpediente extends CustomComponent {
 		botonModDuracCambioUltUbic.setImmediate(true);
 		botonModDuracCambioUltUbic.setWidth("-1px");
 		botonModDuracCambioUltUbic.setHeight("-1px");
-		LayoutFechas.addComponent(botonModDuracCambioUltUbic, "right:351.0px;bottom:-721.0px;");
+		LayoutFechas.addComponent(botonModDuracCambioUltUbic, "top:680.0px;left:0.0px;");
 		
 		// campoDuracCambioUltUbic
 		campoDuracCambioUltUbic = new TextField();
 		campoDuracCambioUltUbic.setImmediate(false);
 		campoDuracCambioUltUbic.setWidth("-1px");
 		campoDuracCambioUltUbic.setHeight("-1px");
-		LayoutFechas.addComponent(campoDuracCambioUltUbic, "right:289.0px;bottom:-2063.0px;");
+		LayoutFechas.addComponent(campoDuracCambioUltUbic, "top:730.0px;left:0.0px;");
 		
 		// botonEnvDuracCambioUltUbic
 		botonEnvDuracCambioUltUbic = new Button();
@@ -2181,7 +2181,7 @@ public class VistaExpediente extends CustomComponent {
 		botonEnvDuracCambioUltUbic.setImmediate(true);
 		botonEnvDuracCambioUltUbic.setWidth("-1px");
 		botonEnvDuracCambioUltUbic.setHeight("-1px");
-		LayoutFechas.addComponent(botonEnvDuracCambioUltUbic, "right:391.0px;bottom:119.0px;");
+		LayoutFechas.addComponent(botonEnvDuracCambioUltUbic, "top:730.0px;left:200.0px;");
 		
 		return LayoutFechas;
 	}

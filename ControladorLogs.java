@@ -41,4 +41,8 @@ public class ControladorLogs {
 	public ArrayList<String[]> pedirDatos(){
 		return modeloLogs.pedirDatos(codigoExp);
 	}
+	
+	public void generarReporte(){
+		modeloLogs.generarReporte(codigoExp);
+	}
 }
