@@ -64,6 +64,7 @@ public class ControladorLogin {
 	}
 	
 	public void setVista() {
+		//interfazLogin.setVista();
 		MyUI.getCurrent().setContent(interfazLogin);
 	}
 
