@@ -127,6 +127,7 @@ public class ControladorCrearUsuario {
 			}
 			catch (JRException e) {
 				
+				
 			}
 			
 			s.close();

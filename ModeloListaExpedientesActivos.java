@@ -7,15 +7,15 @@ import java.sql.Statement;
 
 import com.vaadin.data.util.sqlcontainer.connection.SimpleJDBCConnectionPool;
 
-public class ModeloListaExpedientes {
-	private static ModeloListaExpedientes primeraInstancia;
-	public ModeloListaExpedientes(){
+public class ModeloListaExpedientesActivos {
+	private static ModeloListaExpedientesActivos primeraInstancia;
+	public ModeloListaExpedientesActivos(){
 		conectarBD();
 	}
 	
-	public static ModeloListaExpedientes obtenerInstancia() {
+	public static ModeloListaExpedientesActivos obtenerInstancia() {
 		if(primeraInstancia == null){
-			primeraInstancia = new ModeloListaExpedientes();
+			primeraInstancia = new ModeloListaExpedientesActivos();
 		}
 		return primeraInstancia;
 	}
@@ -24,8 +24,8 @@ public class ModeloListaExpedientes {
 		SimpleJDBCConnectionPool cp;
 		Connection conexion = null;
 		try{
-			cp = new SimpleJDBCConnectionPool("org.postgresql.Driver",
-					"jdbc:postgresql://127.0.0.1:5432/Fiscalia", "postgres", "123456", 1, 5);
+			cp = new SimpleJDBCConnectionPool("org.postgresql.Driver", 
+			"jdbc:postgresql://127.0.0.1:5432/Fiscalia", "postgres", "ECCIpgsql2016", 1, 5);
 			Connection conn = cp.reserveConnection();
 			Statement statement = conn.createStatement();
 			ResultSet rs = statement.executeQuery("SELECT current_database()");

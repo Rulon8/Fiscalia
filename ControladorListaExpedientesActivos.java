@@ -17,24 +17,24 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 
-public class ControladorListaExpedientes {
-	ModeloListaExpedientes modelo;
-	VistaListaExpedientes InterfazListaExpedientes;
-	private static ControladorListaExpedientes primeraInstancia = null;
+public class ControladorListaExpedientesActivos {
+	ModeloListaExpedientesActivos modelo;
+	VistaListaExpedientesActivos InterfazListaExpedientes;
+	private static ControladorListaExpedientesActivos primeraInstancia = null;
 	
-	public ControladorListaExpedientes(){
+	public ControladorListaExpedientesActivos(){
 		
 	}
 	
 	public void iniciar(){
-		modelo = ModeloListaExpedientes.obtenerInstancia();
-		InterfazListaExpedientes = new VistaListaExpedientes();
+		modelo = ModeloListaExpedientesActivos.obtenerInstancia();
+		InterfazListaExpedientes = new VistaListaExpedientesActivos();
 		
 	}
 	
-	public static ControladorListaExpedientes obtenerInstancia() {
+	public static ControladorListaExpedientesActivos obtenerInstancia() {
 		if(primeraInstancia == null){
-			primeraInstancia = new ControladorListaExpedientes();
+			primeraInstancia = new ControladorListaExpedientesActivos();
 		}
 		return primeraInstancia;
 	}
