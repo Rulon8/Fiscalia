@@ -4,7 +4,10 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -80,19 +83,23 @@ public class ModeloLogs {
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
-			System.out.println("SELECT numcambio, cedusuario, fecha, campo, estadoAnterior, estadoActual FROM logcambios WHERE codigo = '" + codExp + "'");
-			String consulta = "SELECT cedusuario, fecha, campo FROM logcambios WHERE codigo = '" + codExp + "'";
+			System.out.println("SELECT numcambio, cedusuario, fecha, campo, estadoanterior, estadoactual FROM logcambios WHERE codigo = '" + codExp + "'");
+			String consulta = "SELECT numcambio, cedusuario, fecha, campo, estadoanterior, estadoactual FROM logcambios WHERE codigo = '" + codExp + "'";
 			ResultSet rs = s.executeQuery(consulta);
+			DateFormat formatoSimple = new SimpleDateFormat("dd-MM-yyyy");
+			DateFormat formatoHora = new SimpleDateFormat("dd-MM-yyyy HH-mm");
+			Date fecha = new Date();
 			
 			try {
 				JasperDesign design= JRXmlLoader.load("C:\\Users\\b33799\\JaspersoftWorkspace\\MyReports\\Logs.jrxml");
 				JasperReport reporte = JasperCompileManager.compileReport(design);
 				JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
 				Map<String, Object> parametros = new HashMap<String, Object>();
-				parametros.put("Titulo", "Reporte de Cambios");
+				parametros.put("Titulo", "Reporte de cambios del expediente " + getNumExp(codExp));
+				parametros.put("Fecha", formatoSimple.format(fecha));
 				JasperReport jasperReport = JasperCompileManager.compileReport("C:\\Users\\b33799\\JaspersoftWorkspace\\MyReports\\Logs.jrxml");
 				JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros, jrRS);
-				JasperExportManager.exportReportToPdfFile(jasperPrint, "C:\\Users\\b33799\\Documents\\reporteLogs.pdf");
+				JasperExportManager.exportReportToPdfFile(jasperPrint, "C:\\Users\\b33799\\Documents\\reporteLogs" + formatoHora.format(fecha) + ".pdf");
 			}
 			catch (JRException e) {
 				System.out.println(e.getMessage());

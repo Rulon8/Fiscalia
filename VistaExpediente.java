@@ -379,8 +379,36 @@ public class VistaExpediente extends CustomComponent {
 		
 		valorNumExpediente.setValue(datosExpediente.get("Numero Expediente"));
 		valorInst.setValue(datosExpediente.get("Instructor Asignado"));
+		valorEstado.setValue(datosExpediente.get("Estado"));
 		valorClas.setValue(datosExpediente.get("Clasificacion"));
-		
+		valorResponsable.setValue(datosExpediente.get("Responsable"));
+		valorFechaDenuncia.setValue(datosExpediente.get("Fecha de Denuncia"));
+		valorParteDenunciada.setValue(datosExpediente.get("Parte Denunciada"));
+		valorCarnet.setValue(datosExpediente.get("Carnet"));
+		valorParteDenunciante.setValue(datosExpediente.get("Parte Denunciante"));
+		valorId.setValue(datosExpediente.get("Identificacion"));
+		valorCausa.setValue(datosExpediente.get("Causa"));
+		valorArtAplicables.setValue(datosExpediente.get("Articulos Aplicables"));
+		valorFechaAudiencia.setValue(datosExpediente.get("Fecha de Audiencia"));
+		valorHoraAudiencia.setValue(datosExpediente.get("Hora de Audiencia"));
+		valorPlazo.setValue(datosExpediente.get("Plazo Meta"));
+		valorTiempoTranscurrido.setValue(datosExpediente.get("Tiempo Transcurrido"));
+		valorCondPlazo.setValue(datosExpediente.get("Condicion Plazo"));
+		valorUbicacion.setValue(datosExpediente.get("Ubicacion"));
+		valorMuebleUbicacion.setValue(datosExpediente.get("Mueble Ubicacion"));
+		valorUbicLegajos.setValue(datosExpediente.get("Ubicacion de Legajos"));
+		valorCantLegajos.setValue(datosExpediente.get("Cantidad de Legajos"));
+		valorFechaPresentacion.setValue(datosExpediente.get("Fecha de Presentacion"));
+		valorFechaIng.setValue(datosExpediente.get("Fecha de Ingreso"));
+		valorDuracPresentacionIngreso.setValue(datosExpediente.get("Duracion Presentacion Ingreso"));
+		valorFechaCambioEstado.setValue(datosExpediente.get("Fecha Cambio de Estado"));
+		valorPlazoIngresoCambio.setValue(datosExpediente.get("Plazo Ingreso Cambio Estado"));
+		valorDuracIngresoCambio.setValue(datosExpediente.get("Duracion Ingreso Cambio Estado"));
+		valorFechaUltUbicacion.setValue(datosExpediente.get("Fecha de Ultima Ubicacion"));
+		valorPlazoIngresoUltUbic.setValue(datosExpediente.get("Plazo Ingreso Ultima Ubicacion"));
+		valorDuracIngresoUltUbic.setValue(datosExpediente.get("Duracion Ingreso Ultima Ubicacion"));
+		valorDuracCambioUltUbic.setValue(datosExpediente.get("Duracion Cambio Estado Ultima Ubicacion"));
+				
 		botonArchivar.addClickListener(new ClickListener() {
 
 			@Override
@@ -672,7 +700,121 @@ public class VistaExpediente extends CustomComponent {
 			
 		});
 		
-		//Aqui va Causa
+		botonModCausa.addClickListener(new ClickListener() {
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				desaparecerCampos();
+				campoCausa.setVisible(true);
+				botonEnvCausa.setVisible(true);
+				
+			}
+			
+		});
+		
+		botonEnvCausa.addClickListener(new ClickListener () {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				// if datos válidos
+					String datoViejo = labelId.getValue();
+					String nuevoDato = campoId.getValue();
+					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
+			}
+			
+		});
+		
+		botonModArtAplicables.addClickListener(new ClickListener() {
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				desaparecerCampos();
+				campoArtAplicables.setVisible(true);
+				botonEnvArtAplicables.setVisible(true);
+				
+			}
+			
+		});
+		
+		botonEnvArtAplicables.addClickListener(new ClickListener () {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				// if datos válidos
+					String datoViejo = labelId.getValue();
+					String nuevoDato = campoId.getValue();
+					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
+			}
+			
+		});
+		
+		botonModFechaAudiencia.addClickListener(new ClickListener() {
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				desaparecerCampos();
+				campoFechaAudiencia.setVisible(true);
+				botonEnvFechaAudiencia.setVisible(true);
+				
+			}
+			
+		});
+		
+		botonEnvFechaAudiencia.addClickListener(new ClickListener () {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				// if datos válidos
+					String datoViejo = labelId.getValue();
+					String nuevoDato = campoId.getValue();
+					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
+			}
+			
+		});
+		
+		botonModHoraAudiencia.addClickListener(new ClickListener() {
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				desaparecerCampos();
+				campoHoraAudiencia.setVisible(true);
+				botonEnvHoraAudiencia.setVisible(true);
+				
+			}
+			
+		});
+		
+		botonEnvHoraAudiencia.addClickListener(new ClickListener () {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				// if datos válidos
+					String datoViejo = labelId.getValue();
+					String nuevoDato = campoId.getValue();
+					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
+			}
+			
+		});
 		
 		botonModPlazo.addClickListener(new ClickListener() {
 
@@ -775,8 +917,6 @@ public class VistaExpediente extends CustomComponent {
 			
 		});
 		
-		//Aqui van otros campos
-		
 		botonEnvUbicacion.addClickListener(new ClickListener () {
 			
 			@Override
@@ -786,6 +926,122 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = labelUbicacion.getValue();
 					String nuevoDato = campoUbicacion.getValue();
+					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
+			}
+			
+		});
+		
+		botonModMuebleUbicacion.addClickListener(new ClickListener() {
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				desaparecerCampos();
+				campoMuebleUbicacion.setVisible(true);
+				botonEnvMuebleUbicacion.setVisible(true);
+				
+			}
+			
+		});
+		
+		botonEnvMuebleUbicacion.addClickListener(new ClickListener () {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				// if datos válidos
+					String datoViejo = labelId.getValue();
+					String nuevoDato = campoId.getValue();
+					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
+			}
+			
+		});
+		
+		botonModUbicLegajos.addClickListener(new ClickListener() {
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				desaparecerCampos();
+				campoUbicLegajos.setVisible(true);
+				botonEnvUbicLegajos.setVisible(true);
+				
+			}
+			
+		});
+		
+		botonEnvUbicLegajos.addClickListener(new ClickListener () {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				// if datos válidos
+					String datoViejo = labelId.getValue();
+					String nuevoDato = campoId.getValue();
+					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
+			}
+			
+		});
+		
+		botonModCantLegajos.addClickListener(new ClickListener() {
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				desaparecerCampos();
+				campoCantLegajos.setVisible(true);
+				botonEnvCantLegajos.setVisible(true);
+				
+			}
+			
+		});
+		
+		botonEnvCantLegajos.addClickListener(new ClickListener () {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				// if datos válidos
+					String datoViejo = labelId.getValue();
+					String nuevoDato = campoId.getValue();
+					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
+			}
+			
+		});
+		
+		botonModFechaPresentacion.addClickListener(new ClickListener() {
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				desaparecerCampos();
+				campoFechaPresentacion.setVisible(true);
+				botonEnvFechaPresentacion.setVisible(true);
+				
+			}
+			
+		});
+		
+		botonEnvFechaPresentacion.addClickListener(new ClickListener () {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				// if datos válidos
+					String datoViejo = labelId.getValue();
+					String nuevoDato = campoId.getValue();
 					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
@@ -821,9 +1077,34 @@ public class VistaExpediente extends CustomComponent {
 			
 		});
 		
+		botonModDuracPresentacionIngreso.addClickListener(new ClickListener() {
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				desaparecerCampos();
+				campoDuracPresentacionIngreso.setVisible(true);
+				botonEnvDuracPresentacionIngreso.setVisible(true);
+				
+			}
+			
+		});
 		
-		
-		
+		botonEnvDuracPresentacionIngreso.addClickListener(new ClickListener () {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				// if datos válidos
+					String datoViejo = labelId.getValue();
+					String nuevoDato = campoId.getValue();
+					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
+			}
+			
+		});
 		
 		botonModFechaCambioEstado.addClickListener(new ClickListener() {
 
@@ -854,7 +1135,179 @@ public class VistaExpediente extends CustomComponent {
 			
 		});
 		
+		botonModPlazoIngresoCambio.addClickListener(new ClickListener() {
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				desaparecerCampos();
+				campoPlazoIngresoCambio.setVisible(true);
+				botonEnvPlazoIngresoCambio.setVisible(true);
+				
+			}
+			
+		});
 		
+		botonEnvPlazoIngresoCambio.addClickListener(new ClickListener () {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				// if datos válidos
+					String datoViejo = labelId.getValue();
+					String nuevoDato = campoId.getValue();
+					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
+			}
+			
+		});
+		
+		botonModDuracIngresoCambio.addClickListener(new ClickListener() {
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				desaparecerCampos();
+				campoDuracIngresoCambio.setVisible(true);
+				botonEnvDuracIngresoCambio.setVisible(true);
+				
+			}
+			
+		});
+		
+		botonEnvDuracIngresoCambio.addClickListener(new ClickListener () {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				// if datos válidos
+					String datoViejo = labelId.getValue();
+					String nuevoDato = campoId.getValue();
+					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
+			}
+			
+		});
+		
+		botonModFechaUltUbicacion.addClickListener(new ClickListener() {
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				desaparecerCampos();
+				campoFechaUltUbicacion.setVisible(true);
+				botonEnvFechaUltUbicacion.setVisible(true);
+				
+			}
+			
+		});
+		
+		botonEnvFechaUltUbicacion.addClickListener(new ClickListener () {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				// if datos válidos
+					String datoViejo = labelId.getValue();
+					String nuevoDato = campoId.getValue();
+					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
+			}
+			
+		});
+		
+		botonModPlazoIngresoUltUbic.addClickListener(new ClickListener() {
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				desaparecerCampos();
+				campoPlazoIngresoUltUbic.setVisible(true);
+				botonEnvPlazoIngresoUltUbic.setVisible(true);
+				
+			}
+			
+		});
+		
+		botonEnvPlazoIngresoUltUbic.addClickListener(new ClickListener () {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				// if datos válidos
+					String datoViejo = labelId.getValue();
+					String nuevoDato = campoId.getValue();
+					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
+			}
+			
+		});
+		
+		botonModDuracIngresoUltUbic.addClickListener(new ClickListener() {
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				desaparecerCampos();
+				campoDuracIngresoUltUbic.setVisible(true);
+				botonEnvDuracIngresoUltUbic.setVisible(true);
+				
+			}
+			
+		});
+		
+		botonEnvDuracIngresoUltUbic.addClickListener(new ClickListener () {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				// if datos válidos
+					String datoViejo = labelId.getValue();
+					String nuevoDato = campoId.getValue();
+					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
+			}
+			
+		});
+		
+		botonModDuracCambioUltUbic.addClickListener(new ClickListener() {
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				desaparecerCampos();
+				campoDuracCambioUltUbic.setVisible(true);
+				botonEnvDuracCambioUltUbic.setVisible(true);
+				
+			}
+			
+		});
+		
+		botonEnvDuracCambioUltUbic.addClickListener(new ClickListener () {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				// if datos válidos
+					String datoViejo = labelId.getValue();
+					String nuevoDato = campoId.getValue();
+					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
+			}
+			
+		});
 		
 	}
 	
@@ -864,10 +1317,64 @@ public class VistaExpediente extends CustomComponent {
 		botonRechazar.setVisible(false);
 		labelConfirmacion.setVisible(false);
 		
-		campoClas.setVisible(false);
-		botonEnvClas.setVisible(false);
 		campoEstado.setVisible(false);
 		botonEnvEstado.setVisible(false);
+		campoClas.setVisible(false);
+		botonEnvClas.setVisible(false);
+		campoResponsable.setVisible(false);
+		botonEnvResponsable.setVisible(false);
+		campoFechaDenuncia.setVisible(false);
+		botonEnvFechaDenuncia.setVisible(false);
+		campoParteDenunciada.setVisible(false);
+		botonEnvParteDenunciada.setVisible(false);
+		campoCarnet.setVisible(false);
+		botonEnvCarnet.setVisible(false);
+		campoParteDenunciante.setVisible(false);
+		botonEnvParteDenunciante.setVisible(false);
+		campoId.setVisible(false);
+		botonEnvId.setVisible(false);
+		campoCausa.setVisible(false);
+		botonEnvCausa.setVisible(false);
+		campoArtAplicables.setVisible(false);
+		botonEnvArtAplicables.setVisible(false);
+		campoFechaAudiencia.setVisible(false);
+		botonEnvFechaAudiencia.setVisible(false);
+		campoHoraAudiencia.setVisible(false);
+		botonEnvHoraAudiencia.setVisible(false);
+		campoPlazo.setVisible(false);
+		botonEnvPlazo.setVisible(false);
+		campoTiempoTranscurrido.setVisible(false);
+		botonEnvTiempoTranscurrido.setVisible(false);
+		campoCondPlazo.setVisible(false);
+		botonEnvCondPlazo.setVisible(false);
+		campoUbicacion.setVisible(false);
+		botonEnvUbicacion.setVisible(false);
+		campoMuebleUbicacion.setVisible(false);
+		botonEnvMuebleUbicacion.setVisible(false);
+		campoUbicLegajos.setVisible(false);
+		botonEnvUbicLegajos.setVisible(false);
+		campoCantLegajos.setVisible(false);
+		botonEnvCantLegajos.setVisible(false);
+		campoFechaPresentacion.setVisible(false);
+		botonEnvFechaPresentacion.setVisible(false);
+		campoFechaIng.setVisible(false);
+		botonEnvFechaIng.setVisible(false);
+		campoDuracPresentacionIngreso.setVisible(false);
+		botonEnvDuracPresentacionIngreso.setVisible(false);
+		campoFechaCambioEstado.setVisible(false);
+		botonEnvFechaCambioEstado.setVisible(false);
+		campoPlazoIngresoCambio.setVisible(false);
+		botonEnvPlazoIngresoCambio.setVisible(false);
+		campoDuracIngresoCambio.setVisible(false);
+		botonEnvDuracIngresoCambio.setVisible(false);
+		campoFechaUltUbicacion.setVisible(false);
+		botonEnvFechaUltUbicacion.setVisible(false);
+		campoPlazoIngresoUltUbic.setVisible(false);
+		botonEnvPlazoIngresoUltUbic.setVisible(false);
+		campoDuracIngresoUltUbic.setVisible(false);
+		botonEnvDuracIngresoUltUbic.setVisible(false);
+		campoDuracCambioUltUbic.setVisible(false);
+		botonEnvDuracCambioUltUbic.setVisible(false);
 		
 	}
 	

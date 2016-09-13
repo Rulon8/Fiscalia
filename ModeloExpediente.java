@@ -58,7 +58,7 @@ public class ModeloExpediente {
 			datos.put("Ubicacion", rs.getString("ubicacion"));
 			datos.put("Mueble Ubicacion", rs.getString("muebleubicacion"));
 			datos.put("Ubicacion de Legajos", rs.getString("ubicacionlegajos"));
-			datos.put("Cantidad de legajos", rs.getString("cantlegajos"));
+			datos.put("Cantidad de Legajos", rs.getString("cantlegajos"));
 			datos.put("Fecha de Presentacion", rs.getString("fechapresentacion"));
 			datos.put("Fecha de Ingreso", rs.getString("fechaingreso"));
 			datos.put("Duracion Presentacion Ingreso", rs.getString("duracpresentacioningreso"));
