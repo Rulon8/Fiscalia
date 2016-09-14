@@ -490,9 +490,10 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					//String nuevoDato = campoEstado.getValue();
-					//controlador.enviarDatos(nuevoDato, "estado");
-					//control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
+					String datoViejo = valorEstado.getValue();
+					String nuevoDato = campoEstado.getValue();
+					controlador.enviarDatos(nuevoDato, "estado", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
 		});
@@ -518,7 +519,7 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelClas.getValue();
+					String datoViejo = valorClas.getValue();
 					String nuevoDato = campoClas.getValue();
 					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
@@ -547,9 +548,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelResponsable.getValue();
+					String datoViejo = valorResponsable.getValue();
 					String nuevoDato = campoResponsable.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "responsable", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -576,9 +577,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelFechaDenuncia.getValue();
+					String datoViejo = valorFechaDenuncia.getValue();
 					String nuevoDato = campoFechaDenuncia.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "fechadenuncia", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -605,9 +606,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelParteDenunciada.getValue();
+					String datoViejo = valorParteDenunciada.getValue();
 					String nuevoDato = campoParteDenunciada.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "partedenunciada", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -634,9 +635,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelCarnet.getValue();
+					String datoViejo = valorCarnet.getValue();
 					String nuevoDato = campoCarnet.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "carnet", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -663,9 +664,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelParteDenunciante.getValue();
+					String datoViejo = valorParteDenunciante.getValue();
 					String nuevoDato = campoParteDenunciante.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "partedenunciante", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -692,9 +693,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelId.getValue();
+					String datoViejo = valorId.getValue();
 					String nuevoDato = campoId.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "identificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -721,9 +722,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelId.getValue();
-					String nuevoDato = campoId.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					String datoViejo = valorCausa.getValue();
+					String nuevoDato = campoCausa.getValue();
+					controlador.enviarDatos(nuevoDato, "causa", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -750,9 +751,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelId.getValue();
-					String nuevoDato = campoId.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					String datoViejo = valorArtAplicables.getValue();
+					String nuevoDato = campoArtAplicables.getValue();
+					controlador.enviarDatos(nuevoDato, "articulosaplicables", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -779,9 +780,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelId.getValue();
-					String nuevoDato = campoId.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					String datoViejo = valorFechaAudiencia.getValue();
+					String nuevoDato = campoFechaAudiencia.getValue();
+					controlador.enviarDatos(nuevoDato, "fechaaudiencia", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -808,9 +809,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelId.getValue();
-					String nuevoDato = campoId.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					String datoViejo = valorHoraAudiencia.getValue();
+					String nuevoDato = campoHoraAudiencia.getValue();
+					controlador.enviarDatos(nuevoDato, "horaaudiencia", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -837,9 +838,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelPlazo.getValue();
+					String datoViejo = valorPlazo.getValue();
 					String nuevoDato = campoPlazo.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "plazometa", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -866,9 +867,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelTiempoTranscurrido.getValue();
+					String datoViejo = valorTiempoTranscurrido.getValue();
 					String nuevoDato = campoTiempoTranscurrido.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "tiempotranscurrido", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -895,9 +896,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelCondPlazo.getValue();
+					String datoViejo = valorCondPlazo.getValue();
 					String nuevoDato = campoCondPlazo.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "condplazo", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -924,9 +925,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelUbicacion.getValue();
+					String datoViejo = valorUbicacion.getValue();
 					String nuevoDato = campoUbicacion.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "ubicacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -953,9 +954,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelId.getValue();
-					String nuevoDato = campoId.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					String datoViejo = valorMuebleUbicacion.getValue();
+					String nuevoDato = campoMuebleUbicacion.getValue();
+					controlador.enviarDatos(nuevoDato, "muebleubicacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -982,9 +983,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelId.getValue();
-					String nuevoDato = campoId.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					String datoViejo = valorUbicLegajos.getValue();
+					String nuevoDato = campoUbicLegajos.getValue();
+					controlador.enviarDatos(nuevoDato, "ubicacionlegajos", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1011,9 +1012,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelId.getValue();
-					String nuevoDato = campoId.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					String datoViejo = valorCantLegajos.getValue();
+					String nuevoDato = campoCantLegajos.getValue();
+					controlador.enviarDatos(nuevoDato, "cantlegajos", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1040,9 +1041,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelId.getValue();
-					String nuevoDato = campoId.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					String datoViejo = valorFechaPresentacion.getValue();
+					String nuevoDato = campoFechaPresentacion.getValue();
+					controlador.enviarDatos(nuevoDato, "fechapresentacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1069,9 +1070,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelFechaIng.getValue();
+					String datoViejo = valorFechaIng.getValue();
 					String nuevoDato = campoFechaIng.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "fechaingreso", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1098,9 +1099,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelId.getValue();
-					String nuevoDato = campoId.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					String datoViejo = valorDuracPresentacionIngreso.getValue();
+					String nuevoDato = campoDuracPresentacionIngreso.getValue();
+					controlador.enviarDatos(nuevoDato, "duracpresentacioningreso", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1127,9 +1128,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelFechaCambioEstado.getValue();
+					String datoViejo = valorFechaCambioEstado.getValue();
 					String nuevoDato = campoFechaCambioEstado.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "fechacambioestado", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1156,9 +1157,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelId.getValue();
-					String nuevoDato = campoId.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					String datoViejo = valorPlazoIngresoCambio.getValue();
+					String nuevoDato = campoPlazoIngresoCambio.getValue();
+					controlador.enviarDatos(nuevoDato, "plazoingresocambio", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1185,9 +1186,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelId.getValue();
-					String nuevoDato = campoId.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					String datoViejo = valorDuracIngresoCambio.getValue();
+					String nuevoDato = campoDuracIngresoCambio.getValue();
+					controlador.enviarDatos(nuevoDato, "duracingresocambio", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1214,9 +1215,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelId.getValue();
-					String nuevoDato = campoId.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					String datoViejo = valorFechaUltUbicacion.getValue();
+					String nuevoDato = campoFechaUltUbicacion.getValue();
+					controlador.enviarDatos(nuevoDato, "fechaultubicacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1243,9 +1244,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelId.getValue();
-					String nuevoDato = campoId.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					String datoViejo = valorPlazoIngresoUltUbic.getValue();
+					String nuevoDato = campoPlazoIngresoUltUbic.getValue();
+					controlador.enviarDatos(nuevoDato, "plazoingresoultubicacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1272,9 +1273,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelId.getValue();
-					String nuevoDato = campoId.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					String datoViejo = valorDuracIngresoUltUbic.getValue();
+					String nuevoDato = campoDuracIngresoUltUbic.getValue();
+					controlador.enviarDatos(nuevoDato, "duracingresoultubicacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1301,9 +1302,9 @@ public class VistaExpediente extends CustomComponent {
 				// TODO Auto-generated method stub
 				
 				// if datos válidos
-					String datoViejo = labelId.getValue();
-					String nuevoDato = campoId.getValue();
-					controlador.enviarDatos(nuevoDato, "clasificacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					String datoViejo = valorDuracCambioUltUbic.getValue();
+					String nuevoDato = campoDuracCambioUltUbic.getValue();
+					controlador.enviarDatos(nuevoDato, "duraccambioultubicacion", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			

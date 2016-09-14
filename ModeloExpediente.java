@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 public class ModeloExpediente {
@@ -52,7 +55,7 @@ public class ModeloExpediente {
 			datos.put("Articulos Aplicables", rs.getString("articulosaplicables"));
 			datos.put("Fecha de Audiencia", rs.getString("fechaaudiencia"));
 			datos.put("Hora de Aundiencia", rs.getString("horaaudiencia"));
-			datos.put("Plazo meta", rs.getString("plazometa"));
+			datos.put("Plazo Meta", rs.getString("plazometa"));
 			datos.put("Tiempo Transcurrido", rs.getString("tiempotranscurrido"));
 			datos.put("Condicion Plazo", rs.getString("condplazo"));
 			datos.put("Ubicacion", rs.getString("ubicacion"));
@@ -113,11 +116,27 @@ public class ModeloExpediente {
 		Statement s;
 		String consulta = "";
 		Modelo m = Modelo.obtenerInstancia();
+		int numCambio;
+		ResultSet rs;
+		DateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+		Date fecha = new Date();
 		
 		try {
 			c = m.getConnectionPool().reserveConnection();
 			s = c.createStatement();
-			consulta = "INSERT INTO logCambios VALUES ()";
+			
+			consulta = "SELECT numcambios FROM expediente WHERE codigo = '" + codigo + "'";
+			
+			rs = s.executeQuery(consulta);
+			rs.next();
+			
+			numCambio = rs.getInt(1);
+			numCambio++;
+			
+			consulta = "UPDATE expediente SET numcambios = " + numCambio + "WHERE codigo = '" + codigo + "'";
+			s.executeUpdate(consulta);
+			
+			consulta = "INSERT INTO logCambios VALUES ('" + codigo + "', '" + numExp + "', " + numCambio + ", '" + usuario + "', '" + campo + "', '" + formato.format(fecha) + "', '" + valorViejo + "', '" + valorNuevo +"')";
 			s.executeUpdate(consulta);
 			
 			System.out.println(consulta);
