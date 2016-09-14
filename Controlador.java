@@ -13,6 +13,7 @@ public class Controlador {
 	private ControladorListaExpedientesArchivados controladorListaExpedientesArchivados;
 	private ControladorLogs controladorLogs;
 	private ControladorExpediente controladorExpediente;
+	private ControladorCambioPassword controladorCambioPassword;
 	private String tipoUsuario;
 	private String nombreUsuario;
 	private String apellidoUsuario;
@@ -74,6 +75,7 @@ public class Controlador {
 		controladorListaExpedientesArchivados =  ControladorListaExpedientesArchivados.obtenerInstancia();
 		controladorLogs = ControladorLogs.obtenerInstancia();
 		controladorExpediente = ControladorExpediente.obtenerInstancia();
+		controladorCambioPassword = ControladorCambioPassword.obtenerInstancia();
 		
 		//controladorListaExpedientesArchivados.iniciar();
 		//controladorListaExpedientesArchivados.setVista();

@@ -12,10 +12,8 @@ public class ControladorNuevoPassword {
 	private Correo correo;
 	
 	public static ControladorNuevoPassword obtenerInstancia() {
-		if (primeraInstancia == null) {
+		if (primeraInstancia == null)
 			primeraInstancia = new ControladorNuevoPassword();
-		}
-		
 		return primeraInstancia;
 	}
 	
@@ -33,21 +31,13 @@ public class ControladorNuevoPassword {
 		boolean exito = false;
 		String correoUsuario;
 		String[] pass = new String[2];
-		
 		correoUsuario = modeloPassword.autenticar(usuario);
-		
 		if (correoUsuario != "") {
-			
 			pass = crearPassword();
-			
-			//FALTA: Actualizar base de datos
 			exito = modeloPassword.actualizarPass(usuario, pass[1]);
-			
-			if (exito){
+			if (exito)
 				correo.enviar(correoUsuario, pass[0]);
-			}
 		}
-		
 		return exito;
 	}
 	
@@ -62,7 +52,7 @@ public class ControladorNuevoPassword {
 			pass += alfabeto.charAt(r.nextInt(26));
 		}
 		*/
-		pass = "password2";
+		pass = "password2"; //quitar esta linea al descomentar lo de arriba
 		try {
 			MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
 			messageDigest.update(pass.getBytes());
@@ -76,5 +66,4 @@ public class ControladorNuevoPassword {
 		
 		return passwords;
 	}
-	
 }
