@@ -17,6 +17,13 @@ public class ModeloCambioPassword {
 			return primeraInstancia;
 		}
 	
+	public boolean comparar(String pass, String conf) {
+		if(pass == conf)
+			return true;
+		else
+			return false;
+	}
+		
 	public boolean autenticar(String usuario, String pass){
 		boolean valido = false;
 		Connection c;
@@ -52,7 +59,7 @@ public class ModeloCambioPassword {
 		try {
 			c = m.getConnectionPool().reserveConnection();
 			s = c.createStatement();
-			consulta = "UPDATE usuario SET pass = '" + pass + "' WHERE cedula = '" + user + "'";
+			consulta = "UPDATE usuario SET pass = '" + hash(pass) + "' WHERE cedula = '" + user + "'";
 			System.out.println(consulta);
 			s.executeUpdate(consulta);
 			s.close();
@@ -74,7 +81,7 @@ public class ModeloCambioPassword {
 			messageDigest.update(pass.getBytes());
 			pass = new String(messageDigest.digest());
 		} catch (NoSuchAlgorithmException e) {
-			System.out.println("Error de hash");
+			System.out.println(e.getMessage());
 		}
 		return pass;
 	}
