@@ -48,6 +48,8 @@ public class ControladorExpediente {
 		modeloExpediente.actualizarDatos(nuevoDato, columna, codigoExpediente);
 		if (campo == "Archivado") {
 			nuevoDato = "Archivado";
+		} else {
+			campo = campo.replace(":", "");
 		}
 		modeloExpediente.actualizarLogs(codigoExpediente, numExp, instructor, valorViejo, nuevoDato, campo);
 	}

@@ -18,7 +18,7 @@ public class ModeloCambioPassword {
 		}
 	
 	public boolean comparar(String pass, String conf) {
-		if(pass == conf)
+		if(pass.compareTo(conf) == 0)
 			return true;
 		else
 			return false;
@@ -33,16 +33,16 @@ public class ModeloCambioPassword {
 		try {
 			c = m.getConnectionPool().reserveConnection();
 			s = c.createStatement();
-			consulta = "SELECT pass from usuario where cedula = " + usuario + "'";
+			consulta = "SELECT pass from usuario where cedula = '" + usuario + "'";
 			System.out.println(consulta);
 			ResultSet rs = s.executeQuery(consulta);
+			rs.next();
+			if(rs.getString("pass").compareTo(hash(pass)) == 0)
+				valido = true;
 			s.close();
 			c.commit();
 			c.close();
 			m.getConnectionPool().releaseConnection(c);
-			rs.next();
-			if(rs.getString("pass") == hash(pass))
-				valido = true;
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
