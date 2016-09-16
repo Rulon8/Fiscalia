@@ -17,6 +17,7 @@ public class Controlador {
 	private String tipoUsuario;
 	private String nombreUsuario;
 	private String apellidoUsuario;
+	private String cedulaUsuario;
 	private String numInstructor = "-1";
 	
 	private Controlador() {
@@ -30,6 +31,10 @@ public class Controlador {
 		}
 		
 		return primeraInstancia;
+	}
+	
+	public String getCedulaUsuario() {
+		return cedulaUsuario;
 	}
 	
 	public String getNombreUsuario() {
@@ -48,6 +53,10 @@ public class Controlador {
 		return numInstructor;
 	}
 
+	public void setCedulaUsuario(String ced) {
+		cedulaUsuario = ced;
+	}
+	
 	public void setNombreUsuario(String nom) {
 		nombreUsuario = nom;
 	}
@@ -83,18 +92,20 @@ public class Controlador {
 		//controladorListaExpedientesActivos.iniciar();
 		//controladorListaExpedientesActivos.setVista();
 		
-		//controladorLogin.iniciar();
-		//controladorLogin.setVista();
+		controladorLogin.iniciar();
+		controladorLogin.setVista();
 		
-		controladorLogs.iniciar("33");
-		controladorLogs.setVista();
+		//controladorLogs.iniciar("33");
+		//controladorLogs.setVista();
 		
 		//controladorExpediente.iniciar();
 		//controladorExpediente.setVista();
 		
 		//controladorCrearUsuario.iniciar();
 		//controladorCrearUsuario.setVista();
-
+		
+		//controladorCambioPassword.iniciar();
+		//controladorCambioPassword.setVista();
 	}
 	
 	public void cambiarVista(String vista) {

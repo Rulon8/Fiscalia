@@ -23,7 +23,7 @@ public class ModeloLogin {
 		String consulta, pass = "";
 		Modelo m = Modelo.obtenerInstancia();
 		ResultSet rs;
-		String[] datosUsuario = {"","","",""};
+		String[] datosUsuario = {"","","","", ""};
 		
 		try {
 			c = m.getConnectionPool().reserveConnection();
@@ -37,12 +37,13 @@ public class ModeloLogin {
 			
 			if (pass.equals(credenciales[1])) {
 						
-				consulta = "SELECT nombre, apellido, tipodeusuario FROM usuario WHERE cedula = '" + credenciales[0] + "'";
+				consulta = "SELECT nombre, apellido, tipodeusuario, cedula FROM usuario WHERE cedula = '" + credenciales[0] + "'";
 				rs = s.executeQuery(consulta);
 				rs.next();
 				datosUsuario[0] = rs.getString(1);
 				datosUsuario[1] = rs.getString(2);
 				datosUsuario[2] = rs.getString(3);
+				datosUsuario[4] = rs.getString(4);
 				
 				if (datosUsuario[2] == "Instructor" || datosUsuario[2] == "Asistente") {
 					consulta = "SELECT codigo FROM instasist WHERE cedula = '" + credenciales[0] + "'";
