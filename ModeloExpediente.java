@@ -110,7 +110,7 @@ public class ModeloExpediente {
 		}
 	}
 	
-	public void actualizarLogs(String codigo, String numExp, String usuario, String campo, String valorViejo, String valorNuevo) {
+	public void actualizarLogs(String codigo, String numExp, String usuario, String valorViejo, String valorNuevo, String campo) {
 		
 		Connection c;
 		Statement s;

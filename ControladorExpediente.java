@@ -46,7 +46,10 @@ public class ControladorExpediente {
 	
 	public void enviarDatos(String nuevoDato, String columna, String campo, String instructor, String numExp, String valorViejo) {
 		modeloExpediente.actualizarDatos(nuevoDato, columna, codigoExpediente);
-		modeloExpediente.actualizarLogs(codigoExpediente, numExp, instructor, columna, valorViejo, nuevoDato);
+		if (campo == "Archivado") {
+			nuevoDato = "Archivado";
+		}
+		modeloExpediente.actualizarLogs(codigoExpediente, numExp, instructor, valorViejo, nuevoDato, campo);
 	}
 	
 	public void setVista() {
