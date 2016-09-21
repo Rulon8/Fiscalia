@@ -1,5 +1,10 @@
 package ucr.casoUso;
 
+import com.sebworks.vaadstrap.Col;
+import com.sebworks.vaadstrap.ColMod;
+import com.sebworks.vaadstrap.ColOffsetMod;
+import com.sebworks.vaadstrap.Container;
+import com.sebworks.vaadstrap.Row;
 //import com.sebworks.vaadstrap.Col;
 //import com.sebworks.vaadstrap.ColMod;
 //import com.sebworks.vaadstrap.ColOffsetMod;
@@ -76,6 +81,9 @@ public class VistaLogin extends CustomComponent {
 				// TODO Auto-generated method stub
 				String [] credenciales = new String[2];
 				boolean usuarioValido;
+				labelErrAuth.setVisible(false);
+				labelErrPass.setVisible(false);
+				labelErrUser.setVisible(false);
 				
 				if (validarCampos()) {
 					credenciales[0] = campoCedula.getValue();
@@ -104,7 +112,7 @@ public class VistaLogin extends CustomComponent {
 		});
 	}
 	
-/*	public void setVista() {
+	public void setVista() {
 		
 		this.setSizeFull();
 		mainLayout.removeAllComponents();
@@ -113,33 +121,33 @@ public class VistaLogin extends CustomComponent {
 		Container container = new Container();
 		
 		Row row = container.addRow();
-		Col col1 = row.addCol(ColMod.XS_12);
+		Col col1 = row.addCol(ColMod.XS_12, ColOffsetMod.MD_OFFSET_2);
 		col1.addComponent(labelTitulo);
 		
 		
 		Row row2 = container.addRow();
-		Col col2 = row2.addCol(ColMod.XS_12, ColMod.MD_8);
+		Col col2 = row2.addCol(ColMod.XS_12, ColMod.MD_8, ColOffsetMod.MD_OFFSET_2);
 		col2.addComponent(campoCedula);
-		Col col3 = row2.addCol(ColMod.XS_12, ColMod.MD_4);
+		Col col3 = row2.addCol(ColMod.XS_12, ColMod.MD_8, ColOffsetMod.MD_OFFSET_2);
 		col3.addComponent(labelErrUser);
-		Col col4 = row2.addCol(ColMod.XS_12, ColMod.MD_8);
+		Col col4 = row2.addCol(ColMod.XS_12, ColMod.MD_8, ColOffsetMod.MD_OFFSET_2);
 		col4.addComponent(campoPassword);
-		Col col5 = row2.addCol(ColMod.XS_12, ColMod.MD_4);
+		Col col5 = row2.addCol(ColMod.XS_12, ColMod.MD_8, ColOffsetMod.MD_OFFSET_2);
 		col5.addComponent(labelErrPass);
 		
 		
 		Row row3 = container.addRow();
-		Col col6 = row3.addCol(ColMod.XS_12, ColMod.MD_3);
+		Col col6 = row3.addCol(ColMod.XS_12, ColMod.MD_3, ColOffsetMod.MD_OFFSET_2);
 		col6.addComponent(botonCambiar);
 		Col col7 = row3.addCol(ColMod.XS_12, ColMod.MD_3, ColOffsetMod.MD_OFFSET_2);
 		col7.addComponent(botonEntrar);
-		Col col8 = row3.addCol(ColMod.XS_12);
+		Col col8 = row3.addCol(ColMod.XS_12, ColOffsetMod.MD_OFFSET_2);
 		col8.addComponent(labelErrAuth);
 		
-		//mainLayout.addComponent(container);
+		mainLayout.addComponent(container);
 		
-		MyUI.getCurrent().setContent(container);
-	} */
+		MyUI.getCurrent().setContent(this);
+	} 
 
 	private boolean validarCampos() {
 		boolean resultado = true;
@@ -161,6 +169,7 @@ public class VistaLogin extends CustomComponent {
 	private AbsoluteLayout buildMainLayout() {
 		// common part: create layout
 		mainLayout = new AbsoluteLayout();
+		mainLayout.setStyleName("layout-centrado");
 		mainLayout.setImmediate(false);
 		mainLayout.setWidth("100%");
 		mainLayout.setHeight("100%");
@@ -171,6 +180,7 @@ public class VistaLogin extends CustomComponent {
 		
 		// campoCedula
 		campoCedula = new TextField();
+		campoCedula.setStyleName("campotexto");
 		campoCedula.setImmediate(false);
 		campoCedula.setWidth("394px");
 		campoCedula.setHeight("-1px");
@@ -180,7 +190,7 @@ public class VistaLogin extends CustomComponent {
 		
 		// botonCambiar
 		botonCambiar = new Button();
-		botonCambiar.setStyleName("boton-texto");
+		botonCambiar.setStyleName("boton");
 		botonCambiar.setCaption("¿Olvidó su contraseña?");
 		botonCambiar.setImmediate(true);
 		botonCambiar.setWidth("-1px");
@@ -190,7 +200,7 @@ public class VistaLogin extends CustomComponent {
 		
 		// botonEntrar
 		botonEntrar = new Button();
-		botonEntrar.setStyleName("boton-texto");
+		botonEntrar.setStyleName("boton");
 		botonEntrar.setCaption("Entrar");
 		botonEntrar.setImmediate(true);
 		botonEntrar.setWidth("-1px");
@@ -236,6 +246,7 @@ public class VistaLogin extends CustomComponent {
 		
 		// campoPassword
 		campoPassword = new PasswordField();
+		campoPassword.setStyleName("campotexto");
 		campoPassword.setImmediate(false);
 		campoPassword.setWidth("394px");
 		campoPassword.setHeight("-1px");

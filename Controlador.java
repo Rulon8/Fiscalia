@@ -144,6 +144,11 @@ public class Controlador {
 		case "Expedientes Archivados":
 			controladorListaExpedientesArchivados.iniciar();
 			controladorListaExpedientesArchivados.setVista();
+		
+		case "Cambio Pass":
+			controladorCambioPassword.iniciar();
+			controladorCambioPassword.setVista();
+			break;
 		}
 
 		}	

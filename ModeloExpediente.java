@@ -54,7 +54,7 @@ public class ModeloExpediente {
 			datos.put("Causa", rs.getString("causa"));
 			datos.put("Articulos Aplicables", rs.getString("articulosaplicables"));
 			datos.put("Fecha de Audiencia", rs.getString("fechaaudiencia"));
-			datos.put("Hora de Aundiencia", rs.getString("horaaudiencia"));
+			datos.put("Hora de Audiencia", rs.getString("horaaudiencia"));
 			datos.put("Plazo Meta", rs.getString("plazometa"));
 			datos.put("Tiempo Transcurrido", rs.getString("tiempotranscurrido"));
 			datos.put("Condicion Plazo", rs.getString("condplazo"));
@@ -110,7 +110,7 @@ public class ModeloExpediente {
 		}
 	}
 	
-	public void actualizarLogs(String codigo, String numExp, String usuario, String campo, String valorViejo, String valorNuevo) {
+	public void actualizarLogs(String codigo, String numExp, String usuario, String valorViejo, String valorNuevo, String campo) {
 		
 		Connection c;
 		Statement s;
