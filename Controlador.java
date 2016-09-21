@@ -86,14 +86,17 @@ public class Controlador {
 		controladorExpediente = ControladorExpediente.obtenerInstancia();
 		controladorCambioPassword = ControladorCambioPassword.obtenerInstancia();
 		
+		controladorCrearExpediente.iniciar();
+		controladorCrearExpediente.setVista();
+		
 		//controladorListaExpedientesArchivados.iniciar();
 		//controladorListaExpedientesArchivados.setVista();
 		
 		//controladorListaExpedientesActivos.iniciar();
 		//controladorListaExpedientesActivos.setVista();
 		
-		controladorLogin.iniciar();
-		controladorLogin.setVista();
+		//controladorLogin.iniciar();
+		//controladorLogin.setVista();
 		
 		//controladorLogs.iniciar("33");
 		//controladorLogs.setVista();
