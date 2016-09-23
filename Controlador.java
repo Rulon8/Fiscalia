@@ -14,6 +14,7 @@ public class Controlador {
 	private ControladorLogs controladorLogs;
 	private ControladorExpediente controladorExpediente;
 	private ControladorCambioPassword controladorCambioPassword;
+	private ControladorUsuarios controladorUsarios;
 	private String tipoUsuario;
 	private String nombreUsuario;
 	private String apellidoUsuario;
@@ -85,6 +86,7 @@ public class Controlador {
 		controladorLogs = ControladorLogs.obtenerInstancia();
 		controladorExpediente = ControladorExpediente.obtenerInstancia();
 		controladorCambioPassword = ControladorCambioPassword.obtenerInstancia();
+		controladorUsarios = ControladorUsuarios.obtenerInstancia();
 		
 		//controladorListaExpedientesArchivados.iniciar();
 		//controladorListaExpedientesArchivados.setVista();
@@ -149,6 +151,10 @@ public class Controlador {
 			controladorCambioPassword.iniciar();
 			controladorCambioPassword.setVista();
 			break;
+			
+		case "Eliminar Usuario":
+			controladorUsarios.iniciar();
+			controladorUsarios.setVista();
 		}
 
 		}	

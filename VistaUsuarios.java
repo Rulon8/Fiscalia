@@ -81,6 +81,7 @@ public class VistaUsuarios extends CustomComponent {
 		
 		tablaInstructor.setSelectable(true);
 		tablaUsuarios.setSelectable(true);
+		llenarTablaUsuarios();
 		
 		tablaUsuarios.addItemClickListener(new ItemClickEvent.ItemClickListener() {
 		    @Override
@@ -96,7 +97,7 @@ public class VistaUsuarios extends CustomComponent {
 			public void buttonClick(ClickEvent event) {
 				Object linea = tablaUsuarios.getValue();
 				Item item = tablaUsuarios.getItem(linea);
-				String cedUsuario = item.getItemProperty("cedula").getValue().toString();
+				String cedUsuario = item.getItemProperty("Cédula").getValue().toString();
 				System.out.println(cedUsuario);
 			}
 		});
