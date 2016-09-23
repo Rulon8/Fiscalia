@@ -169,7 +169,7 @@ public class VistaLogin extends CustomComponent {
 	private AbsoluteLayout buildMainLayout() {
 		// common part: create layout
 		mainLayout = new AbsoluteLayout();
-		mainLayout.setStyleName("layout-centrado");
+		mainLayout.setStyleName("layout-login");
 		mainLayout.setImmediate(false);
 		mainLayout.setWidth("100%");
 		mainLayout.setHeight("100%");
