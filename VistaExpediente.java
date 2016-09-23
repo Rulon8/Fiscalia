@@ -413,6 +413,36 @@ public class VistaExpediente extends CustomComponent {
 		valorDuracIngresoUltUbic.setValue(datosExpediente.get("Duracion Ingreso Ultima Ubicacion"));
 		valorDuracCambioUltUbic.setValue(datosExpediente.get("Duracion Cambio Estado Ultima Ubicacion"));
 		
+		botonEnvEstado.setCaption("");
+		botonEnvClas.setCaption("");
+		botonEnvResponsable.setCaption("");
+		botonEnvFechaDenuncia.setCaption("");
+		botonEnvParteDenunciada.setCaption("");
+		botonEnvCarnet.setCaption("");
+		botonEnvParteDenunciante.setCaption("");
+		botonEnvId.setCaption("");
+		botonEnvCausa.setCaption("");
+		botonEnvArtAplicables.setCaption("");
+		botonEnvFechaAudiencia.setCaption("");
+		botonEnvHoraAudiencia.setCaption("");
+		botonEnvPlazo.setCaption("");
+		botonEnvTiempoTranscurrido.setCaption("");
+		botonEnvCondPlazo.setCaption("");
+		botonEnvUbicacion.setCaption("");
+		botonEnvMuebleUbicacion.setCaption("");
+		botonEnvUbicLegajos.setCaption("");
+		botonEnvCantLegajos.setCaption("");
+		botonEnvFechaPresentacion.setCaption("");
+		botonEnvFechaIng.setCaption("");
+		botonEnvDuracPresentacionIngreso.setCaption("");
+		botonEnvFechaCambioEstado.setCaption("");
+		botonEnvPlazoIngresoCambio.setCaption("");
+		botonEnvDuracIngresoCambio.setCaption("");
+		botonEnvFechaUltUbicacion.setCaption("");
+		botonEnvPlazoIngresoUltUbic.setCaption("");
+		botonEnvDuracIngresoUltUbic.setCaption("");
+		botonEnvDuracCambioUltUbic.setCaption("");
+		
 		botonEnvEstado.setIcon(new ThemeResource("img/arrow-right.svg"));
 		botonEnvClas.setIcon(new ThemeResource("img/arrow-right.svg"));
 		botonEnvResponsable.setIcon(new ThemeResource("img/arrow-right.svg"));
