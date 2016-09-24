@@ -25,5 +25,17 @@ public class ControladorCrearExpediente {
 	public void setVista() {
 		MyUI.getCurrent().setContent(InterfazCrearExpediente);
 	}
+	
+	public boolean comprobarNumExp(String valor){
+		return modelo.comprobarNumExp(valor);
+	}
+	
+	public boolean comprobarInstructor(String valor){
+		return modelo.comprobarInstructor(valor);
+	}
+	
+	public void ingresarExpediente(String consulta){
+		modelo.ingresarExpediente(consulta);
+	}
 
 }

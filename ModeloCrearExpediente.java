@@ -1,5 +1,10 @@
 package ucr.casoUso;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 public class ModeloCrearExpediente {
 	private static ModeloCrearExpediente primeraInstancia;
 	public ModeloCrearExpediente(){
@@ -12,6 +17,72 @@ public class ModeloCrearExpediente {
 		}
 		return primeraInstancia;
 	}
+	
+	public boolean comprobarNumExp(String valorNumExp){
+		String numExp = null;
+		boolean esVacia = false;
+		try {
+			Modelo m = Modelo.obtenerInstancia();
+			Connection c = m.getConnectionPool().reserveConnection();
+			Statement s = c.createStatement();
+			System.out.print( "SELECT numexpediente FROM expediente WHERE numexpediente = '" + valorNumExp + "' \n");
+			String consulta = "SELECT numexpediente FROM expediente WHERE numexpediente = '" + valorNumExp + "'";
+			ResultSet rs = s.executeQuery(consulta);
+			if (!rs.next()) {
+				esVacia = true;
+			}
+			s.close();
+			c.commit();
+			c.close();
+			m.getConnectionPool().releaseConnection(c);
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return esVacia;
+	}
+	
+
+	public boolean comprobarInstructor(String valorInstructor){
+		String numExp = null;
+		boolean esVacia = false;
+		try {
+			Modelo m = Modelo.obtenerInstancia();
+			Connection c = m.getConnectionPool().reserveConnection();
+			Statement s = c.createStatement();
+			System.out.print( "SELECT instructorasig FROM expediente WHERE instructorasig = '" + valorInstructor + "' \n");
+			String consulta = "SELECT instructorasig FROM expediente WHERE instructorasig = '" + valorInstructor + "'";
+			ResultSet rs = s.executeQuery(consulta);
+			if (!rs.next()) {
+				esVacia = true;
+			}
+			s.close();
+			c.commit();
+			c.close();
+			m.getConnectionPool().releaseConnection(c);
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return esVacia;
+	}
+	
+	public void ingresarExpediente(String valorConsulta){
+		try {
+			Modelo m = Modelo.obtenerInstancia();
+			Connection c = m.getConnectionPool().reserveConnection();
+			Statement s = c.createStatement();
+			s.executeUpdate(valorConsulta);
+			s.close();
+			c.commit();
+			c.close();
+			m.getConnectionPool().releaseConnection(c);
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
 }
 
 /*
