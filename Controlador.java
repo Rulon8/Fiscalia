@@ -109,8 +109,8 @@ public class Controlador {
 		//controladorCambioPassword.iniciar();
 		//controladorCambioPassword.setVista();
 		
-		controladorCrearExpediente.iniciar();
-		controladorCrearExpediente.setVista();
+		//controladorCrearExpediente.iniciar();
+		//controladorCrearExpediente.setVista();
 	}
 	
 	public void cambiarVista(String vista) {
