@@ -17,13 +17,13 @@ public class ModeloUsuarios {
 		return primeraInstancia;
 	}
 	
-	public ArrayList<String[]> pedirUsuarios(){
+	public ArrayList<String[]> pedirUsuarios(String ced){
 		try {
 			resultados = new ArrayList<String[]>();
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
-			String consulta = "SELECT cedula, nombre, apellido, tipodeusuario FROM usuario";
+			String consulta = "SELECT cedula, nombre, apellido, tipodeusuario FROM usuario EXCEPT SELECT cedula, nombre, apellido, tipodeusuario FROM usuario where cedula = '" + ced + "'";
 			System.out.println(consulta);
 			ResultSet rs = s.executeQuery(consulta);
 			while(rs.next() != false) {
@@ -63,5 +63,27 @@ public class ModeloUsuarios {
 			e.printStackTrace();
 		}
 		return resultados;
+	}
+	
+	public boolean eliminarUsuario(String ced){
+		boolean exito;
+		try {
+			Modelo m = Modelo.obtenerInstancia();
+			Connection c = m.getConnectionPool().reserveConnection();
+			Statement s = c.createStatement();
+			String consulta = "DELETE FROM usuario where cedula = '" + ced + "'";
+			System.out.println(consulta);
+			s.executeUpdate(consulta);
+			s.close();
+			c.commit();
+			c.close();
+			m.getConnectionPool().releaseConnection(c);
+			exito = true;
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			exito = false;
+		}
+		return exito;
 	}
 }
