@@ -23,6 +23,7 @@ public class ControladorListaExpedientesArchivados {
 	}
 	
 	public void setVista() {
-		MyUI.getCurrent().setContent(InterfazListaExpedientesArchivados);
+		InterfazListaExpedientesArchivados.setVista();
+		//MyUI.getCurrent().setContent(InterfazListaExpedientesArchivados);
 	}
 }

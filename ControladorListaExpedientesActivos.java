@@ -40,6 +40,7 @@ public class ControladorListaExpedientesActivos {
 	}
 	
 	public void setVista() {
-		MyUI.getCurrent().setContent(InterfazListaExpedientes);
+		InterfazListaExpedientes.setVista();
+		//MyUI.getCurrent().setContent(InterfazListaExpedientes);
 	}
 }
