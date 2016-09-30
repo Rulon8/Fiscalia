@@ -387,8 +387,8 @@ public class VistaExpediente extends CustomComponent {
 		
 		
 		
-		valorNumExpediente.setValue(datosExpediente.get("Numero Expediente"));
-		valorInst.setValue(datosExpediente.get("Instructor Asignado"));
+		labelNumExpediente.setValue("Expediente N° " + datosExpediente.get("Numero Expediente"));
+		labelInst.setValue("Instructor Asignado: " + datosExpediente.get("Instructor Asignado"));
 		valorEstado.setValue(datosExpediente.get("Estado"));
 		valorClas.setValue(datosExpediente.get("Clasificacion"));
 		valorResponsable.setValue(datosExpediente.get("Responsable"));
@@ -1518,15 +1518,17 @@ public class VistaExpediente extends CustomComponent {
 		Container container = new Container();
 		
 		Row row = container.addRow();
-		Col col1 = row.addCol(ColMod.XS_12, ColMod.MD_3, ColOffsetMod.MD_OFFSET_1);
+		Col col1 = row.addCol(ColMod.XS_12, ColMod.MD_4);
 		col1.addComponent(labelNumExpediente);
-		col1.addComponent(valorNumExpediente);
-		Col col2 = row.addCol(ColMod.XS_10, ColOffsetMod.XS_OFFSET_1, ColMod.MD_2, ColOffsetMod.MD_OFFSET_1);
+		Col col2 = row.addCol(ColMod.XS_12, ColMod.MD_2, ColOffsetMod.MD_OFFSET_2);
 		col2.addComponent(botonArchivar);
-		Col col3 = row.addCol(ColMod.XS_10, ColOffsetMod.XS_OFFSET_1, ColMod.MD_2, ColOffsetMod.MD_OFFSET_1);
-		col2.addComponent(botonLog);
-		Col col4 = row.addCol(ColMod.XS_10, ColOffsetMod.XS_OFFSET_1, ColMod.MD_2, ColOffsetMod.MD_OFFSET_1);
-		col2.addComponent(botonVolver);
+		Col col3 = row.addCol(ColMod.XS_12, ColMod.MD_2);
+		col3.addComponent(botonLog);
+		Col col4 = row.addCol(ColMod.XS_12, ColMod.MD_2);
+		col4.addComponent(botonVolver);
+		
+		Row row2 = container.addRow();
+		Col col5 = row2.addCol()
 		
 		mainLayout.addComponent(container);
 		
