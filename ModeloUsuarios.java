@@ -86,4 +86,26 @@ public class ModeloUsuarios {
 		}
 		return exito;
 	}
+	
+	public boolean asignarExpedientes(String viejo, String nuevo){
+		boolean exito = false;
+		try {
+			Modelo m = Modelo.obtenerInstancia();
+			Connection c = m.getConnectionPool().reserveConnection();
+			Statement s = c.createStatement();
+			String consulta = "UPDATE expedientes SET instructorasig = '" + nuevo + "' where instructorasig = '" + viejo + "'";
+			System.out.println(consulta);
+			s.executeUpdate(consulta);
+			s.close();
+			c.commit();
+			c.close();
+			m.getConnectionPool().releaseConnection(c);
+			exito = true;
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			exito = false;
+		}
+		return exito;
+	}
 }
