@@ -145,7 +145,15 @@ public class VistaUsuarios extends CustomComponent {
 				lineaUsuario = tablaUsuarios.getValue();
 				itemUsuario = tablaUsuarios.getItem(lineaUsuario);
 				lineaInstructor = tablaInstructor.getValue();
-				tablaInstructor.getItem(lineaInstructor);
+				itemInstructor = tablaInstructor.getItem(lineaInstructor);
+				labelInstructor.setVisible(false);
+				labelUsuario.setVisible(false);
+				labelUsuarioElim.setVisible(false);
+				labelElimConf1.setVisible(false);
+				labelElimConf2.setVisible(false);
+				labelInstructorConf.setVisible(false);
+				botonInstructorElimConf.setVisible(false);
+				botonInstructorElimCancel.setVisible(false);
 				if(controlador.asignarExpedientes(itemUsuario.getItemProperty("Cédula").getValue().toString() , itemInstructor.getItemProperty("Cédula").getValue().toString())) {
 					if(controlador.eliminarUsuario(itemUsuario.getItemProperty("Cédula").getValue().toString()))
 						labelExito.setVisible(true);
@@ -164,6 +172,8 @@ public class VistaUsuarios extends CustomComponent {
 			public void buttonClick(ClickEvent event) {
 				lineaUsuario = tablaUsuarios.getValue();
 				itemUsuario = tablaUsuarios.getItem(lineaUsuario);
+				lineaInstructor = tablaInstructor.getValue();
+				itemInstructor = tablaInstructor.getItem(lineaInstructor);
 				tablaUsuarios.setVisible(false);
 				tablaInstructor.setVisible(false);
 				labelInstrucciones.setVisible(false);
@@ -177,6 +187,7 @@ public class VistaUsuarios extends CustomComponent {
 				instructor += itemInstructor.getItemProperty("Cédula").getValue().toString();
 				labelUsuario.setValue(usuario);
 				labelInstructor.setValue(instructor);
+				labelInstructor.setVisible(true);
 				labelUsuario.setVisible(true);
 				labelUsuarioElim.setVisible(true);
 				labelElimConf1.setVisible(true);
@@ -192,6 +203,13 @@ public class VistaUsuarios extends CustomComponent {
 			public void buttonClick(ClickEvent event) {
 				lineaUsuario = tablaUsuarios.getValue();
 				itemUsuario = tablaUsuarios.getItem(lineaUsuario);
+				labelUsuario.setVisible(false);
+				labelUsuarioElim.setVisible(false);
+				labelElimConf1.setVisible(false);
+				labelElimConf2.setVisible(false);
+				botonElimConf.setVisible(false);
+				botonElimCancel.setVisible(false);
+				
 				botonAceptar.setVisible(true);
 				if(controlador.eliminarUsuario(itemUsuario.getItemProperty("Cédula").getValue().toString()))
 					labelExito.setVisible(true);

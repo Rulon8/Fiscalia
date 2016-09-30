@@ -93,7 +93,7 @@ public class ModeloUsuarios {
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
-			String consulta = "UPDATE expedientes SET instructorasig = '" + nuevo + "' where instructorasig = '" + viejo + "'";
+			String consulta = "UPDATE expediente SET instructorasig = '" + nuevo + "' where instructorasig = '" + viejo + "'";
 			System.out.println(consulta);
 			s.executeUpdate(consulta);
 			s.close();
