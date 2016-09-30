@@ -96,6 +96,7 @@ public class ModeloUsuarios {
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
+			Statement s2 = c.createStatement();
 			String consulta1 = "SELECT codigo FROM instasist WHERE cedula = '" + viejo + "'";
 			String consulta2 = "SELECT codigo FROM instasist WHERE cedula = '" + nuevo + "'";
 			String consulta3 = "UPDATE expediente SET instructorasig = '" + nuevo + "' where instructorasig = '" + viejo + "'";
@@ -103,12 +104,15 @@ public class ModeloUsuarios {
 			System.out.println(consulta2);
 			System.out.println(consulta3);
 			ResultSet rs1 = s.executeQuery(consulta1);
-			ResultSet rs2 = s.executeQuery(consulta2);
+			rs1.next();
+			ResultSet rs2 = s2.executeQuery(consulta2);
+			rs2.next();
 			String consulta4 = "UPDATE instasist SET codigo = '" + rs2.getString("codigo") + "' WHERE codigo = '" + rs1.getString("codigo") + "'";
 			System.out.println(consulta4);
 			s.executeUpdate(consulta4);
 			s.executeUpdate(consulta3);
 			s.close();
+			s2.close();
 			c.commit();
 			c.close();
 			m.getConnectionPool().releaseConnection(c);
