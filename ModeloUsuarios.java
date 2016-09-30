@@ -98,7 +98,7 @@ public class ModeloUsuarios {
 			Statement s = c.createStatement();
 			String consulta1 = "SELECT codigo FROM instasist WHERE cedula = '" + viejo + "'";
 			String consulta2 = "SELECT codigo FROM instasist WHERE cedula = '" + nuevo + "'";
-			String consulta3 = "UPDATE expedientes SET instructorasig = '" + nuevo + "' where instructorasig = '" + viejo + "'";
+			String consulta3 = "UPDATE expediente SET instructorasig = '" + nuevo + "' where instructorasig = '" + viejo + "'";
 			System.out.println(consulta1);
 			System.out.println(consulta2);
 			System.out.println(consulta3);
