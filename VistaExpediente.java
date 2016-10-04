@@ -1528,8 +1528,184 @@ public class VistaExpediente extends CustomComponent {
 		col4.addComponent(botonVolver);
 		
 		Row row2 = container.addRow();
-		Col col5 = row2.addCol()
+		Col col5 = row2.addCol(ColMod.XS_12);
+		col5.addComponent(Acordeon);
 		
+		//Crear Info General
+		LayoutInfoGeneral.removeAllComponents();
+		
+		Row row3 = new Row();
+		Col col6 = row3.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		
+		Col col7 = new Col();
+		col7.addStyles(ColMod.XS_12);
+		col7.addComponent(labelEstado);
+		col6.addComponent(col7);
+		
+		Col col8 = new Col();
+		col8.addStyles(ColMod.XS_12);
+		col8.addComponent(valorEstado);
+		col6.addComponent(col8);
+		
+		Col col9 = new Col();
+		col9.addStyles(ColMod.XS_8);
+		col9.addComponent(botonModEstado);
+		col6.addComponent(col9);
+		
+		Col col10 = new Col();
+		col10.addStyles(ColMod.XS_8);
+		col10.addComponent(comboBoxEstado);
+		col6.addComponent(col10);
+		
+		Col col11 = new Col();
+		col11.addStyles(ColMod.XS_4);
+		col11.addComponent(botonEnvEstado);
+		col6.addComponent(col11);
+		
+		Col col12 = row3.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		
+		Col col13 = new Col();
+		col13.addStyles(ColMod.XS_12);
+		col13.addComponent(labelClas);
+		col12.addComponent(col13);
+		
+		Col col14 = new Col();
+		col14.addStyles(ColMod.XS_12);
+		col14.addComponent(valorClas);
+		col12.addComponent(col14);
+		
+		Col col15 = new Col();
+		col15.addStyles(ColMod.XS_8);
+		col15.addComponent(botonModClas);
+		col12.addComponent(col15);
+		
+		Col col16 = new Col();
+		col16.addStyles(ColMod.XS_8);
+		col16.addComponent(comboBoxClas);
+		col12.addComponent(col16);
+		
+		Col col17 = new Col();
+		col17.addStyles(ColMod.XS_4);
+		col17.addComponent(botonEnvClas);
+		col12.addComponent(col17);
+		
+		Col col18 = row3.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		
+		Col col19 = new Col();
+		col19.addStyles(ColMod.XS_12);
+		col19.addComponent(labelResponsable);
+		col18.addComponent(col19);
+		
+		Col col20 = new Col();
+		col20.addStyles(ColMod.XS_12);
+		col20.addComponent(valorResponsable);
+		col18.addComponent(col20);
+		
+		Col col21 = new Col();
+		col21.addStyles(ColMod.XS_8);
+		col21.addComponent(botonModResponsable);
+		col18.addComponent(col21);
+		
+		Col col22 = new Col();
+		col22.addStyles(ColMod.XS_8);
+		col22.addComponent(campoResponsable);
+		col18.addComponent(col22);
+		
+		Col col23 = new Col();
+		col23.addStyles(ColMod.XS_4);
+		col23.addComponent(botonEnvResponsable);
+		col18.addComponent(col23);
+		
+		LayoutInfoGeneral.addComponent(row3);
+		
+		//Crear Info Denuncia
+		LayoutInfoDenuncia.removeAllComponents();
+		
+		Row row4 = new Row();
+		Col col24 = row4.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		
+		Col col25 = new Col();
+		col25.addStyles(ColMod.XS_12);
+		col25.addComponent(labelFechaDenuncia);
+		col24.addComponent(col25);
+		
+		Col col26 = new Col();
+		col26.addStyles(ColMod.XS_12);
+		col26.addComponent(valorFechaDenuncia);
+		col24.addComponent(col26);
+		
+		Col col27 = new Col();
+		col27.addStyles(ColMod.XS_8);
+		col27.addComponent(botonModFechaDenuncia);
+		col24.addComponent(col27);
+		
+		Col col28 = new Col();
+		col28.addStyles(ColMod.XS_8);
+		col28.addComponent(campoFechaDenuncia);
+		col24.addComponent(col28);
+		
+		Col col29 = new Col();
+		col29.addStyles(ColMod.XS_4);
+		col29.addComponent(botonEnvFechaDenuncia);
+		col24.addComponent(col29);
+		
+		/*
+		Col col12 = row3.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		
+		Col col13 = new Col();
+		col13.addStyles(ColMod.XS_12);
+		col13.addComponent(labelClas);
+		col12.addComponent(col13);
+		
+		Col col14 = new Col();
+		col14.addStyles(ColMod.XS_12);
+		col14.addComponent(valorClas);
+		col12.addComponent(col14);
+		
+		Col col15 = new Col();
+		col15.addStyles(ColMod.XS_8);
+		col15.addComponent(botonModClas);
+		col12.addComponent(col15);
+		
+		Col col16 = new Col();
+		col16.addStyles(ColMod.XS_8);
+		col16.addComponent(comboBoxClas);
+		col12.addComponent(col16);
+		
+		Col col17 = new Col();
+		col17.addStyles(ColMod.XS_4);
+		col17.addComponent(botonEnvClas);
+		col12.addComponent(col17);
+		
+		Col col18 = row3.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		
+		Col col19 = new Col();
+		col19.addStyles(ColMod.XS_12);
+		col19.addComponent(labelResponsable);
+		col18.addComponent(col19);
+		
+		Col col20 = new Col();
+		col20.addStyles(ColMod.XS_12);
+		col20.addComponent(valorResponsable);
+		col18.addComponent(col20);
+		
+		Col col21 = new Col();
+		col21.addStyles(ColMod.XS_8);
+		col21.addComponent(botonModResponsable);
+		col18.addComponent(col21);
+		
+		Col col22 = new Col();
+		col22.addStyles(ColMod.XS_8);
+		col22.addComponent(campoResponsable);
+		col18.addComponent(col22);
+		
+		Col col23 = new Col();
+		col23.addStyles(ColMod.XS_4);
+		col23.addComponent(botonEnvResponsable);
+		col18.addComponent(col23);
+		
+		LayoutInfoGeneral.addComponent(row3);
+		*/
 		mainLayout.addComponent(container);
 		
 		MyUI.getCurrent().setContent(this);
