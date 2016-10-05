@@ -78,7 +78,8 @@ public class ModeloLogs {
 		return numExp;
 	}
 	
-	public void generarReporte(String codExp) {
+	public String generarReporte(String codExp) {
+		String path = "C:\\Users\\b20069\\Documents\\reporteLogs.pdf";
 		try {
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
@@ -87,19 +88,18 @@ public class ModeloLogs {
 			String consulta = "SELECT numcambio, cedusuario, fecha, campo, estadoanterior, estadoactual FROM logcambios WHERE codigo = '" + codExp + "'";
 			ResultSet rs = s.executeQuery(consulta);
 			DateFormat formatoSimple = new SimpleDateFormat("dd-MM-yyyy");
-			DateFormat formatoHora = new SimpleDateFormat("dd-MM-yyyy HH-mm");
 			Date fecha = new Date();
 			
 			try {
-				JasperDesign design= JRXmlLoader.load("C:\\Users\\b33799\\JaspersoftWorkspace\\MyReports\\Logs.jrxml");
+				JasperDesign design= JRXmlLoader.load("C:\\Users\\b20069\\Downloads\\Logs.jrxml");
 				JasperReport reporte = JasperCompileManager.compileReport(design);
 				JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
 				Map<String, Object> parametros = new HashMap<String, Object>();
 				parametros.put("Titulo", "Reporte de cambios del expediente " + getNumExp(codExp));
 				parametros.put("Fecha", formatoSimple.format(fecha));
-				JasperReport jasperReport = JasperCompileManager.compileReport("C:\\Users\\b33799\\JaspersoftWorkspace\\MyReports\\Logs.jrxml");
+				JasperReport jasperReport = JasperCompileManager.compileReport("C:\\Users\\b20069\\Downloads\\Logs.jrxml");
 				JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros, jrRS);
-				JasperExportManager.exportReportToPdfFile(jasperPrint, "C:\\Users\\b33799\\Documents\\reporteLogs" + formatoHora.format(fecha) + ".pdf");
+				JasperExportManager.exportReportToPdfFile(jasperPrint, path);
 			}
 			catch (JRException e) {
 				System.out.println(e.getMessage());
@@ -113,5 +113,6 @@ public class ModeloLogs {
 		catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return path;
 	}
 }

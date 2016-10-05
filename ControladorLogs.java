@@ -43,7 +43,7 @@ public class ControladorLogs {
 		return modeloLogs.pedirDatos(codigoExp);
 	}
 	
-	public void generarReporte(){
-		modeloLogs.generarReporte(codigoExp);
+	public String generarReporte(){
+		return modeloLogs.generarReporte(codigoExp);
 	}
 }
