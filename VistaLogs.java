@@ -71,8 +71,8 @@ public class VistaLogs extends CustomComponent {
 		botonGenerarReporte.addClickListener(new ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
-				String direccion = controlador.generarReporte();
-				pdf(direccion);
+				controlador.generarReporte();
+				pdf("C:/Users/b33799/Documents/reporteLogs.pdf");
 			}
 		});
 	}
@@ -135,7 +135,7 @@ public class VistaLogs extends CustomComponent {
 			            public InputStream getStream() {
 			                InputStream mipdf = null;
 							try {
-								mipdf = new FileInputStream(new File(nombreArchivo));
+								mipdf = new FileInputStream(nombreArchivo);
 							} catch (FileNotFoundException e) {
 								e.printStackTrace();
 							}
