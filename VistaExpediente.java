@@ -1649,63 +1649,233 @@ public class VistaExpediente extends CustomComponent {
 		col29.addComponent(botonEnvFechaDenuncia);
 		col24.addComponent(col29);
 		
-		/*
-		Col col12 = row3.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
 		
-		Col col13 = new Col();
-		col13.addStyles(ColMod.XS_12);
-		col13.addComponent(labelClas);
-		col12.addComponent(col13);
+		Col col30 = row4.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
 		
-		Col col14 = new Col();
-		col14.addStyles(ColMod.XS_12);
-		col14.addComponent(valorClas);
-		col12.addComponent(col14);
+		Col col31 = new Col();
+		col31.addStyles(ColMod.XS_12);
+		col31.addComponent(labelParteDenunciada);
+		col30.addComponent(col31);
 		
-		Col col15 = new Col();
-		col15.addStyles(ColMod.XS_8);
-		col15.addComponent(botonModClas);
-		col12.addComponent(col15);
+		Col col32 = new Col();
+		col32.addStyles(ColMod.XS_12);
+		col32.addComponent(valorParteDenunciada);
+		col30.addComponent(col32);
 		
-		Col col16 = new Col();
-		col16.addStyles(ColMod.XS_8);
-		col16.addComponent(comboBoxClas);
-		col12.addComponent(col16);
+		Col col33 = new Col();
+		col33.addStyles(ColMod.XS_8);
+		col33.addComponent(botonModParteDenunciada);
+		col30.addComponent(col33);
 		
-		Col col17 = new Col();
-		col17.addStyles(ColMod.XS_4);
-		col17.addComponent(botonEnvClas);
-		col12.addComponent(col17);
+		Col col34= new Col();
+		col34.addStyles(ColMod.XS_8);
+		col34.addComponent(campoParteDenunciada);
+		col30.addComponent(col34);
 		
-		Col col18 = row3.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col35 = new Col();
+		col35.addStyles(ColMod.XS_4);
+		col35.addComponent(botonEnvParteDenunciada);
+		col30.addComponent(col35);
 		
-		Col col19 = new Col();
-		col19.addStyles(ColMod.XS_12);
-		col19.addComponent(labelResponsable);
-		col18.addComponent(col19);
+		Col col36 = row4.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
 		
-		Col col20 = new Col();
-		col20.addStyles(ColMod.XS_12);
-		col20.addComponent(valorResponsable);
-		col18.addComponent(col20);
+		Col col37 = new Col();
+		col37.addStyles(ColMod.XS_12);
+		col37.addComponent(labelCarnet);
+		col36.addComponent(col37);
 		
-		Col col21 = new Col();
-		col21.addStyles(ColMod.XS_8);
-		col21.addComponent(botonModResponsable);
-		col18.addComponent(col21);
+		Col col38 = new Col();
+		col38.addStyles(ColMod.XS_12);
+		col38.addComponent(valorCarnet);
+		col36.addComponent(col38);
 		
-		Col col22 = new Col();
-		col22.addStyles(ColMod.XS_8);
-		col22.addComponent(campoResponsable);
-		col18.addComponent(col22);
+		Col col39 = new Col();
+		col39.addStyles(ColMod.XS_8);
+		col39.addComponent(botonModCarnet);
+		col36.addComponent(col39);
 		
-		Col col23 = new Col();
-		col23.addStyles(ColMod.XS_4);
-		col23.addComponent(botonEnvResponsable);
-		col18.addComponent(col23);
+		Col col40 = new Col();
+		col40.addStyles(ColMod.XS_8);
+		col40.addComponent(campoCarnet);
+		col36.addComponent(col40);
 		
-		LayoutInfoGeneral.addComponent(row3);
-		*/
+		Col col41= new Col();
+		col41.addStyles(ColMod.XS_4);
+		col41.addComponent(botonEnvCarnet);
+		col36.addComponent(col41);
+		
+		LayoutInfoDenuncia.addComponent(row4);
+		
+		Row row5 = new Row();
+		Col col42 = row5.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		
+		Col col43 = new Col();
+		col43.addStyles(ColMod.XS_12);
+		col43.addComponent(labelParteDenunciante);
+		col42.addComponent(col43);
+		
+		Col col44 = new Col();
+		col44.addStyles(ColMod.XS_12);
+		col44.addComponent(valorParteDenunciante);
+		col42.addComponent(col44);
+		
+		Col col45 = new Col();
+		col45.addStyles(ColMod.XS_8);
+		col45.addComponent(botonModParteDenunciante);
+		col42.addComponent(col45);
+		
+		Col col46 = new Col();
+		col46.addStyles(ColMod.XS_8);
+		col46.addComponent(campoParteDenunciante);
+		col42.addComponent(col46);
+		
+		Col col47 = new Col();
+		col47.addStyles(ColMod.XS_4);
+		col47.addComponent(botonEnvParteDenunciante);
+		col42.addComponent(col47);
+		
+		
+		Col col48 = row5.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		
+		Col col49 = new Col();
+		col49.addStyles(ColMod.XS_12);
+		col49.addComponent(labelId);
+		col48.addComponent(col49);
+		
+		Col col50 = new Col();
+		col50.addStyles(ColMod.XS_12);
+		col50.addComponent(valorId);
+		col48.addComponent(col50);
+		
+		Col col51 = new Col();
+		col51.addStyles(ColMod.XS_8);
+		col51.addComponent(botonModId);
+		col48.addComponent(col51);
+		
+		Col col52= new Col();
+		col52.addStyles(ColMod.XS_8);
+		col52.addComponent(campoId);
+		col48.addComponent(col52);
+		
+		Col col53 = new Col();
+		col53.addStyles(ColMod.XS_4);
+		col53.addComponent(botonEnvId);
+		col48.addComponent(col53);
+		
+		Col col54 = row5.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		
+		Col col55 = new Col();
+		col55.addStyles(ColMod.XS_12);
+		col55.addComponent(labelCausa);
+		col54.addComponent(col55);
+		
+		Col col56 = new Col();
+		col56.addStyles(ColMod.XS_12);
+		col56.addComponent(valorCausa);
+		col54.addComponent(col56);
+		
+		Col col57 = new Col();
+		col57.addStyles(ColMod.XS_8);
+		col57.addComponent(botonModCausa);
+		col54.addComponent(col57);
+		
+		Col col58 = new Col();
+		col58.addStyles(ColMod.XS_8);
+		col58.addComponent(campoCausa);
+		col54.addComponent(col58);
+		
+		Col col59= new Col();
+		col59.addStyles(ColMod.XS_4);
+		col59.addComponent(botonEnvCausa);
+		col54.addComponent(col59);
+		
+		LayoutInfoDenuncia.addComponent(row5);
+		
+		Row row6 = new Row();
+		Col col60 = row6.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		
+		Col col61 = new Col();
+		col61.addStyles(ColMod.XS_12);
+		col61.addComponent(labelArtAplicables);
+		col60.addComponent(col61);
+		
+		Col col62 = new Col();
+		col62.addStyles(ColMod.XS_12);
+		col62.addComponent(valorArtAplicables);
+		col60.addComponent(col62);
+		
+		Col col63 = new Col();
+		col63.addStyles(ColMod.XS_8);
+		col63.addComponent(botonModArtAplicables);
+		col60.addComponent(col63);
+		
+		Col col64 = new Col();
+		col64.addStyles(ColMod.XS_8);
+		col64.addComponent(campoArtAplicables);
+		col60.addComponent(col64);
+		
+		Col col65 = new Col();
+		col65.addStyles(ColMod.XS_4);
+		col65.addComponent(botonEnvArtAplicables);
+		col60.addComponent(col65);
+		
+		
+		Col col66 = row6.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		
+		Col col67 = new Col();
+		col67.addStyles(ColMod.XS_12);
+		col67.addComponent(labelFechaAudiencia);
+		col66.addComponent(col67);
+		
+		Col col68 = new Col();
+		col68.addStyles(ColMod.XS_12);
+		col68.addComponent(valorFechaAudiencia);
+		col66.addComponent(col68);
+		
+		Col col69 = new Col();
+		col69.addStyles(ColMod.XS_8);
+		col69.addComponent(botonModFechaAudiencia);
+		col66.addComponent(col69);
+		
+		Col col70= new Col();
+		col70.addStyles(ColMod.XS_8);
+		col70.addComponent(campoFechaAudiencia);
+		col66.addComponent(col70);
+		
+		Col col71 = new Col();
+		col71.addStyles(ColMod.XS_4);
+		col71.addComponent(botonEnvFechaAudiencia);
+		col66.addComponent(col71);
+		
+		Col col72 = row6.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		
+		Col col73 = new Col();
+		col73.addStyles(ColMod.XS_12);
+		col73.addComponent(labelHoraAudiencia);
+		col72.addComponent(col73);
+		
+		Col col74 = new Col();
+		col74.addStyles(ColMod.XS_12);
+		col74.addComponent(valorHoraAudiencia);
+		col72.addComponent(col74);
+		
+		Col col75 = new Col();
+		col75.addStyles(ColMod.XS_8);
+		col75.addComponent(botonModHoraAudiencia);
+		col72.addComponent(col75);
+		
+		Col col76 = new Col();
+		col76.addStyles(ColMod.XS_8);
+		col76.addComponent(campoHoraAudiencia);
+		col72.addComponent(col76);
+		
+		Col col77 = new Col();
+		col77.addStyles(ColMod.XS_4);
+		col77.addComponent(botonEnvHoraAudiencia);
+		col72.addComponent(col77);
+		
+		LayoutInfoDenuncia.addComponent(row6);
+		
 		mainLayout.addComponent(container);
 		
 		MyUI.getCurrent().setContent(this);
