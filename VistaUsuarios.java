@@ -111,7 +111,7 @@ public class VistaUsuarios extends CustomComponent {
 				itemUsuario = tablaUsuarios.getItem(lineaUsuario);
 				String cedUsuario = itemUsuario.getItemProperty("Cédula").getValue().toString();
 				System.out.println(cedUsuario);
-				if(itemUsuario.getItemProperty("Tipo de usuario").getValue().toString().compareTo("Instructor") == 0) {
+				if(itemUsuario.getItemProperty("Tipo de usuario").getValue().toString().compareTo("Instructor") == 0 || itemUsuario.getItemProperty("Tipo de usuario").getValue().toString().compareTo("Instructor Jefe") == 0) {
 					llenarTablaInstructores(itemUsuario.getItemProperty("Cédula").getValue().toString());
 					botonEliminar.setVisible(false);
 					botonCancelar.setVisible(false);

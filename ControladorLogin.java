@@ -54,7 +54,7 @@ public class ControladorLogin {
 			controlador.setApellidoUsuario(datosUsuario[1]);
 			controlador.setTipoUsuario(datosUsuario[2]);
 			controlador.setCedulaUsuario(datosUsuario[4]);
-			if (datosUsuario[2] == "Asistente" || datosUsuario[2] == "Instructor") {
+			if (datosUsuario[2] == "Asistente" || datosUsuario[2] == "Instructor" || datosUsuario[2] == "Instructor Jefe") {
 				controlador.setNumInstructor(datosUsuario[3]);
 			}
 			exito = true;

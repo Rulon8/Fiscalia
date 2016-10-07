@@ -371,11 +371,11 @@ public class VistaExpediente extends CustomComponent {
 		desaparecerCampos();
 		
 		//Inactivar la modificación del expediente si está archivado o si no se tiene permisos de modificación
-		if (control.getTipoUsuario() != "Instructor" && control.getTipoUsuario() != "Asistente"){
+		if (control.getTipoUsuario().compareTo("Instructor") != 0 && control.getTipoUsuario().compareTo("Asistente") != 0 && control.getTipoUsuario().compareTo("Instructor Jefe") != 0 && control.getTipoUsuario().compareTo("Admin") != 0){
 			
 			//desaparecerBotones();
 		}
-		else if (control.getNumInstructor() != datosExpediente.get("Instructor Asignado")) {
+		else if (control.getTipoUsuario().compareTo("Admin") != 0 && control.getNumInstructor() != datosExpediente.get("Instructor Asignado")) {
 			
 			//desaparecerBotones();
 		}
@@ -1875,6 +1875,213 @@ public class VistaExpediente extends CustomComponent {
 		col72.addComponent(col77);
 		
 		LayoutInfoDenuncia.addComponent(row6);
+		
+		//Crear Layout Plazo
+		LayoutPlazo.removeAllComponents();
+		
+		Row row7 = new Row();
+		Col col78 = row7.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		
+		Col col79 = new Col();
+		col79.addStyles(ColMod.XS_12);
+		col79.addComponent(labelPlazo);
+		col78.addComponent(col79);
+		
+		Col col80 = new Col();
+		col80.addStyles(ColMod.XS_12);
+		col80.addComponent(valorPlazo);
+		col78.addComponent(col80);
+		
+		Col col81 = new Col();
+		col81.addStyles(ColMod.XS_8);
+		col81.addComponent(botonModPlazo);
+		col78.addComponent(col81);
+		
+		Col col82= new Col();
+		col82.addStyles(ColMod.XS_8);
+		col82.addComponent(campoPlazo);
+		col78.addComponent(col82);
+		
+		Col col83 = new Col();
+		col83.addStyles(ColMod.XS_4);
+		col83.addComponent(botonEnvPlazo);
+		col78.addComponent(col83);
+		
+		Col col84 = row5.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		
+		Col col85 = new Col();
+		col85.addStyles(ColMod.XS_12);
+		col85.addComponent(labelTiempoTranscurrido);
+		col84.addComponent(col85);
+		
+		Col col86 = new Col();
+		col86.addStyles(ColMod.XS_12);
+		col86.addComponent(valorTiempoTranscurrido);
+		col84.addComponent(col86);
+		
+		Col col87 = new Col();
+		col87.addStyles(ColMod.XS_8);
+		col87.addComponent(botonModTiempoTranscurrido);
+		col84.addComponent(col87);
+		
+		Col col88 = new Col();
+		col88.addStyles(ColMod.XS_8);
+		col88.addComponent(campoTiempoTranscurrido);
+		col84.addComponent(col88);
+		
+		Col col89 = new Col();
+		col89.addStyles(ColMod.XS_4);
+		col89.addComponent(botonEnvTiempoTranscurrido);
+		col84.addComponent(col89);
+		
+		Col col90 = row5.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		
+		Col col91 = new Col();
+		col91.addStyles(ColMod.XS_12);
+		col91.addComponent(labelCondPlazo);
+		col90.addComponent(col91);
+		
+		Col col92 = new Col();
+		col92.addStyles(ColMod.XS_12);
+		col92.addComponent(valorCondPlazo);
+		col90.addComponent(col92);
+		
+		Col col93 = new Col();
+		col93.addStyles(ColMod.XS_8);
+		col93.addComponent(botonModCondPlazo);
+		col90.addComponent(col93);
+		
+		Col col94 = new Col();
+		col94.addStyles(ColMod.XS_8);
+		col94.addComponent(campoCondPlazo);
+		col90.addComponent(col94);
+		
+		Col col95= new Col();
+		col95.addStyles(ColMod.XS_4);
+		col95.addComponent(botonEnvCondPlazo);
+		col90.addComponent(col95);
+		
+		LayoutInfoDenuncia.addComponent(row7);
+		
+		//Crear Layout Ubicación
+		LayoutUbicacion.removeAllComponents();
+		
+		Row row8 = new Row();
+		Col col96 = row7.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		
+		Col col97 = new Col();
+		col97.addStyles(ColMod.XS_12);
+		col97.addComponent(labelUbicacion);
+		col96.addComponent(col97);
+		
+		Col col98 = new Col();
+		col98.addStyles(ColMod.XS_12);
+		col98.addComponent(valorUbicacion);
+		col96.addComponent(col98);
+		
+		Col col99 = new Col();
+		col99.addStyles(ColMod.XS_8);
+		col99.addComponent(botonModUbicacion);
+		col96.addComponent(col99);
+		
+		Col col100= new Col();
+		col100.addStyles(ColMod.XS_8);
+		col100.addComponent(campoUbicacion);
+		col96.addComponent(col100);
+		
+		Col col101 = new Col();
+		col101.addStyles(ColMod.XS_4);
+		col101.addComponent(botonEnvUbicacion);
+		col96.addComponent(col101);
+		
+		Col col102 = row5.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		
+		Col col103 = new Col();
+		col103.addStyles(ColMod.XS_12);
+		col103.addComponent(labelMuebleUbicacion);
+		col102.addComponent(col103);
+		
+		Col col104 = new Col();
+		col104.addStyles(ColMod.XS_12);
+		col104.addComponent(valorMuebleUbicacion);
+		col102.addComponent(col104);
+		
+		Col col105 = new Col();
+		col105.addStyles(ColMod.XS_8);
+		col105.addComponent(botonModMuebleUbicacion);
+		col102.addComponent(col105);
+		
+		Col col106 = new Col();
+		col106.addStyles(ColMod.XS_8);
+		col106.addComponent(campoMuebleUbicacion);
+		col102.addComponent(col106);
+		
+		Col col107 = new Col();
+		col107.addStyles(ColMod.XS_4);
+		col107.addComponent(botonEnvMuebleUbicacion);
+		col102.addComponent(col107);
+		
+		Col col108 = row5.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		
+		Col col109 = new Col();
+		col109.addStyles(ColMod.XS_12);
+		col109.addComponent(labelUbicLegajos);
+		col108.addComponent(col109);
+		
+		Col col110 = new Col();
+		col110.addStyles(ColMod.XS_12);
+		col110.addComponent(valorUbicLegajos);
+		col108.addComponent(col110);
+		
+		Col col111 = new Col();
+		col111.addStyles(ColMod.XS_8);
+		col111.addComponent(botonModUbicLegajos);
+		col108.addComponent(col111);
+		
+		Col col112 = new Col();
+		col112.addStyles(ColMod.XS_8);
+		col112.addComponent(campoUbicLegajos);
+		col108.addComponent(col112);
+		
+		Col col113= new Col();
+		col113.addStyles(ColMod.XS_4);
+		col113.addComponent(botonEnvUbicLegajos);
+		col108.addComponent(col113);
+		
+		LayoutInfoDenuncia.addComponent(row8);
+		
+		//Crear Layout Plazo
+		LayoutPlazo.removeAllComponents();
+		
+		Row row9 = new Row();
+		Col col114 = row7.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		
+		Col col115 = new Col();
+		col115.addStyles(ColMod.XS_12);
+		col115.addComponent(labelCantLegajos);
+		col114.addComponent(col115);
+		
+		Col col116 = new Col();
+		col116.addStyles(ColMod.XS_12);
+		col116.addComponent(valorCantLegajos);
+		col114.addComponent(col116);
+		
+		Col col117 = new Col();
+		col117.addStyles(ColMod.XS_8);
+		col117.addComponent(botonModCantLegajos);
+		col114.addComponent(col117);
+		
+		Col col118= new Col();
+		col118.addStyles(ColMod.XS_8);
+		col118.addComponent(campoCantLegajos);
+		col114.addComponent(col118);
+		
+		Col col119 = new Col();
+		col119.addStyles(ColMod.XS_4);
+		col119.addComponent(botonEnvCantLegajos);
+		col114.addComponent(col119);
+		
+		LayoutInfoDenuncia.addComponent(row9);
 		
 		mainLayout.addComponent(container);
 		

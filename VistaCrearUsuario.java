@@ -187,7 +187,7 @@ public class VistaCrearUsuario extends CustomComponent {
 					comboBoxInstructor.setRequired(true);
 					comboBoxInstructor.setVisible(true);
 					etiquetaInstructor.setVisible(true);
-				} else if (comboBoxTipoUsuario.getValue().toString() == "Instructor") {
+				} else if (comboBoxTipoUsuario.getValue().toString() == "Instructor" || comboBoxTipoUsuario.getValue().toString() == "Instructor Jefe") {
 					campoCodigo.setRequired(true);
 					labelCodigo.setVisible(true);
 					campoCodigo.setVisible(true);
@@ -301,7 +301,7 @@ public class VistaCrearUsuario extends CustomComponent {
 			instructorAsig = comboBoxInstructor.getValue().toString();
 			campos[7] = instructorAsig;
 		}
-		else if (tipoUsuario == "Instructor") {
+		else if (tipoUsuario == "Instructor" || tipoUsuario == "Instructor Jefe") {
 			//FALTA: obtener codigo
 			codigo = campoCodigo.getValue();
 			campos[7] = codigo;
@@ -309,13 +309,17 @@ public class VistaCrearUsuario extends CustomComponent {
 		
 		
 	}	
+	
 	private void llenarComboBoxTipoUsuario() {
 		comboBoxTipoUsuario.addItem("Instructor");
 		comboBoxTipoUsuario.addItem("Secretaria");
 		comboBoxTipoUsuario.addItem("Fiscal");
 		comboBoxTipoUsuario.addItem("Asistente");
 		comboBoxTipoUsuario.addItem("Notificador");
-		
+		comboBoxTipoUsuario.addItem("Instructor Jefe");
+		if (control.getTipoUsuario().compareTo("Admin") == 0) {
+			comboBoxTipoUsuario.addItem("Admin");
+		}
 	}
 	
 	public void addComboBoxInstructor(String opcion) {

@@ -47,7 +47,7 @@ public class ModeloUsuarios {
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
-			String consulta = "SELECT cedula, nombre, apellido FROM usuario where tipodeusuario = 'Instructor' EXCEPT SELECT cedula, nombre, apellido FROM usuario where cedula = '" + cedInst + "'";
+			String consulta = "SELECT cedula, nombre, apellido FROM usuario where tipodeusuario = 'Instructor' OR tipodeusuario = 'Instructor Jefe' EXCEPT SELECT cedula, nombre, apellido FROM usuario where cedula = '" + cedInst + "'";
 			System.out.println(consulta);
 			ResultSet rs = s.executeQuery(consulta);
 			while(rs.next() != false) {

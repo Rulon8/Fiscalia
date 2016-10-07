@@ -94,14 +94,14 @@ public class Controlador {
 		//controladorListaExpedientesActivos.iniciar();
 		//controladorListaExpedientesActivos.setVista();
 		
-		//controladorLogin.iniciar();
-		//controladorLogin.setVista();
+		controladorLogin.iniciar();
+		controladorLogin.setVista();
 		
 		//controladorLogs.iniciar("33");
 		//controladorLogs.setVista();
 		
-		controladorExpediente.iniciar();
-		controladorExpediente.setVista();
+		//controladorExpediente.iniciar();
+		//controladorExpediente.setVista();
 		
 		//controladorCrearUsuario.iniciar();
 		//controladorCrearUsuario.setVista();
@@ -149,6 +149,7 @@ public class Controlador {
 		case "Expedientes Archivados":
 			controladorListaExpedientesArchivados.iniciar();
 			controladorListaExpedientesArchivados.setVista();
+			break;
 		
 		case "Cambio Pass":
 			controladorCambioPassword.iniciar();
@@ -158,6 +159,7 @@ public class Controlador {
 		case "Eliminar Usuario":
 			controladorUsarios.iniciar();
 			controladorUsarios.setVista();
+			break;
 		}
 
 		}	

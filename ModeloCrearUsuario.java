@@ -53,7 +53,7 @@ public class ModeloCrearUsuario {
 			
 			s.executeUpdate(consulta);
 			
-			if (usuario[5] == "Instructor" || usuario[5] == "Asistente") {
+			if (usuario[5] == "Instructor" || usuario[5] == "Asistente" || usuario[5] == "Instructor Jefe") {
 				consulta = "INSERT INTO instasist VALUES ('" + usuario[2] + "', " + usuario[7] + ")";
 				s.executeUpdate(consulta);
 			}
