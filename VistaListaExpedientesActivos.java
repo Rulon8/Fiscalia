@@ -124,6 +124,27 @@ public class VistaListaExpedientesActivos extends CustomComponent {
             }
             }
         });
+	
+		tableExpAct.setCellStyleGenerator(new Table.CellStyleGenerator() {
+		      @Override
+		      public String getStyle(Table source, Object itemId, Object propertyId) {
+		        if (propertyId == null) {
+		          // Styling for row
+		          Item item = tableExpAct.getItem(itemId);
+		          String firstName = (String) item.getItemProperty("First Name").getValue();
+		          if (firstName.toLowerCase().startsWith("g")) {
+		            return "highlight-yellow";
+		          } else if (firstName.contains("o")) {
+		            return "highlight-red";
+		          } else {
+		            return null;
+		          }
+		        } else {
+		          // styling for column propertyId
+		          return null;
+		        }
+		      }
+		    });
 				
 		buttonVolver.addClickListener(new ClickListener(){
 			@Override
@@ -171,8 +192,8 @@ public class VistaListaExpedientesActivos extends CustomComponent {
 		tableExpAct.setContainerDataSource(controlador.consultarDatos(hileraConsulta));
 		tableExpAct.setSelectable(true);
 		tableExpAct.setImmediate(true);
-		tableExpAct.setVisibleColumns(new Object[] {"codigo","numexpediente","instructorasig","fechaingreso","clasificacion"});
-		tableExpAct.setColumnHeaders(new String [] {"Código", "Número de Expediente", "Instructor Asignado", "Fecha de Ingreso", "Clasificación"});
+		tableExpAct.setVisibleColumns(new Object[] {"codigo","numexpediente","instructorasig","fechaingreso","clasificacion", "estadoDelPlazo"});
+		tableExpAct.setColumnHeaders(new String [] {"Código", "Número de expediente", "Instructor asignado", "Fecha de ingreso", "Clasificación", "Estado del plazo"});
 		tableExpAct.setColumnReorderingAllowed(true);
 		tableExpAct.setColumnCollapsingAllowed(true);
 	}

@@ -287,6 +287,8 @@ public class VistaUsuarios extends CustomComponent {
 		});
 	}
 	
+	
+	
 	public void llenarTablaUsuarios(String cedUsuario){
 		ArrayList<String[]> resultados = controlador.pedirDatosUsuarios(cedUsuario);
 		tablaUsuarios.addContainerProperty("Cédula", String.class, null);

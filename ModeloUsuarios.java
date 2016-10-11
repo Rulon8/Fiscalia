@@ -71,10 +71,13 @@ public class ModeloUsuarios {
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
+			String consulta3 = "DELETE FROM notificador WHERE cedula = '" + ced + "'";
 			String consulta1 = "DELETE FROM instasist WHERE cedula = '" + ced + "'";
 			String consulta2 = "DELETE FROM usuario where cedula = '" + ced + "'";
 			System.out.println(consulta1);
 			System.out.println(consulta2);
+			System.out.println(consulta3);
+			s.executeUpdate(consulta3);
 			s.executeUpdate(consulta1);
 			s.executeUpdate(consulta2);
 			s.close();
