@@ -97,9 +97,6 @@ public class ModeloExpediente {
 			s = c.createStatement();
 			consulta = "UPDATE expediente SET " + columna + " = " + "'" + nuevoDato + "' WHERE codigo = '" + codigoExpediente + "'";
 			s.executeUpdate(consulta);
-			
-			System.out.println(consulta);
-			
 			s.close();
 			c.commit();
 			c.close();
@@ -138,9 +135,6 @@ public class ModeloExpediente {
 			
 			consulta = "INSERT INTO logCambios VALUES ('" + codigo + "', '" + numExp + "', " + numCambio + ", '" + usuario + "', '" + campo + "', '" + formato.format(fecha) + "', '" + valorViejo + "', '" + valorNuevo +"')";
 			s.executeUpdate(consulta);
-			
-			System.out.println(consulta);
-			
 			s.close();
 			c.commit();
 			c.close();

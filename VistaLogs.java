@@ -113,7 +113,6 @@ public class VistaLogs extends CustomComponent {
 		table_1.addContainerProperty("Estado Actual", String.class, null);
 		for(int i = 0; i < resultados.size(); i++){
 			String[] tupla = resultados.get(i);
-			System.out.println(tupla[0] + tupla[1] + tupla[2] + tupla[3] + tupla[4] + tupla[5]);
 			table_1.addItem(new Object[]{tupla[0], tupla[1], tupla[2], tupla[3], tupla[4], tupla[5]}, (i +1));
 		}
 	}

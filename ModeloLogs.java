@@ -38,7 +38,6 @@ public class ModeloLogs {
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
-			System.out.println("SELECT numcambio, cedusuario, fecha, campo, estadoAnterior, estadoActual FROM logcambios WHERE codigo = '" + codExp + "'");
 			String consulta = "SELECT numcambio, cedusuario, fecha, campo, estadoAnterior, estadoActual FROM logcambios WHERE codigo = '" + codExp + "'";
 			ResultSet rs = s.executeQuery(consulta);
 			while(rs.next() != false) {
@@ -62,7 +61,6 @@ public class ModeloLogs {
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
-			System.out.println("SELECT numexpediente FROM logcambios WHERE codigo = '" + codExp + "'");
 			String consulta = "SELECT numexpediente FROM logcambios WHERE codigo = '" + codExp + "'";
 			ResultSet rs = s.executeQuery(consulta);
 			rs.next();
@@ -84,7 +82,6 @@ public class ModeloLogs {
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
-			System.out.println("SELECT numcambio, cedusuario, fecha, campo, estadoanterior, estadoactual FROM logcambios WHERE codigo = '" + codExp + "'");
 			String consulta = "SELECT numcambio, cedusuario, fecha, campo, estadoanterior, estadoactual FROM logcambios WHERE codigo = '" + codExp + "'";
 			ResultSet rs = s.executeQuery(consulta);
 			DateFormat formatoSimple = new SimpleDateFormat("dd-MM-yyyy");

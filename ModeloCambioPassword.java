@@ -34,7 +34,6 @@ public class ModeloCambioPassword {
 			c = m.getConnectionPool().reserveConnection();
 			s = c.createStatement();
 			consulta = "SELECT pass from usuario where cedula = '" + usuario + "'";
-			System.out.println(consulta);
 			ResultSet rs = s.executeQuery(consulta);
 			rs.next();
 			if(rs.getString("pass").compareTo(hash(pass)) == 0)
@@ -60,7 +59,6 @@ public class ModeloCambioPassword {
 			c = m.getConnectionPool().reserveConnection();
 			s = c.createStatement();
 			consulta = "UPDATE usuario SET pass = '" + hash(pass) + "' WHERE cedula = '" + user + "'";
-			System.out.println(consulta);
 			s.executeUpdate(consulta);
 			s.close();
 			c.commit();

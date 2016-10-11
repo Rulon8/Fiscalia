@@ -48,9 +48,6 @@ public class ModeloCrearUsuario {
 			c = m.getConnectionPool().reserveConnection();
 			s = c.createStatement();
 			consulta = "INSERT INTO usuario VALUES ('" + usuario[0] + "', '" + usuario[1] + "', '" + usuario[2] + "', '" + usuario[3] + "', '" + usuario[4] + "', '" + usuario[5] + "', '" + usuario[6] + "')";					
-
-			System.out.println(consulta);
-			
 			s.executeUpdate(consulta);
 			
 			if (usuario[5] == "Instructor" || usuario[5] == "Asistente" || usuario[5] == "Instructor Jefe") {
@@ -91,8 +88,6 @@ public class ModeloCrearUsuario {
 			s = c.createStatement();
 			consulta = "SELECT DISTINCT codigo FROM InstAsist";					
 
-			System.out.println(consulta);
-			
 			r = s.executeQuery(consulta);
 			
 			while (r.next()) {

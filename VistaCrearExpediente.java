@@ -204,14 +204,11 @@ public class VistaCrearExpediente extends CustomComponent {
             public void textChange(TextChangeEvent event) {
             	valorNumExp = event.getText();
             	if (!valorNumExp.isEmpty()){
-            		System.out.print("\n" + controlador.comprobarNumExp(valorNumExp) + "\n");
             		if (controlador.comprobarNumExp(valorNumExp)){
-            			System.out.print("si es vacia\n");
             			labelAlertNumExp.setVisible(false);
             			botonIngresar.setEnabled(true);
             		}
             		else{
-            			System.out.print("si no es vacia\n");
             			labelAlertNumExp.setVisible(true);
             			botonIngresar.setEnabled(false);
             		}
@@ -224,14 +221,11 @@ public class VistaCrearExpediente extends CustomComponent {
             public void textChange(TextChangeEvent event) {
             	valorInstructor = event.getText();
             	if (!valorInstructor.isEmpty()){
-            		System.out.print("\n" + controlador.comprobarNumExp(valorNumExp) + "\n");
             		if (controlador.comprobarInstructor(valorInstructor)){
-            			System.out.print("si es vacia\n");
             			labelAlertInstructor.setVisible(true);
             			botonIngresar.setEnabled(false);
             		}
             		else{
-            			System.out.print("si no es vacia\n");
             			labelAlertInstructor.setVisible(false);
             			botonIngresar.setEnabled(true);
             		}
