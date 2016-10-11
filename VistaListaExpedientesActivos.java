@@ -20,6 +20,7 @@ import com.vaadin.data.util.sqlcontainer.connection.SimpleJDBCConnectionPool;
 import com.vaadin.data.util.sqlcontainer.query.FreeformQuery;
 import com.vaadin.event.FieldEvents.TextChangeEvent;
 import com.vaadin.event.FieldEvents.TextChangeListener;
+import com.vaadin.event.ItemClickEvent;
 import com.vaadin.ui.AbsoluteLayout;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
@@ -131,6 +132,17 @@ public class VistaListaExpedientesActivos extends CustomComponent {
 				control.cambiarVista("Menu Principal");
 			}
 		});
+		
+		tableExpAct.addListener(new ItemClickEvent.ItemClickListener() {
+            private static final long serialVersionUID = 2068314108919135281L;
+            public void itemClick(ItemClickEvent event) {
+                if (event.isDoubleClick()) {
+                	Property itemProperty = event.getItem().getItemProperty("codigo");
+                    control.cambiarVista("Expediente", itemProperty.getValue().toString());
+                }
+            }
+        });
+		
 	}
 	
 	public void setVista() {

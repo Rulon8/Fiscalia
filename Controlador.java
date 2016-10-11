@@ -88,8 +88,8 @@ public class Controlador {
 		controladorCambioPassword = ControladorCambioPassword.obtenerInstancia();
 		controladorUsarios = ControladorUsuarios.obtenerInstancia();
 		
-		//controladorListaExpedientesArchivados.iniciar();
-		//controladorListaExpedientesArchivados.setVista();
+		controladorListaExpedientesArchivados.iniciar();
+		controladorListaExpedientesArchivados.setVista();
 		
 		//controladorListaExpedientesActivos.iniciar();
 		//controladorListaExpedientesActivos.setVista();
@@ -100,8 +100,8 @@ public class Controlador {
 		//controladorLogs.iniciar("33");
 		//controladorLogs.setVista();
 		
-		controladorExpediente.iniciar();
-		controladorExpediente.setVista();
+		//controladorExpediente.iniciar();
+		//controladorExpediente.setVista();
 		
 		//controladorCrearUsuario.iniciar();
 		//controladorCrearUsuario.setVista();

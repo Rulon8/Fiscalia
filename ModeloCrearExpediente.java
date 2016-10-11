@@ -25,7 +25,6 @@ public class ModeloCrearExpediente {
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
-			System.out.print( "SELECT numexpediente FROM expediente WHERE numexpediente = '" + valorNumExp + "' \n");
 			String consulta = "SELECT numexpediente FROM expediente WHERE numexpediente = '" + valorNumExp + "'";
 			ResultSet rs = s.executeQuery(consulta);
 			if (!rs.next()) {
@@ -50,7 +49,6 @@ public class ModeloCrearExpediente {
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
-			System.out.print( "SELECT instructorasig FROM expediente WHERE instructorasig = '" + valorInstructor + "' \n");
 			String consulta = "SELECT instructorasig FROM expediente WHERE instructorasig = '" + valorInstructor + "'";
 			ResultSet rs = s.executeQuery(consulta);
 			if (!rs.next()) {
@@ -89,7 +87,6 @@ public class ModeloCrearExpediente {
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
-			System.out.print( "SELECT COUNT(codigo) FROM expediente" + "' \n");
 			String consulta =  "SELECT COUNT(codigo)  AS conteo FROM expediente";
 			ResultSet rs = s.executeQuery(consulta);
 			rs.next();
