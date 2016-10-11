@@ -23,14 +23,23 @@ public class ControladorUsuarios {
 	}
 	
 	public void setVista() {
-		MyUI.getCurrent().setContent(interfazUsuarios);
+		interfazUsuarios.setVista();
+		//MyUI.getCurrent().setContent(interfazUsuarios);
 	}
 	
-	public ArrayList<String[]> pedirDatosUsuarios(){
-		return modeloUsuarios.pedirUsuarios();
+	public ArrayList<String[]> pedirDatosUsuarios(String ced){
+		return modeloUsuarios.pedirUsuarios(ced);
 	}
 	
 	public ArrayList<String[]> pedirDatosInstructores(String cedInst){
 		return modeloUsuarios.pedirInstructores(cedInst);
+	}
+	
+	public boolean eliminarUsuario(String ced){
+		return modeloUsuarios.eliminarUsuario(ced);
+	}
+	
+	public boolean asignarExpedientes(String viejo, String nuevo){
+		return modeloUsuarios.asignarExpedientes(viejo, nuevo);
 	}
 }

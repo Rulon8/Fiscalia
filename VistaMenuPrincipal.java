@@ -58,13 +58,18 @@ public class VistaMenuPrincipal extends CustomComponent {
 	}
 	
 	public void determinarTipoUsuario() {
-		if(controlador.getTipoUsuario().equals("Secretaria")) {
-			botonCrearExpediente.setVisible(true);
-			botonCrearUsuario.setVisible(true);
+		String tipo = controlador.getTipoUsuario();
+		if(tipo.compareTo("Secretaria") == 0) {
+			botonEliminarUsuario.setVisible(false);
 		}
-		else {
+		else if (tipo.compareTo("Notificador") == 0 || tipo.compareTo("Fiscal") == 0 || tipo.compareTo("Asistente") == 0 || tipo.compareTo("Instructor") == 0) {
 			botonCrearExpediente.setVisible(false);
 			botonCrearUsuario.setVisible(false);
+			botonEliminarUsuario.setVisible(false);
+		}
+		else if (tipo.compareTo("Instructor Jefe") == 0) {
+			botonCrearUsuario.setVisible(false);
+			botonCrearExpediente.setVisible(false);
 		}
 	}
 	
@@ -150,7 +155,7 @@ public class VistaMenuPrincipal extends CustomComponent {
 		botonCrearExpediente.addClickListener(new ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
-				controlador.cambiarVista("Agregar Expediente");
+				controlador.cambiarVista("Crear Expediente");
 			}
 		});
 		

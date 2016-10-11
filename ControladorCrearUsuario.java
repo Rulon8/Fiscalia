@@ -144,7 +144,8 @@ public class ControladorCrearUsuario {
 	}
 	
 	public void setVista() {
-		MyUI.getCurrent().setContent(interfazCrearUsuario);
+		interfazCrearUsuario.setVista();
+		//MyUI.getCurrent().setContent(interfazCrearUsuario);
 	}
 	
 }

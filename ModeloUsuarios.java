@@ -17,13 +17,13 @@ public class ModeloUsuarios {
 		return primeraInstancia;
 	}
 	
-	public ArrayList<String[]> pedirUsuarios(){
+	public ArrayList<String[]> pedirUsuarios(String ced){
 		try {
 			resultados = new ArrayList<String[]>();
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
-			String consulta = "SELECT cedula, nombre, apellido, tipodeusuario FROM usuario";
+			String consulta = "SELECT cedula, nombre, apellido, tipodeusuario FROM usuario EXCEPT SELECT cedula, nombre, apellido, tipodeusuario FROM usuario where cedula = '" + ced + "'";
 			System.out.println(consulta);
 			ResultSet rs = s.executeQuery(consulta);
 			while(rs.next() != false) {
@@ -47,7 +47,7 @@ public class ModeloUsuarios {
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
-			String consulta = "SELECT cedula, nombre, apellido FROM usuario where tipodeusuario = 'instructor' EXCEPT SELECT cedula, nombre, apellido FROM usuario where cedula = '" + cedInst + "'";
+			String consulta = "SELECT cedula, nombre, apellido FROM usuario where tipodeusuario = 'Instructor' OR tipodeusuario = 'Instructor Jefe' EXCEPT SELECT cedula, nombre, apellido FROM usuario where cedula = '" + cedInst + "'";
 			System.out.println(consulta);
 			ResultSet rs = s.executeQuery(consulta);
 			while(rs.next() != false) {
@@ -63,5 +63,65 @@ public class ModeloUsuarios {
 			e.printStackTrace();
 		}
 		return resultados;
+	}
+	
+	public boolean eliminarUsuario(String ced){
+		boolean exito;
+		try {
+			Modelo m = Modelo.obtenerInstancia();
+			Connection c = m.getConnectionPool().reserveConnection();
+			Statement s = c.createStatement();
+			String consulta1 = "DELETE FROM instasist WHERE cedula = '" + ced + "'";
+			String consulta2 = "DELETE FROM usuario where cedula = '" + ced + "'";
+			System.out.println(consulta1);
+			System.out.println(consulta2);
+			s.executeUpdate(consulta1);
+			s.executeUpdate(consulta2);
+			s.close();
+			c.commit();
+			c.close();
+			m.getConnectionPool().releaseConnection(c);
+			exito = true;
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			exito = false;
+		}
+		return exito;
+	}
+	
+	public boolean asignarExpedientes(String viejo, String nuevo){
+		boolean exito = false;
+		try {
+			Modelo m = Modelo.obtenerInstancia();
+			Connection c = m.getConnectionPool().reserveConnection();
+			Statement s = c.createStatement();
+			Statement s2 = c.createStatement();
+			String consulta1 = "SELECT codigo FROM instasist WHERE cedula = '" + viejo + "'";
+			String consulta2 = "SELECT codigo FROM instasist WHERE cedula = '" + nuevo + "'";
+			String consulta3 = "UPDATE expediente SET instructorasig = '" + nuevo + "' where instructorasig = '" + viejo + "'";
+			System.out.println(consulta1);
+			System.out.println(consulta2);
+			System.out.println(consulta3);
+			ResultSet rs1 = s.executeQuery(consulta1);
+			rs1.next();
+			ResultSet rs2 = s2.executeQuery(consulta2);
+			rs2.next();
+			String consulta4 = "UPDATE instasist SET codigo = '" + rs2.getString("codigo") + "' WHERE codigo = '" + rs1.getString("codigo") + "'";
+			System.out.println(consulta4);
+			s.executeUpdate(consulta4);
+			s.executeUpdate(consulta3);
+			s.close();
+			s2.close();
+			c.commit();
+			c.close();
+			m.getConnectionPool().releaseConnection(c);
+			exito = true;
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			exito = false;
+		}
+		return exito;
 	}
 }

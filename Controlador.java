@@ -149,6 +149,7 @@ public class Controlador {
 		case "Expedientes Archivados":
 			controladorListaExpedientesArchivados.iniciar();
 			controladorListaExpedientesArchivados.setVista();
+			break;
 		
 		case "Cambio Pass":
 			controladorCambioPassword.iniciar();
@@ -158,6 +159,7 @@ public class Controlador {
 		case "Eliminar Usuario":
 			controladorUsarios.iniciar();
 			controladorUsarios.setVista();
+			break;
 		}
 
 		}	

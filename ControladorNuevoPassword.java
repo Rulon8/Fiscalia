@@ -24,7 +24,8 @@ public class ControladorNuevoPassword {
 	}
 	
 	public void setVista() {
-		MyUI.getCurrent().setContent(interfazNuevoPassword);
+		interfazNuevoPassword.setVista();
+		//MyUI.getCurrent().setContent(interfazNuevoPassword);
 	}
 
 	public boolean enviarDatos(String usuario) {

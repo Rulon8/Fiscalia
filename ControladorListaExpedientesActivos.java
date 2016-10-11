@@ -43,7 +43,8 @@ public class ControladorListaExpedientesActivos {
 	}
 	
 	public void setVista() {
-		MyUI.getCurrent().setContent(InterfazListaExpedientes);
+		InterfazListaExpedientes.setVista();
+		//MyUI.getCurrent().setContent(InterfazListaExpedientes);
 	}
 	
 	public SQLContainer consultarDatos(String hileraConsulta){

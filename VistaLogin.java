@@ -137,9 +137,9 @@ public class VistaLogin extends CustomComponent {
 		
 		
 		Row row3 = container.addRow();
-		Col col6 = row3.addCol(ColMod.XS_12, ColMod.MD_3, ColOffsetMod.MD_OFFSET_2);
+		Col col6 = row3.addCol(ColMod.XS_12, ColMod.SM_4, ColMod.MD_3, ColOffsetMod.MD_OFFSET_2);
 		col6.addComponent(botonCambiar);
-		Col col7 = row3.addCol(ColMod.XS_12, ColMod.MD_3, ColOffsetMod.MD_OFFSET_2);
+		Col col7 = row3.addCol(ColMod.XS_12, ColMod.SM_4, ColOffsetMod.SM_OFFSET_4, ColMod.MD_3, ColOffsetMod.MD_OFFSET_2);
 		col7.addComponent(botonEntrar);
 		Col col8 = row3.addCol(ColMod.XS_12, ColOffsetMod.MD_OFFSET_2);
 		col8.addComponent(labelErrAuth);

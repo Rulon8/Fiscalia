@@ -27,7 +27,8 @@ public class ControladorLogs {
 	}
 	
 	public void setVista() {
-		MyUI.getCurrent().setContent(interfazLogs);
+		interfazLogs.setVista();
+		//MyUI.getCurrent().setContent(interfazLogs);
 	}
 	
 	public String getCodExp(){
