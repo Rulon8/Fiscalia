@@ -37,5 +37,10 @@ public class ControladorCrearExpediente {
 	public void ingresarExpediente(String consulta){
 		modelo.ingresarExpediente(consulta);
 	}
+	
+	public int consultarCodigo(){
+		int cantidad = modelo.consultarCodigo();
+		return cantidad;
+	}
 
 }

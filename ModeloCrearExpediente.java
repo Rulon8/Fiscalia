@@ -82,6 +82,28 @@ public class ModeloCrearExpediente {
 			e.printStackTrace();
 		}
 	}
+	
+	public int consultarCodigo(){
+		int cantidadCodigo = 0;
+		try {
+			Modelo m = Modelo.obtenerInstancia();
+			Connection c = m.getConnectionPool().reserveConnection();
+			Statement s = c.createStatement();
+			System.out.print( "SELECT COUNT(codigo) FROM expediente" + "' \n");
+			String consulta =  "SELECT COUNT(codigo)  AS conteo FROM expediente";
+			ResultSet rs = s.executeQuery(consulta);
+			rs.next();
+			cantidadCodigo = rs.getInt("conteo");
+			s.close();
+			c.commit();
+			c.close();
+			m.getConnectionPool().releaseConnection(c);
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return cantidadCodigo;
+	}
 
 }
 

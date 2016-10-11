@@ -143,6 +143,7 @@ public class VistaCrearExpediente extends CustomComponent {
 	private String valorResponsable;
 	private String valorEstado;
 	private String valorClasificacion;
+	private String valorCodigo;
 	
 	private String valorFechaDenuncia;
 	private String valorParteDenunciada;
@@ -471,10 +472,13 @@ public class VistaCrearExpediente extends CustomComponent {
 		botonIngresar.addClickListener(new ClickListener(){
 			@Override
 			public void buttonClick(ClickEvent evento){
+				
+				valorCodigo = Integer.toString(controlador.consultarCodigo());
+			
 				consulta = insert + "VALUES("				+
 						"0, " 								+ // Numero de cambios, en 0 por defecto.
 						"false, "							+ //archivado, false por defecto
-						"'2', "								+ //codigo, valor por defecto?
+						"'"+valorCodigo+"', "				+ //codigo, valor por defecto?
 						"'"+valorNumExp+"', "				+ //numero del expediente
 						"'"+valorInstructor+"', "			+ //id Instrcutor
 						"'"+valorEstado+"'"					+ //estado

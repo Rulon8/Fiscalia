@@ -1,5 +1,7 @@
 package ucr.casoUso;
 
+import com.vaadin.data.util.sqlcontainer.SQLContainer;
+
 public class ControladorListaExpedientesArchivados {
 	ModeloListaExpedientesArchivados modelo;
 	VistaListaExpedientesArchivados InterfazListaExpedientesArchivados;
@@ -24,5 +26,9 @@ public class ControladorListaExpedientesArchivados {
 	
 	public void setVista() {
 		MyUI.getCurrent().setContent(InterfazListaExpedientesArchivados);
+	}
+	
+	public SQLContainer consultarDatos(String hileraConsulta){
+		return modelo.consultarDatos(hileraConsulta);
 	}
 }

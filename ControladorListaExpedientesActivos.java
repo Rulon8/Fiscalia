@@ -4,8 +4,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.vaadin.data.util.sqlcontainer.SQLContainer;
 
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRResultSetDataSource;
@@ -41,5 +44,9 @@ public class ControladorListaExpedientesActivos {
 	
 	public void setVista() {
 		MyUI.getCurrent().setContent(InterfazListaExpedientes);
+	}
+	
+	public SQLContainer consultarDatos(String hileraConsulta){
+		return modelo.consultarDatos(hileraConsulta);
 	}
 }

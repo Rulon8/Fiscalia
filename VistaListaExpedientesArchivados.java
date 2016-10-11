@@ -51,11 +51,13 @@ public class VistaListaExpedientesArchivados extends CustomComponent {
 			+ "WHERE archivado = true";
 	
 	public VistaListaExpedientesArchivados() {
+		control = Controlador.obtenerInstancia();
+		controlador = ControladorListaExpedientesArchivados.obtenerInstancia();
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 		llenarTabla(consultaInicial);
 		llenarComboBoxOpciones();
-		control = Controlador.obtenerInstancia();
+		
 		
 		//Metodo para el filtro de la tabla
 		textFieldFiltro.addTextChangeListener(new TextChangeListener() {
@@ -103,25 +105,13 @@ public class VistaListaExpedientesArchivados extends CustomComponent {
 	}
 	
 	public void llenarTabla(String hileraConsulta){
-		try{
-			SimpleJDBCConnectionPool cp;
-			cp = new SimpleJDBCConnectionPool("org.postgresql.Driver",
-				"jdbc:postgresql://127.0.0.1:5432/Fiscalia", "postgres", "ECCIpgsql2016", 1, 5);
-			//TableQuery tq = new TableQuery("expediente", cp);
-			//SQLContainer containerTabla = new SQLContainer(tq);
-			FreeformQuery productFreeFormQuery = new FreeformQuery(hileraConsulta, cp);
-			SQLContainer containerTabla = new SQLContainer(productFreeFormQuery);
-			tableExpArc.setContainerDataSource(containerTabla);
+			tableExpArc.setContainerDataSource(controlador.consultarDatos(hileraConsulta));
 			tableExpArc.setSelectable(true);
 			tableExpArc.setImmediate(true);
 			tableExpArc.setVisibleColumns(new Object[] {"codigo","numexpediente","instructorasig","fechaingreso","clasificacion"});
 			tableExpArc.setColumnHeaders(new String [] {"Código", "Número de Expediente", "Instructor Asignado", "Fecha de Ingreso", "Clasificación"});
 			tableExpArc.setColumnReorderingAllowed(true);
 			tableExpArc.setColumnCollapsingAllowed(true);	
-		}
-		catch (SQLException e){
-			e.printStackTrace();
-		}
 	}
 	
 	private void llenarComboBoxOpciones() {
