@@ -25,7 +25,7 @@ public class Modelo {
 	private boolean conectarBD() {
 		boolean exito = false;
 		try {
-			cp = new SimpleJDBCConnectionPool("org.postgresql.Driver", "jdbc:postgresql://127.0.0.1:5432/Fiscalia", "postgres", "pass", 1, 5);
+			cp = new SimpleJDBCConnectionPool("org.postgresql.Driver", "jdbc:postgresql://127.0.0.1:5432/Fiscalia", "postgres", "ECCIpgsql2016", 1, 5);
 			exito = true;
 			return exito;
 		}

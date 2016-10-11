@@ -23,6 +23,7 @@ public class ControladorUsuarios {
 	}
 	
 	public void setVista() {
+		//interfazUsuarios.setVista();
 		MyUI.getCurrent().setContent(interfazUsuarios);
 	}
 	
