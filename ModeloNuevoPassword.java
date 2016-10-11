@@ -50,7 +50,6 @@ public class ModeloNuevoPassword {
 			c = m.getConnectionPool().reserveConnection();
 			s = c.createStatement();
 			consulta = "UPDATE usuario SET pass = '" + pass + "' WHERE cedula = '" + user + "'";
-			System.out.println(consulta);
 			s.executeUpdate(consulta);
 			s.close();
 			c.commit();

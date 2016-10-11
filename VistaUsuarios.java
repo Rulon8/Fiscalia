@@ -116,7 +116,6 @@ public class VistaUsuarios extends CustomComponent {
 				lineaUsuario = tablaUsuarios.getValue();
 				itemUsuario = tablaUsuarios.getItem(lineaUsuario);
 				String cedUsuario = itemUsuario.getItemProperty("Cédula").getValue().toString();
-				System.out.println(cedUsuario);
 				if(itemUsuario.getItemProperty("Tipo de usuario").getValue().toString().compareTo("Instructor") == 0 || itemUsuario.getItemProperty("Tipo de usuario").getValue().toString().compareTo("Instructor Jefe") == 0) {
 					llenarTablaInstructores(itemUsuario.getItemProperty("Cédula").getValue().toString());
 					botonEliminar.setVisible(false);
@@ -297,7 +296,6 @@ public class VistaUsuarios extends CustomComponent {
 		tablaUsuarios.addContainerProperty("Tipo de usuario", String.class, null);
 		for(int i = 0; i < resultados.size(); i++){
 			String[] tupla = resultados.get(i);
-			System.out.println(tupla[0] + tupla[1] + tupla[2] + tupla[3]);
 			tablaUsuarios.addItem(new Object[]{tupla[0], tupla[1], tupla[2], tupla[3]}, (i +1));
 		}
 	}
@@ -309,7 +307,6 @@ public class VistaUsuarios extends CustomComponent {
 		tablaInstructor.addContainerProperty("Apellido", String.class, null);
 		for(int i = 0; i < resultados.size(); i++){
 			String[] tupla = resultados.get(i);
-			System.out.println(tupla[0] + tupla[1] + tupla[2]);
 			tablaInstructor.addItem(new Object[]{tupla[0], tupla[1], tupla[2]}, (i +1));
 		}
 	}

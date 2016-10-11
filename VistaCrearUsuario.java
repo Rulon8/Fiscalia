@@ -277,7 +277,6 @@ public class VistaCrearUsuario extends CustomComponent {
 		codigo = "";
 		campos = new String[8];
 		
-		System.out.println(nombre + " " + apellido + " " + email + " " +telefono + " " + cedula + " " + tipoUsuario);
 		campos[0] = nombre;
 		campos[1] = apellido;
 		campos[2] = cedula;

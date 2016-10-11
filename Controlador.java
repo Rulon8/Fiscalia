@@ -88,29 +88,10 @@ public class Controlador {
 		controladorCambioPassword = ControladorCambioPassword.obtenerInstancia();
 		controladorUsarios = ControladorUsuarios.obtenerInstancia();
 		
-		//controladorListaExpedientesArchivados.iniciar();
-		//controladorListaExpedientesArchivados.setVista();
-		
-		//controladorListaExpedientesActivos.iniciar();
-		//controladorListaExpedientesActivos.setVista();
-		
-		//controladorLogin.iniciar();
-		//controladorLogin.setVista();
-		
-		//controladorLogs.iniciar("33");
-		//controladorLogs.setVista();
-		
-		controladorExpediente.iniciar();
-		controladorExpediente.setVista();
-		
-		//controladorCrearUsuario.iniciar();
-		//controladorCrearUsuario.setVista();
-		
-		//controladorCambioPassword.iniciar();
-		//controladorCambioPassword.setVista();
-		
-		//controladorCrearExpediente.iniciar();
-		//controladorCrearExpediente.setVista();
+
+		controladorLogin.iniciar();
+		controladorLogin.setVista();
+
 	}
 	
 	public void cambiarVista(String vista) {
