@@ -370,18 +370,18 @@ public class VistaExpediente extends CustomComponent {
 		
 		//Ocultar los campos de modificación
 		desaparecerCampos();
-		/*
+		
 		//Inactivar la modificación del expediente si está archivado o si no se tiene permisos de modificación
 		if (control.getTipoUsuario().compareTo("Instructor") != 0 && control.getTipoUsuario().compareTo("Asistente") != 0 && control.getTipoUsuario().compareTo("Instructor Jefe") != 0 && control.getTipoUsuario().compareTo("Admin") != 0){
 			
-			//desaparecerBotones();
+			desaparecerBotones();
 		}
 		else if (control.getTipoUsuario().compareTo("Admin") != 0 && control.getNumInstructor() != datosExpediente.get("Instructor Asignado")) {
 			
-			//desaparecerBotones();
+			desaparecerBotones();
 		}
-		*/
-		if (datosExpediente.get("Archivado").compareTo("t") == 0) {
+		
+		if (datosExpediente.get("Archivado").compareTo("true") == 0) {
 			
 			desaparecerBotones();
 		}
