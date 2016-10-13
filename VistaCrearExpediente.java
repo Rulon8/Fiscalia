@@ -691,7 +691,7 @@ public class VistaCrearExpediente extends CustomComponent {
 		col30.addComponent(col31);
 		
 		Col col34= new Col();
-		col34.addStyles(ColMod.XS_8, MarginMod.TOP5);
+		col34.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col34.addComponent(campoParteDenunciada);
 		col30.addComponent(col34);
 		
@@ -703,7 +703,7 @@ public class VistaCrearExpediente extends CustomComponent {
 		col36.addComponent(col37);
 		
 		Col col40 = new Col();
-		col40.addStyles(ColMod.XS_8, MarginMod.TOP5);
+		col40.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col40.addComponent(campoCarnet);
 		col36.addComponent(col40);
 		
@@ -718,7 +718,7 @@ public class VistaCrearExpediente extends CustomComponent {
 		col42.addComponent(col43);
 		
 		Col col46 = new Col();
-		col46.addStyles(ColMod.XS_8, MarginMod.TOP5);
+		col46.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col46.addComponent(campoParteDenunciante);
 		col42.addComponent(col46);
 		
@@ -730,7 +730,7 @@ public class VistaCrearExpediente extends CustomComponent {
 		col48.addComponent(col49);
 		
 		Col col52= new Col();
-		col52.addStyles(ColMod.XS_8, MarginMod.TOP5);
+		col52.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col52.addComponent(campoId);
 		col48.addComponent(col52);
 		
@@ -742,7 +742,7 @@ public class VistaCrearExpediente extends CustomComponent {
 		col54.addComponent(col55);
 		
 		Col col58 = new Col();
-		col58.addStyles(ColMod.XS_8, MarginMod.TOP5);
+		col58.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col58.addComponent(campoCausa);
 		col54.addComponent(col58);
 		
@@ -757,7 +757,7 @@ public class VistaCrearExpediente extends CustomComponent {
 		col60.addComponent(col61);
 		
 		Col col64 = new Col();
-		col64.addStyles(ColMod.XS_8, MarginMod.TOP5);
+		col64.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col64.addComponent(campoArtAplicables);
 		col60.addComponent(col64);
 				
@@ -769,7 +769,7 @@ public class VistaCrearExpediente extends CustomComponent {
 		col66.addComponent(col67);
 		
 		Col col70= new Col();
-		col70.addStyles(ColMod.XS_8, MarginMod.TOP5);
+		col70.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col70.addComponent(campoFechaAudiencia);
 		col66.addComponent(col70);
 		
@@ -781,7 +781,7 @@ public class VistaCrearExpediente extends CustomComponent {
 		col72.addComponent(col73);
 		
 		Col col76 = new Col();
-		col76.addStyles(ColMod.XS_8, MarginMod.TOP5);
+		col76.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col76.addComponent(campoHoraAudiencia);
 		col72.addComponent(col76);
 		
@@ -799,7 +799,7 @@ public class VistaCrearExpediente extends CustomComponent {
 		col96.addComponent(col97);
 		
 		Col col100= new Col();
-		col100.addStyles(ColMod.XS_8, MarginMod.TOP5);
+		col100.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col100.addComponent(campoUbicacion);
 		col96.addComponent(col100);
 		
@@ -811,7 +811,7 @@ public class VistaCrearExpediente extends CustomComponent {
 		col102.addComponent(col103);
 		
 		Col col106 = new Col();
-		col106.addStyles(ColMod.XS_8, MarginMod.TOP5);
+		col106.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col106.addComponent(campoMuebleUbicacion);
 		col102.addComponent(col106);
 		
@@ -823,7 +823,7 @@ public class VistaCrearExpediente extends CustomComponent {
 		col108.addComponent(col109);
 		
 		Col col112 = new Col();
-		col112.addStyles(ColMod.XS_8, MarginMod.TOP5);
+		col112.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col112.addComponent(campoUbicLegajos);
 		col108.addComponent(col112);
 		
@@ -838,7 +838,7 @@ public class VistaCrearExpediente extends CustomComponent {
 		col114.addComponent(col115);
 		
 		Col col118= new Col();
-		col118.addStyles(ColMod.XS_8, MarginMod.TOP5);
+		col118.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col118.addComponent(campoCantLegajos);
 		col114.addComponent(col118);
 		
@@ -856,7 +856,7 @@ public class VistaCrearExpediente extends CustomComponent {
 		col120.addComponent(col121);
 		
 		Col col124= new Col();
-		col124.addStyles(ColMod.XS_8, MarginMod.TOP5);
+		col124.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col124.addComponent(campoFechaPresentacion);
 		col120.addComponent(col124);
 		
@@ -868,7 +868,7 @@ public class VistaCrearExpediente extends CustomComponent {
 		col126.addComponent(col127);
 		
 		Col col130 = new Col();
-		col130.addStyles(ColMod.XS_8, MarginMod.TOP5);
+		col130.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col130.addComponent(campoFechaIng);
 		col126.addComponent(col130);
 		
@@ -880,8 +880,7 @@ public class VistaCrearExpediente extends CustomComponent {
 		col156.addComponent(col157);
 		
 		Col col160= new Col();
-		//col160.addStyles(ColMod.XS_8, MarginMod.TOP5);
-		col160.addStyleName("col-xs-8");
+		col160.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col160.addComponent(campoFechaUltUbicacion);
 		col156.addComponent(col160);
 		

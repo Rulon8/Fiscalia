@@ -73,7 +73,7 @@ public class VistaLogs extends CustomComponent {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				controlador.generarReporte();
-				pdf(VaadinService.getCurrent().getBaseDirectory().getAbsolutePath().replace("\\", "/") + "/WEB-INF/files/reporte/Logs.pdf");
+				pdf(VaadinService.getCurrent().getBaseDirectory().getAbsolutePath().replace("\\", "/") + "/WEB-INF/reporte/Logs.pdf");
 			}
 		});
 	}

@@ -33,7 +33,6 @@ import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.TextField;
-//import com.vaadin.server.Sizeable;
 
 
 
