@@ -371,17 +371,20 @@ public class VistaExpediente extends CustomComponent {
 		//Ocultar los campos de modificación
 		desaparecerCampos();
 		
+		System.out.println(control.getNumInstructor());
+		System.out.println(datosExpediente.get("Instructor Asignado"));
+		
 		//Inactivar la modificación del expediente si está archivado o si no se tiene permisos de modificación
 		if (control.getTipoUsuario().compareTo("Instructor") != 0 && control.getTipoUsuario().compareTo("Asistente") != 0 && control.getTipoUsuario().compareTo("Instructor Jefe") != 0 && control.getTipoUsuario().compareTo("Admin") != 0){
 			
 			desaparecerBotones();
 		}
-		else if (control.getTipoUsuario().compareTo("Admin") != 0 && control.getNumInstructor() != datosExpediente.get("Instructor Asignado")) {
+		else if (control.getTipoUsuario().compareTo("Admin") != 0 && control.getNumInstructor().compareTo(datosExpediente.get("Instructor Asignado")) != 0) {
 			
 			desaparecerBotones();
 		}
 		
-		if (datosExpediente.get("Archivado").compareTo("true") == 0) {
+		if (datosExpediente.get("Archivado").compareTo("1") == 0) {
 			
 			desaparecerBotones();
 		}
@@ -2622,6 +2625,7 @@ public class VistaExpediente extends CustomComponent {
 	private AbsoluteLayout buildLayoutInfoGeneral() {
 		// common part: create layout
 		LayoutInfoGeneral = new AbsoluteLayout();
+		LayoutInfoGeneral.setStyleName("layout-acordeon");
 		LayoutInfoGeneral.setImmediate(false);
 		LayoutInfoGeneral.setWidth("100.0%");
 		LayoutInfoGeneral.setHeight("100.0%");
@@ -2750,7 +2754,7 @@ public class VistaExpediente extends CustomComponent {
 	private AbsoluteLayout buildLayoutInfoDenuncia() {
 		// common part: create layout
 		LayoutInfoDenuncia = new AbsoluteLayout();
-		LayoutInfoDenuncia.setStyleName("vertical-scroll");
+		LayoutInfoDenuncia.setStyleName("vertical-scroll layout-acordeon");
 		LayoutInfoDenuncia.setImmediate(false);
 		LayoutInfoDenuncia.setWidth("100.0%");
 		LayoutInfoDenuncia.setHeight("100.0%");
@@ -3113,6 +3117,7 @@ public class VistaExpediente extends CustomComponent {
 	private AbsoluteLayout buildLayoutPlazo() {
 		// common part: create layout
 		LayoutPlazo = new AbsoluteLayout();
+		LayoutPlazo.setStyleName("layout-acordeon");
 		LayoutPlazo.setImmediate(false);
 		LayoutPlazo.setWidth("100.0%");
 		LayoutPlazo.setHeight("100.0%");
@@ -3241,6 +3246,7 @@ public class VistaExpediente extends CustomComponent {
 	private AbsoluteLayout buildLayoutUbicacion() {
 		// common part: create layout
 		LayoutUbicacion = new AbsoluteLayout();
+		LayoutUbicacion.setStyleName("layout-acordeon");
 		LayoutUbicacion.setImmediate(false);
 		LayoutUbicacion.setWidth("100.0%");
 		LayoutUbicacion.setHeight("100.0%");
@@ -3408,6 +3414,7 @@ public class VistaExpediente extends CustomComponent {
 	private AbsoluteLayout buildLayoutFechas() {
 		// common part: create layout
 		LayoutFechas = new AbsoluteLayout();
+		LayoutFechas.setStyleName("layout-acordeon");
 		LayoutFechas.setImmediate(false);
 		LayoutFechas.setWidth("100.0%");
 		LayoutFechas.setHeight("100.0%");

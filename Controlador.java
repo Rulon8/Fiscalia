@@ -88,7 +88,6 @@ public class Controlador {
 		controladorCambioPassword = ControladorCambioPassword.obtenerInstancia();
 		controladorUsarios = ControladorUsuarios.obtenerInstancia();
 		
-
 		controladorLogin.iniciar();
 		controladorLogin.setVista();
 

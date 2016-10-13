@@ -11,6 +11,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.vaadin.annotations.Theme;
+import com.vaadin.server.VaadinService;
+
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRResultSetDataSource;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -77,7 +80,7 @@ public class ModeloLogs {
 	}
 	
 	public void generarReporte(String codExp) {
-		String path = "C:\\Users\\b33799\\Documents\\reporteLogs.pdf";
+		String path = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath() + "\\WEB-INF\\files\\reporte\\Logs.pdf";
 		try {
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
@@ -88,13 +91,13 @@ public class ModeloLogs {
 			Date fecha = new Date();
 			
 			try {
-				JasperDesign design= JRXmlLoader.load("C:\\Users\\b33799\\Downloads\\Logs.jrxml");
+				JasperDesign design= JRXmlLoader.load(VaadinService.getCurrent().getBaseDirectory().getAbsolutePath() + "\\WEB-INF\\files\\reporte\\Logs.jrxml");
 				JasperReport reporte = JasperCompileManager.compileReport(design);
 				JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
 				Map<String, Object> parametros = new HashMap<String, Object>();
 				parametros.put("Titulo", "Reporte de cambios del expediente " + getNumExp(codExp));
 				parametros.put("Fecha", formatoSimple.format(fecha));
-				JasperReport jasperReport = JasperCompileManager.compileReport("C:\\Users\\b33799\\Downloads\\Logs.jrxml");
+				JasperReport jasperReport = JasperCompileManager.compileReport(VaadinService.getCurrent().getBaseDirectory().getAbsolutePath() + "\\WEB-INF\\files\\reporte\\Logs.jrxml");
 				JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros, jrRS);
 				JasperExportManager.exportReportToPdfFile(jasperPrint, path);
 			}
