@@ -371,8 +371,6 @@ public class VistaExpediente extends CustomComponent {
 		//Ocultar los campos de modificación
 		desaparecerCampos();
 		
-		System.out.println(control.getNumInstructor());
-		System.out.println(datosExpediente.get("Instructor Asignado"));
 		
 		//Inactivar la modificación del expediente si está archivado o si no se tiene permisos de modificación
 		if (control.getTipoUsuario().compareTo("Instructor") != 0 && control.getTipoUsuario().compareTo("Asistente") != 0 && control.getTipoUsuario().compareTo("Instructor Jefe") != 0 && control.getTipoUsuario().compareTo("Admin") != 0){

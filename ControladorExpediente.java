@@ -56,7 +56,6 @@ public class ControladorExpediente {
 	
 	public void setVista() {
 		interfazExpediente.setVista();
-		//MyUI.getCurrent().setContent(interfazExpediente);
 	}
 	
 }

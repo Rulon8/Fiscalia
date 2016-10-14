@@ -21,16 +21,6 @@ import java.util.Random;
 
 import com.vaadin.data.Container;
 
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JRResultSetDataSource;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperExportManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.design.JasperDesign;
-import net.sf.jasperreports.engine.xml.JRXmlLoader;
-
 public class ControladorCrearUsuario {
 	
 	VistaCrearUsuario interfazCrearUsuario;
@@ -65,8 +55,7 @@ public class ControladorCrearUsuario {
 		user[6] = pass[1];
 		
 		exito = modelo.setNewUsuario(user);
-		//correo.enviar(user[3], pass[0]);
-		//crearReporteUsuarios();
+		correo.enviar(user[3], pass[0]);
 		actualizar();
 		return exito;
 	}
@@ -77,12 +66,11 @@ public class ControladorCrearUsuario {
 		String passHash = "";
 		String[] passwords = new String[2];
 		Random r = new Random();
-		/*
+		
 		for (int i = 0; i < 8; i++) {
 			pass += alfabeto.charAt(r.nextInt(26));
 		}
-		*/
-		pass = "password1";
+		
 		try {
 			MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
 			messageDigest.update(pass.getBytes());
@@ -100,52 +88,8 @@ public class ControladorCrearUsuario {
 		return passwords;
 	}
 	
-	public void crearReporteUsuarios() {
-		
-		Connection c;
-		Statement s;
-		String consulta;
-		ResultSet rs;
-		Modelo m = Modelo.obtenerInstancia();
-				
-		try {
-			c = m.getConnectionPool().reserveConnection();
-			s = c.createStatement();
-			consulta = "SELECT nombre, apellido, tipodeusuario FROM usuario";					
-
-			rs = s.executeQuery(consulta);
-			
-			try {
-				JasperDesign design= JRXmlLoader.load("C:\\Users\\Admin\\JaspersoftWorkspace\\MyReports\\usuarios.jrxml");
-				JasperReport reporte = JasperCompileManager.compileReport(design);
-				JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
-				Map<String, Object> parametros = new HashMap();
-				parametros.put("empresa", "Colegio de Abogados");
-				JasperReport jasperReport = JasperCompileManager.compileReport("C:\\Users\\Admin\\JaspersoftWorkspace\\MyReports\\usuarios.jrxml");
-				JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros, jrRS);
-				JasperExportManager.exportReportToPdfFile(jasperPrint, "C:\\Users\\Giancarlo\\Documents\\UCR\\Ingenería I\\reporteUsuarios.pdf");
-			}
-			catch (JRException e) {
-				
-				
-			}
-			
-			s.close();
-			c.commit();
-			c.close();
-			
-			m.getConnectionPool().releaseConnection(c);
-		}
-		catch (SQLException e) {
-			//FALTA: Controlar errores de SQL
-			e.printStackTrace();
-		}
-		
-	}
-	
 	public void setVista() {
 		interfazCrearUsuario.setVista();
-		//MyUI.getCurrent().setContent(interfazCrearUsuario);
 	}
 	
 }

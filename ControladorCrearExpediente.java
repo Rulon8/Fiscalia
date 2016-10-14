@@ -24,7 +24,6 @@ public class ControladorCrearExpediente {
 	
 	public void setVista() {
 		InterfazCrearExpediente.setVista();
-		//MyUI.getCurrent().setContent(InterfazCrearExpediente);
 	}
 	
 	public boolean comprobarNumExp(String valor){

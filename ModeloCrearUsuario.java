@@ -23,19 +23,6 @@ public class ModeloCrearUsuario {
 		return primeraInstancia;
 	}
 	
-	public List<String> getInfoInstructores() {
-		
-		List<String> instructores = new ArrayList<String>();
-		
-		//FALTA: CAMBIAR POR CONSULTA
-		instructores.add("instructor 1");
-		instructores.add("instructor 2");
-		instructores.add("Instructor 3");
-		
-		return instructores;
-		
-	}
-	
 	public boolean setNewUsuario(String[] usuario){
 		
 		Connection c;
@@ -69,7 +56,6 @@ public class ModeloCrearUsuario {
 			return exito;
 		}
 		catch (SQLException e) {
-			//FALTA: Controlar errores de SQL
 			e.printStackTrace();
 		}
 		return exito;
@@ -102,7 +88,6 @@ public class ModeloCrearUsuario {
 			
 		}
 		catch (SQLException e) {
-			//FALTA: Controlar errores de SQL
 			e.printStackTrace();
 		}
 		

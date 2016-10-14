@@ -24,7 +24,6 @@ public class ModeloUsuarios {
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
 			String consulta = "SELECT cedula, nombre, apellido, tipodeusuario FROM usuario EXCEPT SELECT cedula, nombre, apellido, tipodeusuario FROM usuario where cedula = '" + ced + "'";
-			System.out.println(consulta);
 			ResultSet rs = s.executeQuery(consulta);
 			while(rs.next() != false) {
 				String[] tupla = {rs.getString("cedula"), rs.getString("nombre"), rs.getString("apellido"), rs.getString("tipodeusuario")};

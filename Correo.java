@@ -55,8 +55,6 @@ public class Correo {
 			
 			message.setContent(mensaje, "text/html");
 
-			System.out.println("Enviando correo...");
-
 			Transport.send(message);
 
 			resultado = true;
@@ -68,14 +66,3 @@ public class Correo {
 		return resultado;
 	}
 }
-
-
-
-/*
- *	Properties props = new Properties();
-		props.put("mail.smtp.auth", "true");
-		props.put("mail.smtp.host", "smtp.zoho.com");  //smtp.gmail.com
-		props.put("mail.smtp.port", "465");             //587
-		props.put("mail.smtp.starttls.enable", "true"); 
- * */
- 

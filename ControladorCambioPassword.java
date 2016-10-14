@@ -25,6 +25,5 @@ public class ControladorCambioPassword {
 	
 	public void setVista() {
 		interfazCambioPassword.setVista();
-		//MyUI.getCurrent().setContent(interfazCambioPassword);
 	}
 }
