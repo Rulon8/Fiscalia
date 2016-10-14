@@ -23,7 +23,8 @@ public class ModeloUsuarios {
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
-			String consulta = "SELECT cedula, nombre, apellido, tipodeusuario FROM usuario EXCEPT SELECT cedula, nombre, apellido, tipodeusuario FROM usuario where cedula = '" + ced + "'";
+			String consulta = "SELECT u.cedula, u.nombre, u.apellido, u.tipodeusuario FROM usuario u WHERE u.cedula NOT IN (SELECT x.cedula FROM usuario x where x.cedula = '" + ced + "')";
+			System.out.println(ced);
 			ResultSet rs = s.executeQuery(consulta);
 			while(rs.next() != false) {
 				String[] tupla = {rs.getString("cedula"), rs.getString("nombre"), rs.getString("apellido"), rs.getString("tipodeusuario")};
@@ -46,7 +47,7 @@ public class ModeloUsuarios {
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
-			String consulta = "SELECT cedula, nombre, apellido FROM usuario where tipodeusuario = 'Instructor' OR tipodeusuario = 'Instructor Jefe' EXCEPT SELECT cedula, nombre, apellido FROM usuario where cedula = '" + cedInst + "'";
+			String consulta = "SELECT u.cedula, u.nombre, u.apellido FROM usuario u WHERE (u.tipodeusuario = 'Instructor' OR u.tipodeusuario = 'Instructor Jefe') AND u.cedula NOT IN (SELECT x.cedula FROM usuario x where x.cedula = '" + cedInst + "')";
 			ResultSet rs = s.executeQuery(consulta);
 			while(rs.next() != false) {
 				String[] tupla = {rs.getString("cedula"), rs.getString("nombre"), rs.getString("apellido")};
