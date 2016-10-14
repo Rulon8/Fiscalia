@@ -37,11 +37,11 @@ public class ModeloCrearUsuario {
 			consulta = "INSERT INTO usuario VALUES ('" + usuario[0] + "', '" + usuario[1] + "', '" + usuario[2] + "', '" + usuario[3] + "', '" + usuario[4] + "', '" + usuario[5] + "', '" + usuario[6] + "')";					
 			s.executeUpdate(consulta);
 			
-			if (usuario[5] == "Instructor" || usuario[5] == "Asistente" || usuario[5] == "Instructor Jefe") {
+			if (usuario[5].compareTo("Instructor") == 0 || usuario[5].compareTo("Asistente") == 0 || usuario[5].compareTo("Instructor Jefe") == 0) {
 				consulta = "INSERT INTO instasist VALUES ('" + usuario[2] + "', " + usuario[7] + ")";
 				s.executeUpdate(consulta);
 			}
-			else if (usuario[5] == "Notificador") {
+			else if (usuario[5].compareTo("Notificador") == 0) {
 				consulta = "INSERT INTO notificador VALUES ('" + usuario[2] + "')";
 				s.executeUpdate(consulta);
 			}
