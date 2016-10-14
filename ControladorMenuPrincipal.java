@@ -19,7 +19,6 @@ public class ControladorMenuPrincipal {
 	}
 	
 	public void setVista() {
-		//MyUI.getCurrent().setContent(interfazMenuPrincipal);
 		interfazMenuPrincipal.setVista();
 	}
 	

@@ -25,7 +25,6 @@ public class ControladorNuevoPassword {
 	
 	public void setVista() {
 		interfazNuevoPassword.setVista();
-		//MyUI.getCurrent().setContent(interfazNuevoPassword);
 	}
 
 	public boolean enviarDatos(String usuario) {
@@ -48,12 +47,11 @@ public class ControladorNuevoPassword {
 		String passHash = "";
 		String[] passwords = new String[2];
 		Random r = new Random();
-		/*
+		
 		for (int i = 0; i < 8; i++) {
 			pass += alfabeto.charAt(r.nextInt(26));
 		}
-		*/
-		pass = "password2"; //quitar esta linea al descomentar lo de arriba
+		
 		try {
 			MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
 			messageDigest.update(pass.getBytes());

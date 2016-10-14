@@ -24,7 +24,6 @@ public class ControladorUsuarios {
 	
 	public void setVista() {
 		interfazUsuarios.setVista();
-		//MyUI.getCurrent().setContent(interfazUsuarios);
 	}
 	
 	public ArrayList<String[]> pedirDatosUsuarios(String ced){

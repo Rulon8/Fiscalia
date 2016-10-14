@@ -285,12 +285,11 @@ public class VistaCrearUsuario extends CustomComponent {
 		campos[5] = tipoUsuario;
 		campos[6] = pass;
 		
-		if (tipoUsuario == "Asistente") {
+		if (tipoUsuario.compareTo("Asistente") == 0) {
 			instructorAsig = comboBoxInstructor.getValue().toString();
 			campos[7] = instructorAsig;
 		}
-		else if (tipoUsuario == "Instructor" || tipoUsuario == "Instructor Jefe") {
-			//FALTA: obtener codigo
+		else if (tipoUsuario.compareTo("Instructor") == 0 || tipoUsuario.compareTo("Instructor Jefe") == 0) {
 			codigo = campoCodigo.getValue();
 			campos[7] = codigo;
 		}

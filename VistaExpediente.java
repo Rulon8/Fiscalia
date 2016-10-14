@@ -371,17 +371,18 @@ public class VistaExpediente extends CustomComponent {
 		//Ocultar los campos de modificación
 		desaparecerCampos();
 		
+		
 		//Inactivar la modificación del expediente si está archivado o si no se tiene permisos de modificación
 		if (control.getTipoUsuario().compareTo("Instructor") != 0 && control.getTipoUsuario().compareTo("Asistente") != 0 && control.getTipoUsuario().compareTo("Instructor Jefe") != 0 && control.getTipoUsuario().compareTo("Admin") != 0){
 			
 			desaparecerBotones();
 		}
-		else if (control.getTipoUsuario().compareTo("Admin") != 0 && control.getNumInstructor() != datosExpediente.get("Instructor Asignado")) {
+		else if (control.getTipoUsuario().compareTo("Admin") != 0 && control.getNumInstructor().compareTo(datosExpediente.get("Instructor Asignado")) != 0) {
 			
 			desaparecerBotones();
 		}
 		
-		if (datosExpediente.get("Archivado").compareTo("true") == 0) {
+		if (datosExpediente.get("Archivado").compareTo("1") == 0) {
 			
 			desaparecerBotones();
 		}
@@ -543,8 +544,8 @@ public class VistaExpediente extends CustomComponent {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				if (datosExpediente.get("Archivado") == "true") {
-					//control.cambiarVista("Lista Expedientes Archivados");
+				if (datosExpediente.get("Archivado").compareTo("1") == 0) {
+					control.cambiarVista("Lista Expedientes Archivados");
 				} else {
 					control.cambiarVista("Lista Expedientes");
 				}
@@ -1648,7 +1649,7 @@ public class VistaExpediente extends CustomComponent {
 		LayoutInfoGeneral.removeAllComponents();
 		
 		Row row3 = new Row();
-		Col col6 = row3.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col6 = row3.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col7 = new Col();
 		col7.addStyles(ColMod.XS_12);
@@ -1656,26 +1657,26 @@ public class VistaExpediente extends CustomComponent {
 		col6.addComponent(col7);
 		
 		Col col8 = new Col();
-		col8.addStyles(ColMod.XS_12);
+		col8.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col8.addComponent(valorEstado);
 		col6.addComponent(col8);
 		
 		Col col9 = new Col();
-		col9.addStyles(ColMod.XS_8);
+		col9.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col9.addComponent(botonModEstado);
 		col6.addComponent(col9);
 		
 		Col col10 = new Col();
-		col10.addStyles(ColMod.XS_8);
+		col10.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col10.addComponent(comboBoxEstado);
 		col6.addComponent(col10);
 		
 		Col col11 = new Col();
-		col11.addStyles(ColMod.XS_4);
+		col11.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col11.addComponent(botonEnvEstado);
 		col6.addComponent(col11);
 		
-		Col col12 = row3.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col12 = row3.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col13 = new Col();
 		col13.addStyles(ColMod.XS_12);
@@ -1683,26 +1684,26 @@ public class VistaExpediente extends CustomComponent {
 		col12.addComponent(col13);
 		
 		Col col14 = new Col();
-		col14.addStyles(ColMod.XS_12);
+		col14.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col14.addComponent(valorClas);
 		col12.addComponent(col14);
 		
 		Col col15 = new Col();
-		col15.addStyles(ColMod.XS_8);
+		col15.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col15.addComponent(botonModClas);
 		col12.addComponent(col15);
 		
 		Col col16 = new Col();
-		col16.addStyles(ColMod.XS_8);
+		col16.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col16.addComponent(comboBoxClas);
 		col12.addComponent(col16);
 		
 		Col col17 = new Col();
-		col17.addStyles(ColMod.XS_4);
+		col17.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col17.addComponent(botonEnvClas);
 		col12.addComponent(col17);
 		
-		Col col18 = row3.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col18 = row3.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col19 = new Col();
 		col19.addStyles(ColMod.XS_12);
@@ -1710,22 +1711,22 @@ public class VistaExpediente extends CustomComponent {
 		col18.addComponent(col19);
 		
 		Col col20 = new Col();
-		col20.addStyles(ColMod.XS_12);
+		col20.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col20.addComponent(valorResponsable);
 		col18.addComponent(col20);
 		
 		Col col21 = new Col();
-		col21.addStyles(ColMod.XS_8);
+		col21.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col21.addComponent(botonModResponsable);
 		col18.addComponent(col21);
 		
 		Col col22 = new Col();
-		col22.addStyles(ColMod.XS_8);
+		col22.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col22.addComponent(campoResponsable);
 		col18.addComponent(col22);
 		
 		Col col23 = new Col();
-		col23.addStyles(ColMod.XS_4);
+		col23.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col23.addComponent(botonEnvResponsable);
 		col18.addComponent(col23);
 		
@@ -1735,7 +1736,7 @@ public class VistaExpediente extends CustomComponent {
 		LayoutInfoDenuncia.removeAllComponents();
 		
 		Row row4 = new Row();
-		Col col24 = row4.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col24 = row4.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col25 = new Col();
 		col25.addStyles(ColMod.XS_12);
@@ -1743,27 +1744,27 @@ public class VistaExpediente extends CustomComponent {
 		col24.addComponent(col25);
 		
 		Col col26 = new Col();
-		col26.addStyles(ColMod.XS_12);
+		col26.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col26.addComponent(valorFechaDenuncia);
 		col24.addComponent(col26);
 		
 		Col col27 = new Col();
-		col27.addStyles(ColMod.XS_8);
+		col27.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col27.addComponent(botonModFechaDenuncia);
 		col24.addComponent(col27);
 		
 		Col col28 = new Col();
-		col28.addStyles(ColMod.XS_8);
+		col28.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col28.addComponent(campoFechaDenuncia);
 		col24.addComponent(col28);
 		
 		Col col29 = new Col();
-		col29.addStyles(ColMod.XS_4);
+		col29.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col29.addComponent(botonEnvFechaDenuncia);
 		col24.addComponent(col29);
 		
 		
-		Col col30 = row4.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col30 = row4.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col31 = new Col();
 		col31.addStyles(ColMod.XS_12);
@@ -1771,26 +1772,26 @@ public class VistaExpediente extends CustomComponent {
 		col30.addComponent(col31);
 		
 		Col col32 = new Col();
-		col32.addStyles(ColMod.XS_12);
+		col32.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col32.addComponent(valorParteDenunciada);
 		col30.addComponent(col32);
 		
 		Col col33 = new Col();
-		col33.addStyles(ColMod.XS_8);
+		col33.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col33.addComponent(botonModParteDenunciada);
 		col30.addComponent(col33);
 		
 		Col col34= new Col();
-		col34.addStyles(ColMod.XS_8);
+		col34.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col34.addComponent(campoParteDenunciada);
 		col30.addComponent(col34);
 		
 		Col col35 = new Col();
-		col35.addStyles(ColMod.XS_4);
+		col35.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col35.addComponent(botonEnvParteDenunciada);
 		col30.addComponent(col35);
 		
-		Col col36 = row4.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col36 = row4.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col37 = new Col();
 		col37.addStyles(ColMod.XS_12);
@@ -1798,29 +1799,29 @@ public class VistaExpediente extends CustomComponent {
 		col36.addComponent(col37);
 		
 		Col col38 = new Col();
-		col38.addStyles(ColMod.XS_12);
+		col38.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col38.addComponent(valorCarnet);
 		col36.addComponent(col38);
 		
 		Col col39 = new Col();
-		col39.addStyles(ColMod.XS_8);
+		col39.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col39.addComponent(botonModCarnet);
 		col36.addComponent(col39);
 		
 		Col col40 = new Col();
-		col40.addStyles(ColMod.XS_8);
+		col40.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col40.addComponent(campoCarnet);
 		col36.addComponent(col40);
 		
 		Col col41= new Col();
-		col41.addStyles(ColMod.XS_4);
+		col41.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col41.addComponent(botonEnvCarnet);
 		col36.addComponent(col41);
 		
 		LayoutInfoDenuncia.addComponent(row4);
 		
 		Row row5 = new Row();
-		Col col42 = row5.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col42 = row5.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col43 = new Col();
 		col43.addStyles(ColMod.XS_12);
@@ -1828,27 +1829,27 @@ public class VistaExpediente extends CustomComponent {
 		col42.addComponent(col43);
 		
 		Col col44 = new Col();
-		col44.addStyles(ColMod.XS_12);
+		col44.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col44.addComponent(valorParteDenunciante);
 		col42.addComponent(col44);
 		
 		Col col45 = new Col();
-		col45.addStyles(ColMod.XS_8);
+		col45.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col45.addComponent(botonModParteDenunciante);
 		col42.addComponent(col45);
 		
 		Col col46 = new Col();
-		col46.addStyles(ColMod.XS_8);
+		col46.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col46.addComponent(campoParteDenunciante);
 		col42.addComponent(col46);
 		
 		Col col47 = new Col();
-		col47.addStyles(ColMod.XS_4);
+		col47.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col47.addComponent(botonEnvParteDenunciante);
 		col42.addComponent(col47);
 		
 		
-		Col col48 = row5.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col48 = row5.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col49 = new Col();
 		col49.addStyles(ColMod.XS_12);
@@ -1856,26 +1857,26 @@ public class VistaExpediente extends CustomComponent {
 		col48.addComponent(col49);
 		
 		Col col50 = new Col();
-		col50.addStyles(ColMod.XS_12);
+		col50.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col50.addComponent(valorId);
 		col48.addComponent(col50);
 		
 		Col col51 = new Col();
-		col51.addStyles(ColMod.XS_8);
+		col51.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col51.addComponent(botonModId);
 		col48.addComponent(col51);
 		
 		Col col52= new Col();
-		col52.addStyles(ColMod.XS_8);
+		col52.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col52.addComponent(campoId);
 		col48.addComponent(col52);
 		
 		Col col53 = new Col();
-		col53.addStyles(ColMod.XS_4);
+		col53.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col53.addComponent(botonEnvId);
 		col48.addComponent(col53);
 		
-		Col col54 = row5.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col54 = row5.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col55 = new Col();
 		col55.addStyles(ColMod.XS_12);
@@ -1883,29 +1884,29 @@ public class VistaExpediente extends CustomComponent {
 		col54.addComponent(col55);
 		
 		Col col56 = new Col();
-		col56.addStyles(ColMod.XS_12);
+		col56.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col56.addComponent(valorCausa);
 		col54.addComponent(col56);
 		
 		Col col57 = new Col();
-		col57.addStyles(ColMod.XS_8);
+		col57.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col57.addComponent(botonModCausa);
 		col54.addComponent(col57);
 		
 		Col col58 = new Col();
-		col58.addStyles(ColMod.XS_8);
+		col58.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col58.addComponent(campoCausa);
 		col54.addComponent(col58);
 		
 		Col col59= new Col();
-		col59.addStyles(ColMod.XS_4);
+		col59.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col59.addComponent(botonEnvCausa);
 		col54.addComponent(col59);
 		
 		LayoutInfoDenuncia.addComponent(row5);
 		
 		Row row6 = new Row();
-		Col col60 = row6.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col60 = row6.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col61 = new Col();
 		col61.addStyles(ColMod.XS_12);
@@ -1913,27 +1914,27 @@ public class VistaExpediente extends CustomComponent {
 		col60.addComponent(col61);
 		
 		Col col62 = new Col();
-		col62.addStyles(ColMod.XS_12);
+		col62.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col62.addComponent(valorArtAplicables);
 		col60.addComponent(col62);
 		
 		Col col63 = new Col();
-		col63.addStyles(ColMod.XS_8);
+		col63.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col63.addComponent(botonModArtAplicables);
 		col60.addComponent(col63);
 		
 		Col col64 = new Col();
-		col64.addStyles(ColMod.XS_8);
+		col64.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col64.addComponent(campoArtAplicables);
 		col60.addComponent(col64);
 		
 		Col col65 = new Col();
-		col65.addStyles(ColMod.XS_4);
+		col65.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col65.addComponent(botonEnvArtAplicables);
 		col60.addComponent(col65);
 		
 		
-		Col col66 = row6.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col66 = row6.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col67 = new Col();
 		col67.addStyles(ColMod.XS_12);
@@ -1941,26 +1942,26 @@ public class VistaExpediente extends CustomComponent {
 		col66.addComponent(col67);
 		
 		Col col68 = new Col();
-		col68.addStyles(ColMod.XS_12);
+		col68.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col68.addComponent(valorFechaAudiencia);
 		col66.addComponent(col68);
 		
 		Col col69 = new Col();
-		col69.addStyles(ColMod.XS_8);
+		col69.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col69.addComponent(botonModFechaAudiencia);
 		col66.addComponent(col69);
 		
 		Col col70= new Col();
-		col70.addStyles(ColMod.XS_8);
+		col70.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col70.addComponent(campoFechaAudiencia);
 		col66.addComponent(col70);
 		
 		Col col71 = new Col();
-		col71.addStyles(ColMod.XS_4);
+		col71.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col71.addComponent(botonEnvFechaAudiencia);
 		col66.addComponent(col71);
 		
-		Col col72 = row6.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col72 = row6.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col73 = new Col();
 		col73.addStyles(ColMod.XS_12);
@@ -1968,22 +1969,22 @@ public class VistaExpediente extends CustomComponent {
 		col72.addComponent(col73);
 		
 		Col col74 = new Col();
-		col74.addStyles(ColMod.XS_12);
+		col74.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col74.addComponent(valorHoraAudiencia);
 		col72.addComponent(col74);
 		
 		Col col75 = new Col();
-		col75.addStyles(ColMod.XS_8);
+		col75.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col75.addComponent(botonModHoraAudiencia);
 		col72.addComponent(col75);
 		
 		Col col76 = new Col();
-		col76.addStyles(ColMod.XS_8);
+		col76.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col76.addComponent(campoHoraAudiencia);
 		col72.addComponent(col76);
 		
 		Col col77 = new Col();
-		col77.addStyles(ColMod.XS_4);
+		col77.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col77.addComponent(botonEnvHoraAudiencia);
 		col72.addComponent(col77);
 		
@@ -1993,7 +1994,7 @@ public class VistaExpediente extends CustomComponent {
 		LayoutPlazo.removeAllComponents();
 		
 		Row row7 = new Row();
-		Col col78 = row7.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col78 = row7.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col79 = new Col();
 		col79.addStyles(ColMod.XS_12);
@@ -2001,26 +2002,26 @@ public class VistaExpediente extends CustomComponent {
 		col78.addComponent(col79);
 		
 		Col col80 = new Col();
-		col80.addStyles(ColMod.XS_12);
+		col80.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col80.addComponent(valorPlazo);
 		col78.addComponent(col80);
 		
 		Col col81 = new Col();
-		col81.addStyles(ColMod.XS_8);
+		col81.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col81.addComponent(botonModPlazo);
 		col78.addComponent(col81);
 		
 		Col col82= new Col();
-		col82.addStyles(ColMod.XS_8);
+		col82.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col82.addComponent(campoPlazo);
 		col78.addComponent(col82);
 		
 		Col col83 = new Col();
-		col83.addStyles(ColMod.XS_4);
+		col83.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col83.addComponent(botonEnvPlazo);
 		col78.addComponent(col83);
 		
-		Col col84 = row7.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col84 = row7.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col85 = new Col();
 		col85.addStyles(ColMod.XS_12);
@@ -2028,26 +2029,26 @@ public class VistaExpediente extends CustomComponent {
 		col84.addComponent(col85);
 		
 		Col col86 = new Col();
-		col86.addStyles(ColMod.XS_12);
+		col86.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col86.addComponent(valorTiempoTranscurrido);
 		col84.addComponent(col86);
 		
 		Col col87 = new Col();
-		col87.addStyles(ColMod.XS_8);
+		col87.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col87.addComponent(botonModTiempoTranscurrido);
 		col84.addComponent(col87);
 		
 		Col col88 = new Col();
-		col88.addStyles(ColMod.XS_8);
+		col88.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col88.addComponent(campoTiempoTranscurrido);
 		col84.addComponent(col88);
 		
 		Col col89 = new Col();
-		col89.addStyles(ColMod.XS_4);
+		col89.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col89.addComponent(botonEnvTiempoTranscurrido);
 		col84.addComponent(col89);
 		
-		Col col90 = row7.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col90 = row7.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col91 = new Col();
 		col91.addStyles(ColMod.XS_12);
@@ -2055,22 +2056,22 @@ public class VistaExpediente extends CustomComponent {
 		col90.addComponent(col91);
 		
 		Col col92 = new Col();
-		col92.addStyles(ColMod.XS_12);
+		col92.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col92.addComponent(valorCondPlazo);
 		col90.addComponent(col92);
 		
 		Col col93 = new Col();
-		col93.addStyles(ColMod.XS_8);
+		col93.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col93.addComponent(botonModCondPlazo);
 		col90.addComponent(col93);
 		
 		Col col94 = new Col();
-		col94.addStyles(ColMod.XS_8);
+		col94.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col94.addComponent(campoCondPlazo);
 		col90.addComponent(col94);
 		
 		Col col95= new Col();
-		col95.addStyles(ColMod.XS_4);
+		col95.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col95.addComponent(botonEnvCondPlazo);
 		col90.addComponent(col95);
 		
@@ -2080,7 +2081,7 @@ public class VistaExpediente extends CustomComponent {
 		LayoutUbicacion.removeAllComponents();
 		
 		Row row8 = new Row();
-		Col col96 = row8.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col96 = row8.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col97 = new Col();
 		col97.addStyles(ColMod.XS_12);
@@ -2088,26 +2089,26 @@ public class VistaExpediente extends CustomComponent {
 		col96.addComponent(col97);
 		
 		Col col98 = new Col();
-		col98.addStyles(ColMod.XS_12);
+		col98.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col98.addComponent(valorUbicacion);
 		col96.addComponent(col98);
 		
 		Col col99 = new Col();
-		col99.addStyles(ColMod.XS_8);
+		col99.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col99.addComponent(botonModUbicacion);
 		col96.addComponent(col99);
 		
 		Col col100= new Col();
-		col100.addStyles(ColMod.XS_8);
+		col100.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col100.addComponent(campoUbicacion);
 		col96.addComponent(col100);
 		
 		Col col101 = new Col();
-		col101.addStyles(ColMod.XS_4);
+		col101.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col101.addComponent(botonEnvUbicacion);
 		col96.addComponent(col101);
 		
-		Col col102 = row8.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col102 = row8.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col103 = new Col();
 		col103.addStyles(ColMod.XS_12);
@@ -2115,26 +2116,26 @@ public class VistaExpediente extends CustomComponent {
 		col102.addComponent(col103);
 		
 		Col col104 = new Col();
-		col104.addStyles(ColMod.XS_12);
+		col104.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col104.addComponent(valorMuebleUbicacion);
 		col102.addComponent(col104);
 		
 		Col col105 = new Col();
-		col105.addStyles(ColMod.XS_8);
+		col105.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col105.addComponent(botonModMuebleUbicacion);
 		col102.addComponent(col105);
 		
 		Col col106 = new Col();
-		col106.addStyles(ColMod.XS_8);
+		col106.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col106.addComponent(campoMuebleUbicacion);
 		col102.addComponent(col106);
 		
 		Col col107 = new Col();
-		col107.addStyles(ColMod.XS_4);
+		col107.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col107.addComponent(botonEnvMuebleUbicacion);
 		col102.addComponent(col107);
 		
-		Col col108 = row8.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col108 = row8.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col109 = new Col();
 		col109.addStyles(ColMod.XS_12);
@@ -2142,29 +2143,29 @@ public class VistaExpediente extends CustomComponent {
 		col108.addComponent(col109);
 		
 		Col col110 = new Col();
-		col110.addStyles(ColMod.XS_12);
+		col110.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col110.addComponent(valorUbicLegajos);
 		col108.addComponent(col110);
 		
 		Col col111 = new Col();
-		col111.addStyles(ColMod.XS_8);
+		col111.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col111.addComponent(botonModUbicLegajos);
 		col108.addComponent(col111);
 		
 		Col col112 = new Col();
-		col112.addStyles(ColMod.XS_8);
+		col112.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col112.addComponent(campoUbicLegajos);
 		col108.addComponent(col112);
 		
 		Col col113= new Col();
-		col113.addStyles(ColMod.XS_4);
+		col113.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col113.addComponent(botonEnvUbicLegajos);
 		col108.addComponent(col113);
 		
 		LayoutUbicacion.addComponent(row8);
 		
 		Row row9 = new Row();
-		Col col114 = row9.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col114 = row9.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col115 = new Col();
 		col115.addStyles(ColMod.XS_12);
@@ -2172,22 +2173,22 @@ public class VistaExpediente extends CustomComponent {
 		col114.addComponent(col115);
 		
 		Col col116 = new Col();
-		col116.addStyles(ColMod.XS_12);
+		col116.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col116.addComponent(valorCantLegajos);
 		col114.addComponent(col116);
 		
 		Col col117 = new Col();
-		col117.addStyles(ColMod.XS_8);
+		col117.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col117.addComponent(botonModCantLegajos);
 		col114.addComponent(col117);
 		
 		Col col118= new Col();
-		col118.addStyles(ColMod.XS_8);
+		col118.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col118.addComponent(campoCantLegajos);
 		col114.addComponent(col118);
 		
 		Col col119 = new Col();
-		col119.addStyles(ColMod.XS_4);
+		col119.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col119.addComponent(botonEnvCantLegajos);
 		col114.addComponent(col119);
 		
@@ -2197,7 +2198,7 @@ public class VistaExpediente extends CustomComponent {
 		LayoutFechas.removeAllComponents();
 		
 		Row row10 = new Row();
-		Col col120 = row10.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col120 = row10.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col121 = new Col();
 		col121.addStyles(ColMod.XS_12);
@@ -2205,26 +2206,26 @@ public class VistaExpediente extends CustomComponent {
 		col120.addComponent(col121);
 		
 		Col col122 = new Col();
-		col122.addStyles(ColMod.XS_12);
+		col122.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col122.addComponent(valorFechaPresentacion);
 		col120.addComponent(col122);
 		
 		Col col123 = new Col();
-		col123.addStyles(ColMod.XS_8);
+		col123.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col123.addComponent(botonModFechaPresentacion);
 		col120.addComponent(col123);
 		
 		Col col124= new Col();
-		col124.addStyles(ColMod.XS_8);
+		col124.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col124.addComponent(campoFechaPresentacion);
 		col120.addComponent(col124);
 		
 		Col col125 = new Col();
-		col125.addStyles(ColMod.XS_4);
+		col125.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col125.addComponent(botonEnvFechaPresentacion);
 		col120.addComponent(col125);
 		
-		Col col126 = row10.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col126 = row10.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col127 = new Col();
 		col127.addStyles(ColMod.XS_12);
@@ -2232,26 +2233,26 @@ public class VistaExpediente extends CustomComponent {
 		col126.addComponent(col127);
 		
 		Col col128 = new Col();
-		col128.addStyles(ColMod.XS_12);
+		col128.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col128.addComponent(valorFechaIng);
 		col126.addComponent(col128);
 		
 		Col col129 = new Col();
-		col129.addStyles(ColMod.XS_8);
+		col129.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col129.addComponent(botonModFechaIng);
 		col126.addComponent(col129);
 		
 		Col col130 = new Col();
-		col130.addStyles(ColMod.XS_8);
+		col130.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col130.addComponent(campoFechaIng);
 		col126.addComponent(col130);
 		
 		Col col131 = new Col();
-		col131.addStyles(ColMod.XS_4);
+		col131.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col131.addComponent(botonEnvFechaIng);
 		col126.addComponent(col131);
 		
-		Col col132 = row10.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col132 = row10.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col133 = new Col();
 		col133.addStyles(ColMod.XS_12);
@@ -2259,29 +2260,29 @@ public class VistaExpediente extends CustomComponent {
 		col132.addComponent(col133);
 		
 		Col col134 = new Col();
-		col134.addStyles(ColMod.XS_12);
+		col134.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col134.addComponent(valorDuracPresentacionIngreso);
 		col132.addComponent(col134);
 		
 		Col col135 = new Col();
-		col135.addStyles(ColMod.XS_8);
+		col135.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col135.addComponent(botonModDuracPresentacionIngreso);
 		col132.addComponent(col135);
 		
 		Col col136 = new Col();
-		col136.addStyles(ColMod.XS_8);
+		col136.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col136.addComponent(campoDuracPresentacionIngreso);
 		col132.addComponent(col136);
 		
 		Col col137= new Col();
-		col137.addStyles(ColMod.XS_4);
+		col137.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col137.addComponent(botonEnvDuracPresentacionIngreso);
 		col132.addComponent(col137);
 		
 		LayoutFechas.addComponent(row10);
 		
 		Row row11 = new Row();
-		Col col138 = row11.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col138 = row11.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col139 = new Col();
 		col139.addStyles(ColMod.XS_12);
@@ -2289,26 +2290,26 @@ public class VistaExpediente extends CustomComponent {
 		col138.addComponent(col139);
 		
 		Col col140 = new Col();
-		col140.addStyles(ColMod.XS_12);
+		col140.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col140.addComponent(valorFechaCambioEstado);
 		col138.addComponent(col140);
 		
 		Col col141 = new Col();
-		col141.addStyles(ColMod.XS_8);
+		col141.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col141.addComponent(botonModFechaCambioEstado);
 		col138.addComponent(col141);
 		
 		Col col142= new Col();
-		col142.addStyles(ColMod.XS_8);
+		col142.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col142.addComponent(campoFechaCambioEstado);
 		col138.addComponent(col142);
 		
 		Col col143 = new Col();
-		col143.addStyles(ColMod.XS_4);
+		col143.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col143.addComponent(botonEnvFechaCambioEstado);
 		col138.addComponent(col143);
 		
-		Col col144 = row11.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col144 = row11.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col145 = new Col();
 		col145.addStyles(ColMod.XS_12);
@@ -2316,26 +2317,26 @@ public class VistaExpediente extends CustomComponent {
 		col144.addComponent(col145);
 		
 		Col col146 = new Col();
-		col146.addStyles(ColMod.XS_12);
+		col146.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col146.addComponent(valorPlazoIngresoCambio);
 		col144.addComponent(col146);
 		
 		Col col147 = new Col();
-		col147.addStyles(ColMod.XS_8);
+		col147.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col147.addComponent(botonModPlazoIngresoCambio);
 		col144.addComponent(col147);
 		
 		Col col148 = new Col();
-		col148.addStyles(ColMod.XS_8);
+		col148.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col148.addComponent(campoPlazoIngresoCambio);
 		col144.addComponent(col148);
 		
 		Col col149 = new Col();
-		col149.addStyles(ColMod.XS_4);
+		col149.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col149.addComponent(botonEnvPlazoIngresoCambio);
 		col144.addComponent(col149);
 		
-		Col col150 = row11.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col150 = row11.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col151 = new Col();
 		col151.addStyles(ColMod.XS_12);
@@ -2343,29 +2344,29 @@ public class VistaExpediente extends CustomComponent {
 		col150.addComponent(col151);
 		
 		Col col152 = new Col();
-		col152.addStyles(ColMod.XS_12);
+		col152.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col152.addComponent(valorDuracIngresoCambio);
 		col150.addComponent(col152);
 		
 		Col col153 = new Col();
-		col153.addStyles(ColMod.XS_8);
+		col153.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col153.addComponent(botonModDuracIngresoCambio);
 		col150.addComponent(col153);
 		
 		Col col154 = new Col();
-		col154.addStyles(ColMod.XS_8);
+		col154.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col154.addComponent(campoDuracIngresoCambio);
 		col150.addComponent(col154);
 		
 		Col col155= new Col();
-		col155.addStyles(ColMod.XS_4);
+		col155.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col155.addComponent(botonEnvDuracIngresoCambio);
 		col150.addComponent(col155);
 		
 		LayoutFechas.addComponent(row11);
 		
 		Row row12 = new Row();
-		Col col156 = row12.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col156 = row12.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col157 = new Col();
 		col157.addStyles(ColMod.XS_12);
@@ -2373,26 +2374,26 @@ public class VistaExpediente extends CustomComponent {
 		col156.addComponent(col157);
 		
 		Col col158 = new Col();
-		col158.addStyles(ColMod.XS_12);
+		col158.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col158.addComponent(valorFechaUltUbicacion);
 		col156.addComponent(col158);
 		
 		Col col159 = new Col();
-		col159.addStyles(ColMod.XS_8);
+		col159.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col159.addComponent(botonModFechaUltUbicacion);
 		col156.addComponent(col159);
 		
 		Col col160= new Col();
-		col160.addStyles(ColMod.XS_8);
+		col160.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col160.addComponent(campoFechaUltUbicacion);
 		col156.addComponent(col160);
 		
 		Col col161 = new Col();
-		col161.addStyles(ColMod.XS_4);
+		col161.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col161.addComponent(botonEnvFechaUltUbicacion);
 		col156.addComponent(col161);
 		
-		Col col162 = row12.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col162 = row12.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col163 = new Col();
 		col163.addStyles(ColMod.XS_12);
@@ -2400,26 +2401,26 @@ public class VistaExpediente extends CustomComponent {
 		col162.addComponent(col163);
 		
 		Col col164 = new Col();
-		col164.addStyles(ColMod.XS_12);
+		col164.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col164.addComponent(valorPlazoIngresoUltUbic);
 		col162.addComponent(col164);
 		
 		Col col165 = new Col();
-		col165.addStyles(ColMod.XS_8);
+		col165.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col165.addComponent(botonModPlazoIngresoUltUbic);
 		col162.addComponent(col165);
 		
 		Col col166 = new Col();
-		col166.addStyles(ColMod.XS_8);
+		col166.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col166.addComponent(campoPlazoIngresoUltUbic);
 		col162.addComponent(col166);
 		
 		Col col167 = new Col();
-		col167.addStyles(ColMod.XS_4);
+		col167.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col167.addComponent(botonEnvPlazoIngresoUltUbic);
 		col162.addComponent(col167);
 		
-		Col col168 = row12.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col168 = row12.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col169 = new Col();
 		col169.addStyles(ColMod.XS_12);
@@ -2427,29 +2428,29 @@ public class VistaExpediente extends CustomComponent {
 		col168.addComponent(col169);
 		
 		Col col170 = new Col();
-		col170.addStyles(ColMod.XS_12);
+		col170.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col170.addComponent(valorDuracIngresoUltUbic);
 		col168.addComponent(col170);
 		
 		Col col171 = new Col();
-		col171.addStyles(ColMod.XS_8);
+		col171.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col171.addComponent(botonModDuracIngresoUltUbic);
 		col168.addComponent(col171);
 		
 		Col col172 = new Col();
-		col172.addStyles(ColMod.XS_8);
+		col172.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col172.addComponent(campoDuracIngresoUltUbic);
 		col168.addComponent(col172);
 		
 		Col col173= new Col();
-		col173.addStyles(ColMod.XS_4);
+		col173.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col173.addComponent(botonEnvDuracIngresoUltUbic);
 		col168.addComponent(col173);
 		
 		LayoutFechas.addComponent(row12);
 		
 		Row row13 = new Row();
-		Col col174 = row13.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4);
+		Col col174 = row13.addCol(ColMod.XS_12, ColMod.SM_6, ColMod.MD_4, MarginMod.TOP20);
 		
 		Col col175 = new Col();
 		col175.addStyles(ColMod.XS_12);
@@ -2457,22 +2458,22 @@ public class VistaExpediente extends CustomComponent {
 		col174.addComponent(col175);
 		
 		Col col176 = new Col();
-		col176.addStyles(ColMod.XS_12);
+		col176.addStyles(ColMod.XS_12, MarginMod.TOP5);
 		col176.addComponent(valorDuracCambioUltUbic);
 		col174.addComponent(col176);
 		
 		Col col177 = new Col();
-		col177.addStyles(ColMod.XS_8);
+		col177.addStyles(ColMod.XS_8, MarginMod.TOP5);
 		col177.addComponent(botonModDuracCambioUltUbic);
 		col174.addComponent(col177);
 		
 		Col col178= new Col();
-		col178.addStyles(ColMod.XS_8);
+		col178.addStyles(ColMod.XS_8, MarginMod.TOP10);
 		col178.addComponent(campoDuracCambioUltUbic);
 		col174.addComponent(col178);
 		
 		Col col179 = new Col();
-		col179.addStyles(ColMod.XS_4);
+		col179.addStyles(ColMod.XS_4, MarginMod.TOP10);
 		col179.addComponent(botonEnvDuracCambioUltUbic);
 		col174.addComponent(col179);
 		
@@ -2622,6 +2623,7 @@ public class VistaExpediente extends CustomComponent {
 	private AbsoluteLayout buildLayoutInfoGeneral() {
 		// common part: create layout
 		LayoutInfoGeneral = new AbsoluteLayout();
+		LayoutInfoGeneral.setStyleName("layout-acordeon");
 		LayoutInfoGeneral.setImmediate(false);
 		LayoutInfoGeneral.setWidth("100.0%");
 		LayoutInfoGeneral.setHeight("100.0%");
@@ -2750,7 +2752,7 @@ public class VistaExpediente extends CustomComponent {
 	private AbsoluteLayout buildLayoutInfoDenuncia() {
 		// common part: create layout
 		LayoutInfoDenuncia = new AbsoluteLayout();
-		LayoutInfoDenuncia.setStyleName("vertical-scroll");
+		LayoutInfoDenuncia.setStyleName("vertical-scroll layout-acordeon");
 		LayoutInfoDenuncia.setImmediate(false);
 		LayoutInfoDenuncia.setWidth("100.0%");
 		LayoutInfoDenuncia.setHeight("100.0%");
@@ -3113,6 +3115,7 @@ public class VistaExpediente extends CustomComponent {
 	private AbsoluteLayout buildLayoutPlazo() {
 		// common part: create layout
 		LayoutPlazo = new AbsoluteLayout();
+		LayoutPlazo.setStyleName("layout-acordeon");
 		LayoutPlazo.setImmediate(false);
 		LayoutPlazo.setWidth("100.0%");
 		LayoutPlazo.setHeight("100.0%");
@@ -3241,6 +3244,7 @@ public class VistaExpediente extends CustomComponent {
 	private AbsoluteLayout buildLayoutUbicacion() {
 		// common part: create layout
 		LayoutUbicacion = new AbsoluteLayout();
+		LayoutUbicacion.setStyleName("layout-acordeon");
 		LayoutUbicacion.setImmediate(false);
 		LayoutUbicacion.setWidth("100.0%");
 		LayoutUbicacion.setHeight("100.0%");
@@ -3408,6 +3412,7 @@ public class VistaExpediente extends CustomComponent {
 	private AbsoluteLayout buildLayoutFechas() {
 		// common part: create layout
 		LayoutFechas = new AbsoluteLayout();
+		LayoutFechas.setStyleName("layout-acordeon");
 		LayoutFechas.setImmediate(false);
 		LayoutFechas.setWidth("100.0%");
 		LayoutFechas.setHeight("100.0%");

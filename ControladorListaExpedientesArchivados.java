@@ -26,7 +26,6 @@ public class ControladorListaExpedientesArchivados {
 	
 	public void setVista() {
 		InterfazListaExpedientesArchivados.setVista();
-		//MyUI.getCurrent().setContent(InterfazListaExpedientesArchivados);
 	}
 	
 	public SQLContainer consultarDatos(String hileraConsulta){

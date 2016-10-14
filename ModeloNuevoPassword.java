@@ -29,7 +29,6 @@ public class ModeloNuevoPassword {
 			
 			if (rs.next() != false)
 				correo = rs.getString(1);		
-			System.out.println(correo);
 			s.close();
 			c.close();
 			m.getConnectionPool().releaseConnection(c);
@@ -59,8 +58,7 @@ public class ModeloNuevoPassword {
 			return exito;
 		}
 		catch (SQLException e) {
-			//FALTA: Controlar errores de SQL
-			e.printStackTrace();
+      e.printStackTrace();
 		}
 		return exito;
 	}

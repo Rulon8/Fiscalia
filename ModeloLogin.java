@@ -45,7 +45,7 @@ public class ModeloLogin {
 				datosUsuario[2] = rs.getString(3);
 				datosUsuario[4] = rs.getString(4);
 				
-				if (datosUsuario[2] == "Instructor" || datosUsuario[2] == "Asistente" || datosUsuario[2] == "Instructor Jefe") {
+				if (datosUsuario[2].compareTo("Instructor") == 0 || datosUsuario[2].compareTo("Asistente") == 0 || datosUsuario[2].compareTo("Instructor Jefe") == 0) {
 					consulta = "SELECT codigo FROM instasist WHERE cedula = '" + credenciales[0] + "'";
 					rs = s.executeQuery(consulta);
 					rs.next();
