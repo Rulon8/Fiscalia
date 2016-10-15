@@ -511,7 +511,7 @@ public class VistaExpediente extends CustomComponent {
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				
-				controlador.enviarDatos("true", "archivado", "Archivado", datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), "Activo");
+				controlador.enviarDatos("true", "archivado", "Archivado", control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), "Activo");
 				control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -581,7 +581,7 @@ public class VistaExpediente extends CustomComponent {
 					} else {
 						nuevoDato = "";
 					}
-					controlador.enviarDatos(nuevoDato, "estado", labelEstado.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "estado", labelEstado.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -613,7 +613,7 @@ public class VistaExpediente extends CustomComponent {
 				String plazo = valorPlazo.getValue();
 				if (comboBoxClas.getValue() != null) {
 					nuevoDato = comboBoxClas.getValue().toString();
-					controlador.enviarDatos(nuevoDato, "clasificacion", labelClas.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "clasificacion", labelClas.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					switch(nuevoDato) {
 					case "0":
 						plazo = "15";
@@ -716,7 +716,7 @@ public class VistaExpediente extends CustomComponent {
 						break;
 						
 					}
-					controlador.enviarDatos(plazo, "plazometa", labelPlazo.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), valorPlazo.getValue());
+					controlador.enviarDatos(plazo, "plazometa", labelPlazo.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), valorPlazo.getValue());
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 				}
 			}
@@ -746,7 +746,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorResponsable.getValue();
 					String nuevoDato = campoResponsable.getValue();
-					controlador.enviarDatos(nuevoDato, "responsable", labelResponsable.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "responsable", labelResponsable.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -775,7 +775,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorFechaDenuncia.getValue();
 					String nuevoDato = campoFechaDenuncia.getValue();
-					controlador.enviarDatos(nuevoDato, "fechadenuncia", labelFechaDenuncia.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "fechadenuncia", labelFechaDenuncia.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -804,7 +804,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorParteDenunciada.getValue();
 					String nuevoDato = campoParteDenunciada.getValue();
-					controlador.enviarDatos(nuevoDato, "partedenunciada", labelParteDenunciada.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "partedenunciada", labelParteDenunciada.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -833,7 +833,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorCarnet.getValue();
 					String nuevoDato = campoCarnet.getValue();
-					controlador.enviarDatos(nuevoDato, "carnet", labelCarnet.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "carnet", labelCarnet.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -862,7 +862,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorParteDenunciante.getValue();
 					String nuevoDato = campoParteDenunciante.getValue();
-					controlador.enviarDatos(nuevoDato, "partedenunciante", labelParteDenunciante.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "partedenunciante", labelParteDenunciante.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -891,7 +891,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorId.getValue();
 					String nuevoDato = campoId.getValue();
-					controlador.enviarDatos(nuevoDato, "identificacion", labelId.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "identificacion", labelId.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -920,7 +920,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorCausa.getValue();
 					String nuevoDato = campoCausa.getValue();
-					controlador.enviarDatos(nuevoDato, "causa", labelCausa.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "causa", labelCausa.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -949,7 +949,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorArtAplicables.getValue();
 					String nuevoDato = campoArtAplicables.getValue();
-					controlador.enviarDatos(nuevoDato, "articulosaplicables", labelArtAplicables.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "articulosaplicables", labelArtAplicables.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -978,7 +978,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorFechaAudiencia.getValue();
 					String nuevoDato = campoFechaAudiencia.getValue();
-					controlador.enviarDatos(nuevoDato, "fechaaudiencia", labelFechaAudiencia.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "fechaaudiencia", labelFechaAudiencia.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1007,7 +1007,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorHoraAudiencia.getValue();
 					String nuevoDato = campoHoraAudiencia.getValue();
-					controlador.enviarDatos(nuevoDato, "horaaudiencia", labelHoraAudiencia.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "horaaudiencia", labelHoraAudiencia.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1036,7 +1036,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorPlazo.getValue();
 					String nuevoDato = campoPlazo.getValue();
-					controlador.enviarDatos(nuevoDato, "plazometa", labelPlazo.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatosInt(nuevoDato, "plazometa", labelPlazo.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1065,7 +1065,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorTiempoTranscurrido.getValue();
 					String nuevoDato = campoTiempoTranscurrido.getValue();
-					controlador.enviarDatos(nuevoDato, "tiempotranscurrido", labelTiempoTranscurrido.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatosInt(nuevoDato, "tiempotranscurrido", labelTiempoTranscurrido.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1094,7 +1094,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorCondPlazo.getValue();
 					String nuevoDato = campoCondPlazo.getValue();
-					controlador.enviarDatos(nuevoDato, "condplazo", labelCondPlazo.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "condplazo", labelCondPlazo.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1123,7 +1123,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorUbicacion.getValue();
 					String nuevoDato = campoUbicacion.getValue();
-					controlador.enviarDatos(nuevoDato, "ubicacion", labelUbicacion.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "ubicacion", labelUbicacion.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1152,7 +1152,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorMuebleUbicacion.getValue();
 					String nuevoDato = campoMuebleUbicacion.getValue();
-					controlador.enviarDatos(nuevoDato, "muebleubicacion", labelMuebleUbicacion.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "muebleubicacion", labelMuebleUbicacion.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1181,7 +1181,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorUbicLegajos.getValue();
 					String nuevoDato = campoUbicLegajos.getValue();
-					controlador.enviarDatos(nuevoDato, "ubicacionlegajos", labelUbicLegajos.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "ubicacionlegajos", labelUbicLegajos.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1239,7 +1239,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorFechaPresentacion.getValue();
 					String nuevoDato = campoFechaPresentacion.getValue();
-					controlador.enviarDatos(nuevoDato, "fechapresentacion", labelFechaPresentacion.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "fechapresentacion", labelFechaPresentacion.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1268,7 +1268,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorFechaIng.getValue();
 					String nuevoDato = campoFechaIng.getValue();
-					controlador.enviarDatos(nuevoDato, "fechaingreso", labelFechaIng.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "fechaingreso", labelFechaIng.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1297,7 +1297,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorDuracPresentacionIngreso.getValue();
 					String nuevoDato = campoDuracPresentacionIngreso.getValue();
-					controlador.enviarDatos(nuevoDato, "duracpresentacioningreso", labelDuracPresentacionIngreso.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatosInt(nuevoDato, "duracpresentacioningreso", labelDuracPresentacionIngreso.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1326,7 +1326,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorFechaCambioEstado.getValue();
 					String nuevoDato = campoFechaCambioEstado.getValue();
-					controlador.enviarDatos(nuevoDato, "fechacambioestado", labelFechaCambioEstado.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "fechacambioestado", labelFechaCambioEstado.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1355,7 +1355,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorPlazoIngresoCambio.getValue();
 					String nuevoDato = campoPlazoIngresoCambio.getValue();
-					controlador.enviarDatos(nuevoDato, "plazoingresocambio", labelPlazoIngresoCambio.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatosInt(nuevoDato, "plazoingresocambio", labelPlazoIngresoCambio.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1384,7 +1384,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorDuracIngresoCambio.getValue();
 					String nuevoDato = campoDuracIngresoCambio.getValue();
-					controlador.enviarDatos(nuevoDato, "duracingresocambio", labelDuracIngresoCambio.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatosInt(nuevoDato, "duracingresocambio", labelDuracIngresoCambio.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1413,7 +1413,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorFechaUltUbicacion.getValue();
 					String nuevoDato = campoFechaUltUbicacion.getValue();
-					controlador.enviarDatos(nuevoDato, "fechaultubicacion", labelFechaUltUbicacion.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatos(nuevoDato, "fechaultubicacion", labelFechaUltUbicacion.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1442,7 +1442,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorPlazoIngresoUltUbic.getValue();
 					String nuevoDato = campoPlazoIngresoUltUbic.getValue();
-					controlador.enviarDatos(nuevoDato, "plazoingresoultubicacion", labelPlazoIngresoUltUbic.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatosInt(nuevoDato, "plazoingresoultubicacion", labelPlazoIngresoUltUbic.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1471,7 +1471,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorDuracIngresoUltUbic.getValue();
 					String nuevoDato = campoDuracIngresoUltUbic.getValue();
-					controlador.enviarDatos(nuevoDato, "duracingresoultubicacion", labelDuracIngresoUltUbic.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatosInt(nuevoDato, "duracingresoultubicacion", labelDuracIngresoUltUbic.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -1500,7 +1500,7 @@ public class VistaExpediente extends CustomComponent {
 				// if datos válidos
 					String datoViejo = valorDuracCambioUltUbic.getValue();
 					String nuevoDato = campoDuracCambioUltUbic.getValue();
-					controlador.enviarDatos(nuevoDato, "duraccambioultubicacion", labelDuracCambioUltUbic.getValue(), datosExpediente.get("Instructor Asignado"), datosExpediente.get("Numero Expediente"), datoViejo);
+					controlador.enviarDatosInt(nuevoDato, "duraccambioultubicacion", labelDuracCambioUltUbic.getValue(), control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), datoViejo);
 					control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
