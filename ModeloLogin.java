@@ -28,15 +28,14 @@ public class ModeloLogin {
 		try {
 			c = m.getConnectionPool().reserveConnection();
 			s = c.createStatement();
-			consulta = "SELECT pass FROM usuario WHERE cedula = '" + credenciales[0] + "'";
+			consulta = "SELECT pass FROM usuario WHERE cedula = '" + credenciales[0] + "';";
 			rs = s.executeQuery(consulta);
 			
 			if (rs.next() != false) {
 				pass = rs.getString(1);
 			}
 			
-			if (pass.equals(credenciales[1])) {
-						
+			if (pass.equals(credenciales[1])) {	
 				consulta = "SELECT nombre, apellido, tipodeusuario, cedula FROM usuario WHERE cedula = '" + credenciales[0] + "'";
 				rs = s.executeQuery(consulta);
 				rs.next();
