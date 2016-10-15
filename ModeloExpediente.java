@@ -106,6 +106,28 @@ public class ModeloExpediente {
 			e.printStackTrace();
 		}
 	}
+  
+  public void actualizarDatosInt(String nuevoDato, String columna, String codigoExpediente) {
+		
+		Connection c;
+		Statement s;
+		String consulta = "";
+		Modelo m = Modelo.obtenerInstancia();
+		
+		try {
+			c = m.getConnectionPool().reserveConnection();
+			s = c.createStatement();
+			consulta = "UPDATE expediente SET " + columna + " = " + nuevoDato + " WHERE codigo = '" + codigoExpediente + "'";
+			s.executeUpdate(consulta);
+			s.close();
+			c.commit();
+			c.close();
+			m.getConnectionPool().releaseConnection(c);
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public void actualizarLogs(String codigo, String numExp, String usuario, String valorViejo, String valorNuevo, String campo) {
 		
@@ -130,7 +152,7 @@ public class ModeloExpediente {
 			numCambio = rs.getInt(1);
 			numCambio++;
 			
-			consulta = "UPDATE expediente SET numcambios = " + numCambio + "WHERE codigo = '" + codigo + "'";
+			consulta = "UPDATE expediente SET numcambios = " + numCambio + " WHERE codigo = '" + codigo + "'";
 			s.executeUpdate(consulta);
 			
 			consulta = "INSERT INTO logCambios VALUES ('" + codigo + "', '" + numExp + "', " + numCambio + ", '" + usuario + "', '" + campo + "', '" + formato.format(fecha) + "', '" + valorViejo + "', '" + valorNuevo +"')";

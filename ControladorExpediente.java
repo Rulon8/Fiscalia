@@ -54,6 +54,11 @@ public class ControladorExpediente {
 		modeloExpediente.actualizarLogs(codigoExpediente, numExp, instructor, valorViejo, nuevoDato, campo);
 	}
 	
+  public void enviarDatosInt(String nuevoDato, String columna, String campo, String instructor, String numExp, String valorViejo) {
+		modeloExpediente.actualizarDatosInt(nuevoDato, columna, codigoExpediente);
+		modeloExpediente.actualizarLogs(codigoExpediente, numExp, instructor, valorViejo, nuevoDato, campo);
+	}
+  
 	public void setVista() {
 		interfazExpediente.setVista();
 	}
