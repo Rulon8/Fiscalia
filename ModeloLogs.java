@@ -64,7 +64,7 @@ public class ModeloLogs {
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
-			String consulta = "SELECT numexpediente FROM logcambios WHERE codigo = '" + codExp + "'";
+			String consulta = "SELECT numexpediente FROM expediente WHERE codigo = '" + codExp + "'";
 			ResultSet rs = s.executeQuery(consulta);
 			rs.next();
 			numExp = rs.getString("numexpediente");	

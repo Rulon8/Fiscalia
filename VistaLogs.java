@@ -1,6 +1,5 @@
 package ucr.casoUso;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -60,7 +59,7 @@ public class VistaLogs extends CustomComponent {
 		setCompositionRoot(mainLayout);
 		controlador = ControladorLogs.obtenerInstancia();
 		control = Controlador.obtenerInstancia();
-		labelNumero.setValue(controlador.getNumExp());
+		labelTitulo.setValue(labelTitulo.getValue() + " " + controlador.getNumExp());
 		llenarTabla();
 		botonVolver.addClickListener(new ClickListener() {
 			@Override

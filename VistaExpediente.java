@@ -511,7 +511,7 @@ public class VistaExpediente extends CustomComponent {
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				
-				controlador.enviarDatos("true", "archivado", "Archivado", control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), "Activo");
+				controlador.enviarDatos("1", "archivado", "Archivado", control.getCedulaUsuario(), datosExpediente.get("Numero Expediente"), "Activo");
 				control.cambiarVista("Expediente", datosExpediente.get("Codigo"));
 			}
 			
@@ -545,7 +545,7 @@ public class VistaExpediente extends CustomComponent {
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				if (datosExpediente.get("Archivado").compareTo("1") == 0) {
-					control.cambiarVista("Lista Expedientes Archivados");
+					control.cambiarVista("Expedientes Archivados");
 				} else {
 					control.cambiarVista("Lista Expedientes");
 				}
