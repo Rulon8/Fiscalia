@@ -391,31 +391,94 @@ public class VistaExpediente extends CustomComponent {
 		
 		labelNumExpediente.setValue("Expediente N° " + datosExpediente.get("Numero Expediente"));
 		labelInst.setValue("Instructor Asignado: " + datosExpediente.get("Instructor Asignado"));
+		if (datosExpediente.get("Estado").equals("null")) {
+			datosExpediente.put("Estado", "");
+		}
 		valorEstado.setValue(datosExpediente.get("Estado"));
+		if (datosExpediente.get("Clasificacion").equals("null")) {
+			datosExpediente.put("Clasificacion", "");
+		}
 		valorClas.setValue(datosExpediente.get("Clasificacion"));
+		if (datosExpediente.get("Responsable").equals("null")) {
+			datosExpediente.put("Responsable", "");
+		}
 		valorResponsable.setValue(datosExpediente.get("Responsable"));
+		if (datosExpediente.get("Fecha de Denuncia").equals("null")) {
+			datosExpediente.put("Fecha de Denuncia", "");
+		}
 		valorFechaDenuncia.setValue(datosExpediente.get("Fecha de Denuncia"));
+		if (datosExpediente.get("Parte Denunciada").equals("null")) {
+			datosExpediente.put("Parte Denunciada", "");
+		}
 		valorParteDenunciada.setValue(datosExpediente.get("Parte Denunciada"));
+		if (datosExpediente.get("Carnet").equals("null")) {
+			datosExpediente.put("Carnet", "");
+		}
 		valorCarnet.setValue(datosExpediente.get("Carnet"));
+		if (datosExpediente.get("Parte Denunciante").equals("null")) {
+			datosExpediente.put("Parte Denunciante", "");
+		}
 		valorParteDenunciante.setValue(datosExpediente.get("Parte Denunciante"));
+		if (datosExpediente.get("Identificacion").equals("null")) {
+			datosExpediente.put("Identificacion", "");
+		}
 		valorId.setValue(datosExpediente.get("Identificacion"));
+		if (datosExpediente.get("Causa").equals("null")) {
+			datosExpediente.put("Causa", "");
+		}
 		valorCausa.setValue(datosExpediente.get("Causa"));
+		if (datosExpediente.get("Articulos Aplicables").equals("null")) {
+			datosExpediente.put("Articulos Aplicables", "");
+		}
 		valorArtAplicables.setValue(datosExpediente.get("Articulos Aplicables"));
+		if (datosExpediente.get("Fecha de Audiencia").equals("null")) {
+			datosExpediente.put("Fecha de Audiencia", "");
+		}
 		valorFechaAudiencia.setValue(datosExpediente.get("Fecha de Audiencia"));
+		if (datosExpediente.get("Hora de Audiencia").equals("null")) {
+			datosExpediente.put("Hora de Audiencia", "");
+		}
 		valorHoraAudiencia.setValue(datosExpediente.get("Hora de Audiencia"));
 		valorPlazo.setValue(datosExpediente.get("Plazo Meta"));
 		valorTiempoTranscurrido.setValue(datosExpediente.get("Tiempo Transcurrido"));
+		if (datosExpediente.get("Condicion Plazo").equals("null")) {
+			datosExpediente.put("Condicion Plazo", "");
+		}
 		valorCondPlazo.setValue(datosExpediente.get("Condicion Plazo"));
+		if (datosExpediente.get("Ubicacion").equals("null")) {
+			datosExpediente.put("Ubicacion", "");
+		}
 		valorUbicacion.setValue(datosExpediente.get("Ubicacion"));
+		if (datosExpediente.get("Mueble Ubicacion").equals("null")) {
+			datosExpediente.put("Mueble Ubicacion", "");
+		}
 		valorMuebleUbicacion.setValue(datosExpediente.get("Mueble Ubicacion"));
+		if (datosExpediente.get("Ubicacion de Legajos").equals("null")) {
+			datosExpediente.put("Ubicacion de Legajos", "");
+		}
 		valorUbicLegajos.setValue(datosExpediente.get("Ubicacion de Legajos"));
+		if (datosExpediente.get("Cantidad de Legajos").equals("null")) {
+			datosExpediente.put("Cantidad de Legajos", "");
+		}
 		valorCantLegajos.setValue(datosExpediente.get("Cantidad de Legajos"));
+		if (datosExpediente.get("Fecha de Presentacion").equals("null")) {
+			datosExpediente.put("Fecha de Presentacion", "");
+		}
 		valorFechaPresentacion.setValue(datosExpediente.get("Fecha de Presentacion"));
+		if (datosExpediente.get("Fecha de Ingreso").equals("null")) {
+			datosExpediente.put("Fecha de Ingreso", "");
+		}
 		valorFechaIng.setValue(datosExpediente.get("Fecha de Ingreso"));
 		valorDuracPresentacionIngreso.setValue(datosExpediente.get("Duracion Presentacion Ingreso"));
+		if (datosExpediente.get("Fecha Cambio de Estado").equals("null")) {
+			datosExpediente.put("Fecha Cambio de Estado", "");
+		}
 		valorFechaCambioEstado.setValue(datosExpediente.get("Fecha Cambio de Estado"));
 		valorPlazoIngresoCambio.setValue(datosExpediente.get("Plazo Ingreso Cambio Estado"));
 		valorDuracIngresoCambio.setValue(datosExpediente.get("Duracion Ingreso Cambio Estado"));
+		if (datosExpediente.get("Fecha de Ultima Ubicacion").equals("null")) {
+			datosExpediente.put("Fecha de Ultima Ubicacion", " ");
+		}
 		valorFechaUltUbicacion.setValue(datosExpediente.get("Fecha de Ultima Ubicacion"));
 		valorPlazoIngresoUltUbic.setValue(datosExpediente.get("Plazo Ingreso Ultima Ubicacion"));
 		valorDuracIngresoUltUbic.setValue(datosExpediente.get("Duracion Ingreso Ultima Ubicacion"));
