@@ -477,7 +477,7 @@ public class VistaExpediente extends CustomComponent {
 		valorPlazoIngresoCambio.setValue(datosExpediente.get("Plazo Ingreso Cambio Estado"));
 		valorDuracIngresoCambio.setValue(datosExpediente.get("Duracion Ingreso Cambio Estado"));
 		if (datosExpediente.get("Fecha de Ultima Ubicacion").equals("null")) {
-			datosExpediente.put("Fecha de Ultima Ubicacion", " ");
+			datosExpediente.put("Fecha de Ultima Ubicacion", "");
 		}
 		valorFechaUltUbicacion.setValue(datosExpediente.get("Fecha de Ultima Ubicacion"));
 		valorPlazoIngresoUltUbic.setValue(datosExpediente.get("Plazo Ingreso Ultima Ubicacion"));
