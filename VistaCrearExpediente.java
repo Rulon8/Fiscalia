@@ -195,14 +195,14 @@ public class VistaCrearExpediente extends CustomComponent {
 		labelInsert.setVisible(false);
 		llenarComboBoxEstado();
 		llenarComboBoxClasif();
-		
+		//botonIngresar.setEnabled(false);
 		//Campos de "Informacion General"
 		
 		campoNumExp.addTextChangeListener(new TextChangeListener() {
             @Override
             public void textChange(TextChangeEvent event) {
             	valorNumExp = event.getText();
-            	if (!valorNumExp.isEmpty()){
+            	/*if (!valorNumExp.isEmpty()){
             		if (controlador.comprobarNumExp(valorNumExp)){
             			labelAlertNumExp.setVisible(false);
             			botonIngresar.setEnabled(true);
@@ -211,7 +211,7 @@ public class VistaCrearExpediente extends CustomComponent {
             			labelAlertNumExp.setVisible(true);
             			botonIngresar.setEnabled(false);
             		}
-            	}
+            	}*/
             }
 		});
 		
@@ -219,7 +219,7 @@ public class VistaCrearExpediente extends CustomComponent {
             @Override
             public void textChange(TextChangeEvent event) {
             	valorInstructor = event.getText();
-            	if (!valorInstructor.isEmpty()){
+            	/*if (!valorInstructor.isEmpty()){
             		if (controlador.comprobarInstructor(valorInstructor)){
             			labelAlertInstructor.setVisible(true);
             			botonIngresar.setEnabled(false);
@@ -231,7 +231,7 @@ public class VistaCrearExpediente extends CustomComponent {
             	}
             	else{
             		labelAlertInstructor.setVisible(false);
-            	}
+            	}*/
             }
 		});
 		
@@ -246,6 +246,7 @@ public class VistaCrearExpediente extends CustomComponent {
 			@Override
 			public void valueChange(ValueChangeEvent event){
 				if (comboBoxClasificacion.getValue() != null){
+					botonIngresar.setEnabled(true);
 					switch(comboBoxClasificacion.getValue().toString()) {
 					case "0":
 						valorClasificacion = "0";
@@ -517,48 +518,62 @@ public class VistaCrearExpediente extends CustomComponent {
 		botonIngresar.addClickListener(new ClickListener(){
 			@Override
 			public void buttonClick(ClickEvent evento){
-				
-				valorCodigo = Integer.toString(controlador.consultarCodigo());
+				labelAlertInstructor.setVisible(false);
+				labelAlertNumExp.setVisible(false);
+				labelInsert.setVisible(false);
+				if (comboBoxClasificacion.getValue() != null && !valorNumExp.isEmpty() && !controlador.comprobarInstructor(valorInstructor) && !valorInstructor.isEmpty() && controlador.comprobarNumExp(valorNumExp)) {
+					
+					valorCodigo = Integer.toString(controlador.consultarCodigo());
 			
-				consulta = insert + "VALUES("				+
-						"0, " 								+ // Numero de cambios, en 0 por defecto.
-						"false, "							+ //archivado, false por defecto
-						"'"+valorCodigo+"', "				+ //codigo, valor por defecto?
-						"'"+valorNumExp+"', "				+ //numero del expediente
-						"'"+valorInstructor+"', "			+ //id Instrcutor
-						"'"+valorEstado+"', "				+ //estado
-						"'"+valorClasificacion+"', "		+ //clasificacion, da el valor al plazo
-						"'"+valorResponsable+"', "			+ //responsable
-						"'"+valorFechaDenuncia+"', "		+ //fecha de denuncia
-						"'"+valorParteDenunciada+"', "		+ //parte denunciada
-						"'"+valorCarneDenunciada+"', "		+ //carne de denunciada
-						"'"+valorParteDenunciante+"', "		+ //parte denuncianete
-						"'"+valorIdentDenunciante+"', "		+ //id del denunciante
-						"'"+valorCausaDenun+"', "			+ //causa de la denuncia
-						"'"+valorArtAplicables+"', "		+ //articulos aplicables
-						"'"+valorFechaAudiencia+"', "		+ //fecha de audiencia
-						"'"+valorHoraAudiencia+"', "		+ //hora de audiencia
-						""+Integer.parseInt(valorPlazo)+", "+ //plazo meta
-						""+"0"+", "							+ //tiempo trancurrido
-						"'"+"condPlazo"+"', "				+ 
-						"'"+valorUbicacion+"', "			+ 
-						"'"+valorMuebleUbi+"', "			+ 
-						"'"+valorUbiLegajos+"', "			+ 
-						"'"+valorCantidadLegajos+"', "		+ 
-						"'"+valorFechaPresentacion+"', "	+ 
-						"'"+valorFechaIngrDenun+"', "		+ 
-						""+"0"+", "							+ 
-						"'"+"fechaCambiEstado"+"', "		+ 
-						""+"0"+", "							+ 
-						""+"0"+", "			+ 
-						"'"+valorFechaUltimaUbi+"', "		+ 
-						""+"0"+", "							+ 
-						""+"0"+", "							+ 
-						""+"0"+","							+
-						"'"+"A tiempo"+"'"					+
-						");";
-				controlador.ingresarExpediente(consulta);
-				labelInsert.setVisible(true);
+					consulta = insert + "VALUES("				+
+							"0, " 								+ // Numero de cambios, en 0 por defecto.
+							"false, "							+ //archivado, false por defecto
+							"'"+valorCodigo+"', "				+ //codigo, valor por defecto?
+							"'"+valorNumExp+"', "				+ //numero del expediente
+							"'"+valorInstructor+"', "			+ //id Instrcutor
+							"'"+valorEstado+"', "				+ //estado
+							"'"+valorClasificacion+"', "		+ //clasificacion, da el valor al plazo
+							"'"+valorResponsable+"', "			+ //responsable
+							"'"+valorFechaDenuncia+"', "		+ //fecha de denuncia
+							"'"+valorParteDenunciada+"', "		+ //parte denunciada
+							"'"+valorCarneDenunciada+"', "		+ //carne de denunciada
+							"'"+valorParteDenunciante+"', "		+ //parte denuncianete
+							"'"+valorIdentDenunciante+"', "		+ //id del denunciante
+							"'"+valorCausaDenun+"', "			+ //causa de la denuncia
+							"'"+valorArtAplicables+"', "		+ //articulos aplicables
+							"'"+valorFechaAudiencia+"', "		+ //fecha de audiencia
+							"'"+valorHoraAudiencia+"', "		+ //hora de audiencia
+							""+Integer.parseInt(valorPlazo)+", "+ //plazo meta
+							""+"0"+", "							+ //tiempo trancurrido
+							"'"+""+"', "				+ 
+							"'"+valorUbicacion+"', "			+ 
+							"'"+valorMuebleUbi+"', "			+ 
+							"'"+valorUbiLegajos+"', "			+ 
+							"'"+valorCantidadLegajos+"', "		+ 
+							"'"+valorFechaPresentacion+"', "	+ 
+							"'"+valorFechaIngrDenun+"', "		+ 
+							""+"0"+", "							+ 
+							"'"+""+"', "		+ 
+							""+"0"+", "							+ 
+							""+"0"+", "			+ 
+							"'"+valorFechaUltimaUbi+"', "		+ 
+							""+"0"+", "							+ 
+							""+"0"+", "							+ 
+							""+"0"+","							+
+							"'"+"A tiempo"+"'"					+
+							");";
+					controlador.ingresarExpediente(consulta);
+					labelInsert.setVisible(true);
+				} else {
+					if (controlador.comprobarInstructor(valorInstructor)){
+            			labelAlertInstructor.setVisible(true);
+            			
+            		}
+					if (!controlador.comprobarNumExp(valorNumExp)){
+            			labelAlertNumExp.setVisible(true);
+            			
+            		}
+				}
 			}
 		});
 		

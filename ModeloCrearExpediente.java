@@ -49,7 +49,7 @@ public class ModeloCrearExpediente {
 			Modelo m = Modelo.obtenerInstancia();
 			Connection c = m.getConnectionPool().reserveConnection();
 			Statement s = c.createStatement();
-			String consulta = "SELECT cedula FROM usuario WHERE cedula = '" + valorInstructor + "' AND tipoDeUsuario = 'Instructor'";
+			String consulta = "SELECT codigo FROM instasist WHERE codigo = '" + valorInstructor + "'";
 			ResultSet rs = s.executeQuery(consulta);
 			if (!rs.next()) {
 				esVacia = true;
