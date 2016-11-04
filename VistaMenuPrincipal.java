@@ -297,7 +297,7 @@ public class VistaMenuPrincipal extends CustomComponent {
 		// botonEliminarUsuario
 		botonEliminarUsuario = new Button();
 		botonEliminarUsuario.setStyleName("boton");
-		botonEliminarUsuario.setCaption("Eliminar Usuario");
+		botonEliminarUsuario.setCaption("Usuarios del Sistema");
 		botonEliminarUsuario.setImmediate(true);
 		botonEliminarUsuario.setWidth("250px");
 		botonEliminarUsuario.setHeight("30px");
