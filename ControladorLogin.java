@@ -44,7 +44,7 @@ public class ControladorLogin {
 		}
 		
 		//Cambiar las comillas para que sean aceptadas por SQL
-		credenciales[1].replaceAll("'", "''");
+		credenciales[1].replaceAll("'", "0");
 		
 		datosUsuario = modeloLogin.autenticar(credenciales);
 		

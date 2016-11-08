@@ -81,6 +81,7 @@ public class ModeloCambioPassword {
 		} catch (NoSuchAlgorithmException e) {
 			System.out.println(e.getMessage());
 		}
+		pass.replaceAll("'", "0");
 		return pass;
 	}
 }

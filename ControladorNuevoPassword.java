@@ -60,6 +60,8 @@ public class ControladorNuevoPassword {
 			System.out.println("Error de hash");
 		}
 		
+		passHash.replaceAll("'", "0");
+		
 		passwords[0] = pass;
 		passwords[1] = passHash;
 		

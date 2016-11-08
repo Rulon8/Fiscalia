@@ -80,7 +80,7 @@ public class ControladorCrearUsuario {
 		}
 		
 		//Cambiar comillas para que sean aceptadas por SQL
-		passHash.replaceAll("'", "''");
+		passHash.replaceAll("'", "0");
 		
 		passwords[0] = pass;
 		passwords[1] = passHash;
