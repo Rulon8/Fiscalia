@@ -24,6 +24,10 @@ public class ControladorListaExpedientesArchivados {
 		return primeraInstancia;
 	}
 	
+	public void  generarReporte() {
+		modelo.generarReporte();
+	}
+	
 	public void setVista() {
 		InterfazListaExpedientesArchivados.setVista();
 	}

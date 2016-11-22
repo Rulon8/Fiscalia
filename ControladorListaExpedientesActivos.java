@@ -32,7 +32,6 @@ public class ControladorListaExpedientesActivos {
 	public void iniciar(){
 		modelo = ModeloListaExpedientesActivos.obtenerInstancia();
 		InterfazListaExpedientes = new VistaListaExpedientesActivos();
-		
 	}
 	
 	public static ControladorListaExpedientesActivos obtenerInstancia() {
@@ -40,6 +39,10 @@ public class ControladorListaExpedientesActivos {
 			primeraInstancia = new ControladorListaExpedientesActivos();
 		}
 		return primeraInstancia;
+	}
+	
+	public void  generarReporte() {
+		modelo.generarReporte();
 	}
 	
 	public void setVista() {
